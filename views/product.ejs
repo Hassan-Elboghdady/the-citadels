@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= product.description.substring(0, 160) %>">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= product.description.substring(0, 160) %>">
+  <meta property="og:type" content="product">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/collections.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="/collections">Collections</a>
+        <span aria-hidden="true">/</span>
+        <a href="/collections?category=<%= product.category %>"><%= product.categoryLabel %></a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page"><%= product.name %></span>
+      </div>
+    </nav>
+
+    <section class="product-detail" aria-labelledby="product-name">
+      <div class="container">
+        <div class="product-detail__layout">
+
+          <!-- Image -->
+          <div class="product-detail__img-col">
+            <div class="product-detail__img-wrap">
+              <img src="<%= product.image %>" alt="<%= product.name %>" class="product-detail__img">
+              <span class="product-card__badge"><%= product.categoryLabel %></span>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="product-detail__info-col">
+            <span class="eyebrow"><%= product.categoryLabel %></span>
+            <h1 id="product-name"><%= product.name %></h1>
+            <p class="product-detail__price"><%= product.price.toLocaleString() %> EGP</p>
+            <p class="product-detail__desc"><%= product.description %></p>
+
+            <div class="product-detail__specs">
+              <h2>Specifications</h2>
+              <ul>
+                <% product.specs.forEach(function(spec) { %>
+                  <li><%= spec %></li>
+                <% }); %>
+              </ul>
+            </div>
+
+            <div class="product-detail__qty">
+              <label for="qty-input" class="form-label">Quantity</label>
+              <div class="qty-control">
+                <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">-</button>
+                <input type="number" id="qty-input" class="qty-input" value="1" min="1" max="99" aria-label="Quantity">
+                <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="product-detail__actions">
+              <button type="button" class="btn btn--dark btn-add-cart" id="detail-add-cart" data-product-id="<%= product.id %>" data-product-name="<%= product.name %>" data-product-price="<%= product.price %>" data-product-image="<%= product.image %>">Add to Cart</button>
+              <a href="/contact" class="btn btn--outline" id="detail-inquiry">Inquire About This Product</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related products -->
+    <% if (relatedProducts.length > 0) { %>
+    <section class="related-section" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 id="related-heading">More from <%= product.categoryLabel %></h2>
+        <div class="products-grid products-grid--related">
+          <% relatedProducts.forEach(function(rp) { %>
+            <article class="product-card" id="related-<%= rp.id %>">
+              <div class="product-card__img-wrap">
+                <img src="<%= rp.image %>" alt="<%= rp.name %>" class="product-card__img" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__name"><%= rp.name %></h3>
+                <div class="product-card__footer">
+                  <span class="product-card__price"><%= rp.price.toLocaleString() %> EGP</span>
+                  <a href="/product/<%= rp.id %>" class="btn btn--outline btn--sm">View Details</a>
+                </div>
+              </div>
+            </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+    <% } %>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+  <script src="/js/cart.js"></script>
+</body>
+</html>

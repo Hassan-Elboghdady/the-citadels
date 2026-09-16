@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/collections.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+
+    <div class="page-intro">
+      <div class="container">
+        <span class="eyebrow">Our Products</span>
+        <h1>Furniture Collections</h1>
+        <p class="lead">Premium imported furniture for every environment, sourced from selected international manufacturers and partners.</p>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="coll-list" aria-labelledby="categories-heading">
+      <h2 id="categories-heading" class="sr-only">Furniture Categories</h2>
+
+      <div class="coll-item" id="residential">
+        <div class="coll-item__img-col">
+          <img src="/images/residential.png" alt="Luxury bedroom with premium imported bed and linen bedding" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num">01</span>
+          <h3>Residential Furniture</h3>
+          <p>Premium imported pieces for living rooms, bedrooms, and dining spaces. We source furniture that brings international design quality into Egyptian homes, from statement sofas to complete dining room collections.</p>
+          <a href="/contact" class="btn btn--outline" id="collections-residential-quote">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="coll-item coll-item--reverse" id="hotel">
+        <div class="coll-item__img-col">
+          <img src="/images/hotel.png" alt="Luxury hotel lobby with elegant seating and marble finishes" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num">02</span>
+          <h3>Hotel Furniture</h3>
+          <p>Complete hospitality furniture solutions including guest room furnishings, lobby seating, restaurant tables and chairs, and conference room setups. Built to withstand commercial use while maintaining a premium look.</p>
+          <p class="coll-item__partner"><strong>Partner:</strong> ABLE</p>
+          <a href="/contact" class="btn btn--outline" id="collections-hotel-quote">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="coll-item" id="office">
+        <div class="coll-item__img-col">
+          <img src="/images/office.png" alt="Executive office with wooden desk and ergonomic leather chair" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num">03</span>
+          <h3>Office Furniture</h3>
+          <p>Ergonomic desks, executive seating, modular workstations, meeting room furniture, and storage solutions. Designed for productivity, comfort, and long-term durability in corporate and commercial offices.</p>
+          <p class="coll-item__partner"><strong>Partners:</strong> Zivella, Falmar</p>
+          <a href="/contact" class="btn btn--outline" id="collections-office-quote">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="coll-item coll-item--reverse" id="control-room">
+        <div class="coll-item__img-col">
+          <img src="/images/control-room.png" alt="Modern control room with ergonomic operator consoles and monitors" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num">04</span>
+          <h3>Control Room Furniture</h3>
+          <p>Specialized ergonomic consoles, operator desks, and monitoring workstations built for 24/7 mission-critical environments. Designed for railway, utility, and security control rooms with integrated cable management and adjustable components.</p>
+          <p class="coll-item__partner"><strong>Partner:</strong> Elettromeccanica Bosco</p>
+          <a href="/contact" class="btn btn--outline" id="collections-control-quote">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="coll-item" id="healthcare">
+        <div class="coll-item__img-col">
+          <img src="/images/healthcare.png" alt="Modern hospital waiting area with clean medical furniture" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num">05</span>
+          <h3>Healthcare & Laboratory</h3>
+          <p>Durable, hygienic, and compliant furniture for hospitals, clinics, laboratories, and medical research facilities. Includes examination tables, lab benches, medical storage, and patient area furnishings.</p>
+          <a href="/contact" class="btn btn--outline" id="collections-healthcare-quote">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="coll-item coll-item--reverse" id="airport">
+        <div class="coll-item__img-col">
+          <div class="coll-item__img-placeholder" style="background: #8E8B83;" role="img" aria-label="Airport furniture and terminal seating"></div>
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num">06</span>
+          <h3>Airport Furniture & Equipment</h3>
+          <p>Public seating, check-in counters, gate area furniture, and VIP lounge furnishings designed for high-traffic aviation environments. Built for durability, security compliance, and passenger comfort.</p>
+          <a href="/contact" class="btn btn--outline" id="collections-airport-quote">Request a Quote</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="partners-header">
+          <h2 id="partners-heading">International Partners</h2>
+          <p class="lead">We work with selected manufacturers to source furniture that meets strict standards for quality, durability, and design.</p>
+        </div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <h3>ABLE</h3>
+            <p>Hotel & Residential Furniture</p>
+          </div>
+          <div class="partner-card">
+            <h3>Zivella</h3>
+            <p>Office Furniture</p>
+          </div>
+          <div class="partner-card">
+            <h3>Falmar</h3>
+            <p>Office Furniture</p>
+          </div>
+          <div class="partner-card">
+            <h3>Elettromeccanica Bosco</h3>
+            <p>Control Room Furniture</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band" aria-labelledby="collections-cta-heading">
+      <div class="container">
+        <div class="cta-band__inner">
+          <div class="cta-band__left">
+            <h2 id="collections-cta-heading">Need a Specific<br>Solution?</h2>
+          </div>
+          <div class="cta-band__right">
+            <p>Tell us about your project requirements. Our team will provide a detailed proposal including product specifications, pricing, and delivery timelines.</p>
+            <div class="btn-row">
+              <a href="/contact" class="btn btn--accent" id="collections-cta-quote">Request a Quote</a>
+              <a href="/projects" class="btn btn--ghost" id="collections-cta-projects">View Our Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/cookie-consent') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

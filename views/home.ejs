@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero__image-wrap">
+        <img src="/images/hero.png" alt="Premium modern living room with luxury imported furniture, natural linen sofa, and solid wood coffee table" class="hero__image">
+      </div>
+      <div class="hero__content">
+        <div class="hero__text">
+          <h1>Premium Imported<br>Furniture for<br>Distinctive Spaces</h1>
+          <p class="hero__sub">Residential. Hospitality. Office. Healthcare.<br>Control room. Airport. Across Egypt.</p>
+          <div class="btn-row">
+            <a href="/collections" class="btn btn--dark" id="hero-cta-collections">View Collections</a>
+            <a href="/contact" class="btn btn--outline" id="hero-cta-contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COLLECTIONS ========== -->
+    <section class="collections-section" aria-labelledby="collections-heading">
+      <div class="container">
+        <div class="collections-header">
+          <h2 id="collections-heading">Six Sectors,<br>One Standard</h2>
+          <p class="lead">Every environment has different demands. We source furniture that meets each one without compromising on quality, durability, or design.</p>
+        </div>
+      </div>
+      <div class="collections-mosaic">
+        <a href="/collections#residential" class="mosaic-card mosaic-card--large" id="card-residential">
+          <img src="/images/residential.png" alt="Luxury bedroom with premium imported bed, linen bedding, and wood nightstands" class="mosaic-card__img">
+          <div class="mosaic-card__overlay">
+            <span class="mosaic-card__cat">01</span>
+            <h3 class="mosaic-card__title">Residential</h3>
+            <p class="mosaic-card__desc">Living rooms, bedrooms, and dining spaces that define modern luxury.</p>
+          </div>
+        </a>
+        <a href="/collections#hotel" class="mosaic-card" id="card-hotel">
+          <img src="/images/hotel.png" alt="Luxury hotel lobby with elegant reception seating and marble finishes" class="mosaic-card__img">
+          <div class="mosaic-card__overlay">
+            <span class="mosaic-card__cat">02</span>
+            <h3 class="mosaic-card__title">Hospitality</h3>
+            <p class="mosaic-card__desc">Guest rooms, lobbies, restaurants, and conference halls.</p>
+          </div>
+        </a>
+        <a href="/collections#office" class="mosaic-card" id="card-office">
+          <img src="/images/office.png" alt="Executive office with wooden desk, leather chair, and city view" class="mosaic-card__img">
+          <div class="mosaic-card__overlay">
+            <span class="mosaic-card__cat">03</span>
+            <h3 class="mosaic-card__title">Office</h3>
+            <p class="mosaic-card__desc">Ergonomic desks, executive seating, and modular workstations.</p>
+          </div>
+        </a>
+        <a href="/collections#control-room" class="mosaic-card" id="card-control-room">
+          <img src="/images/control-room.png" alt="Modern control room with ergonomic operator consoles and multiple monitors" class="mosaic-card__img">
+          <div class="mosaic-card__overlay">
+            <span class="mosaic-card__cat">04</span>
+            <h3 class="mosaic-card__title">Control Room</h3>
+            <p class="mosaic-card__desc">Mission-critical consoles for 24/7 operations.</p>
+          </div>
+        </a>
+        <a href="/collections#healthcare" class="mosaic-card" id="card-healthcare">
+          <img src="/images/healthcare.png" alt="Modern hospital waiting area with clean medical furniture and calming interior" class="mosaic-card__img">
+          <div class="mosaic-card__overlay">
+            <span class="mosaic-card__cat">05</span>
+            <h3 class="mosaic-card__title">Healthcare & Lab</h3>
+            <p class="mosaic-card__desc">Compliant furniture for hospitals, clinics, and laboratories.</p>
+          </div>
+        </a>
+        <a href="/collections#airport" class="mosaic-card" id="card-airport">
+          <div class="mosaic-card__placeholder" style="background:#8E8B83;"></div>
+          <div class="mosaic-card__overlay">
+            <span class="mosaic-card__cat">06</span>
+            <h3 class="mosaic-card__title">Airport</h3>
+            <p class="mosaic-card__desc">Seating, counters, and equipment for aviation environments.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== TRUST STRIP ========== -->
+    <section class="trust-strip" aria-labelledby="trust-heading">
+      <div class="container">
+        <h2 id="trust-heading" class="sr-only">Why The Citadels</h2>
+        <div class="trust-strip__grid">
+          <div class="trust-item">
+            <span class="trust-item__number">01</span>
+            <h3 class="trust-item__title">Imported Quality</h3>
+            <p class="trust-item__text">Sourced through selected international manufacturers. Every product meets strict standards before it enters Egypt.</p>
+          </div>
+          <div class="trust-item">
+            <span class="trust-item__number">02</span>
+            <h3 class="trust-item__title">Project Experience</h3>
+            <p class="trust-item__text">Healthcare facilities, monorail control rooms, hotels, airports. We have delivered across Egypt's most demanding sectors.</p>
+          </div>
+          <div class="trust-item">
+            <span class="trust-item__number">03</span>
+            <h3 class="trust-item__title">End-to-End Support</h3>
+            <p class="trust-item__text">Design coordination, international sourcing, local delivery, professional installation, and after-sales service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="projects-section" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="projects-header">
+          <div class="projects-header__left">
+            <span class="eyebrow">Selected work</span>
+            <h2 id="projects-heading">Projects &<br>Experience</h2>
+          </div>
+          <div class="projects-header__right">
+            <p class="lead">From proton therapy facilities to monorail control rooms, we deliver furniture solutions for environments where quality is not optional.</p>
+            <a href="/projects" class="arrow-link">View all projects</a>
+          </div>
+        </div>
+        <div class="project-row">
+          <article class="project-tile">
+            <div class="project-tile__img-wrap">
+              <img src="/images/healthcare.png" alt="Interior of CCHF Proton Therapy Building in Cairo" class="project-tile__img">
+            </div>
+            <div class="project-tile__info">
+              <span class="project-tile__tag">Healthcare</span>
+              <h3>CCHF Proton Therapy Building</h3>
+              <p class="muted">Cairo, Egypt</p>
+            </div>
+          </article>
+          <article class="project-tile">
+            <div class="project-tile__img-wrap">
+              <img src="/images/control-room.png" alt="NCC Monorail Control Room with ergonomic operator consoles" class="project-tile__img">
+            </div>
+            <div class="project-tile__info">
+              <span class="project-tile__tag">Control Room</span>
+              <h3>NCC Monorail Control Rooms</h3>
+              <p class="muted">Ergonomic Furniture</p>
+            </div>
+          </article>
+          <article class="project-tile">
+            <div class="project-tile__img-wrap">
+              <img src="/images/control-room.png" alt="West Nile Monorail Control Room furniture" class="project-tile__img">
+            </div>
+            <div class="project-tile__info">
+              <span class="project-tile__tag">Control Room</span>
+              <h3>West Nile Monorail Control Rooms</h3>
+              <p class="muted">Ergonomic Furniture</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT PREVIEW ========== -->
+    <section class="about-band" aria-labelledby="about-heading">
+      <div class="about-band__image-col">
+        <img src="/images/hotel.png" alt="Premium furniture showroom with luxury seating and warm interior lighting" class="about-band__img">
+      </div>
+      <div class="about-band__content-col">
+        <span class="eyebrow">Since 2009</span>
+        <h2 id="about-heading">A Family-Owned Company With a Proven Track Record</h2>
+        <p class="lead">Founded in 2009, The Citadels has grown from a focused contracting firm into a comprehensive furniture and project solutions company serving clients across Egypt.</p>
+        <p class="lead">We specialize in sourcing, importing, and delivering premium furniture for environments that demand quality.</p>
+        <a href="/about" class="arrow-link" id="home-about-link">About The Citadels</a>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT CTA ========== -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-band__inner">
+          <div class="cta-band__left">
+            <h2 id="cta-heading">Start Your<br>Furniture Project</h2>
+          </div>
+          <div class="cta-band__right">
+            <p>Contact our team to discuss furniture solutions for your home, hotel, office, or specialized project. We respond to all inquiries within one business day.</p>
+            <div class="btn-row">
+              <a href="/contact" class="btn btn--accent" id="cta-quote">Request a Quote</a>
+              <a href="https://maps.google.com/?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo" class="btn btn--ghost" id="cta-showroom" target="_blank" rel="noopener noreferrer">Visit Showroom</a>
+              <a href="https://wa.me/201069631049" class="btn btn--ghost" id="cta-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/cookie-consent') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

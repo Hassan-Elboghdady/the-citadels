@@ -1,0 +1,32 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" role="banner">
+  <div class="site-header__wrap">
+    <a href="/" class="site-logo" aria-label="The Citadels home page">
+      <img src="/images/logo.png" alt="The Citadels Logo" class="site-logo__full" aria-hidden="true">
+      <span class="site-logo__text">The Citadels</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav" id="nav-toggle">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+      <a href="/" class="site-nav__link<%= currentPage === 'home' ? ' site-nav__link--active' : '' %>">Home</a>
+      <a href="/about" class="site-nav__link<%= currentPage === 'about' ? ' site-nav__link--active' : '' %>">About</a>
+      <a href="/collections" class="site-nav__link<%= currentPage === 'collections' ? ' site-nav__link--active' : '' %>">Collections</a>
+      <a href="/projects" class="site-nav__link<%= currentPage === 'projects' ? ' site-nav__link--active' : '' %>">Projects</a>
+      <a href="/contact" class="site-nav__link<%= currentPage === 'contact' ? ' site-nav__link--active' : '' %>">Contact</a>
+      <span class="site-nav__divider" aria-hidden="true"></span>
+      <% if (typeof user !== 'undefined' && user) { %>
+        <span class="site-nav__user"><%= user.firstName %></span>
+        <form action="/logout" method="POST" class="site-nav__logout-form">
+          <button type="submit" class="site-nav__link site-nav__link--logout">Sign Out</button>
+        </form>
+      <% } else { %>
+        <a href="/login" class="site-nav__link<%= currentPage === 'login' ? ' site-nav__link--active' : '' %>">Sign In</a>
+        <a href="/signup" class="site-nav__link site-nav__link--cta<%= currentPage === 'signup' ? ' site-nav__link--active' : '' %>">Sign Up</a>
+      <% } %>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  </div>
+</header>

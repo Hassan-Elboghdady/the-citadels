@@ -1,0 +1,28 @@
+{
+  "name": "the-citadels",
+  "version": "1.0.0",
+  "description": "The Citadels — Premium Imported Furniture & Project Solutions",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [
+    "furniture",
+    "premium",
+    "egypt",
+    "imported"
+  ],
+  "author": "The Citadels",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-rate-limit": "^8.7.0",
+    "jsonwebtoken": "^9.0.3",
+    "zod": "^4.6.5"
+  }
+}

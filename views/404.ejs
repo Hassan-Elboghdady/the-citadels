@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+    <section style="min-height: 60vh; display: flex; align-items: center; padding: 120px 0;">
+      <div class="container" style="max-width: 560px;">
+        <span class="eyebrow">Error 404</span>
+        <h1 style="margin-bottom: 20px;">Page Not Found</h1>
+        <p class="lead" style="margin-bottom: 36px;">The page you are looking for does not exist or has been moved.</p>
+        <a href="/" class="btn btn--dark" id="404-home-link">Return to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

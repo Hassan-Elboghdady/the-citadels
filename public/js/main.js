@@ -267,12 +267,30 @@
     });
   }
 
+  /* ---------- Cart Badge (global) ---------- */
+  function updateCartBadge() {
+    try {
+      var items = JSON.parse(localStorage.getItem('citadels_cart')) || [];
+      var count = items.reduce(function(sum, i) { return sum + i.qty; }, 0);
+      var badges = document.querySelectorAll('.cart-badge');
+      badges.forEach(function(badge) {
+        if (count > 0) {
+          badge.textContent = count > 99 ? '99+' : count;
+          badge.style.display = '';
+        } else {
+          badge.style.display = 'none';
+        }
+      });
+    } catch (e) {}
+  }
+
   /* ---------- Initialize ---------- */
   document.addEventListener('DOMContentLoaded', function () {
     initCookieConsent();
     initMobileNav();
     initFormValidation();
     initSmoothScroll();
+    updateCartBadge();
   });
 
 })();

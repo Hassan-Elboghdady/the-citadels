@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — The Citadels</title>
+  <meta name="description" content="Sign in to your account at The Citadels.">
+  <link rel="stylesheet" href="public/css/main.css">
+  <link rel="stylesheet" href="public/css/auth.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" role="banner">
+  <div class="site-header__wrap">
+    <a href="index.html" class="site-logo" aria-label="The Citadels home page">
+      <img src="public/images/logo.png" alt="The Citadels Logo" class="site-logo__full" aria-hidden="true">
+      <span class="site-logo__text">The Citadels</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav" id="nav-toggle">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="site-nav__link">Home</a>
+      <a href="about.html" class="site-nav__link">About</a>
+      <a href="collections.html" class="site-nav__link">Collections</a>
+      <a href="projects.html" class="site-nav__link">Projects</a>
+      <a href="contact.html" class="site-nav__link">Contact</a>
+      <a href="cart.html" class="cart-link" aria-label="Shopping cart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1h3l2 10h10l2-7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="cart-badge" style="display: none;">0</span>
+      </a>
+      <span class="site-nav__divider" aria-hidden="true"></span>
+      
+        <a href="login.html" class="site-nav__link site-nav__link--active">Sign In</a>
+        <a href="signup.html" class="site-nav__link site-nav__link--cta">Sign Up</a>
+      
+    </nav>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  </div>
+</header>
+
+
+  <main id="main-content">
+    <section class="auth-section" aria-labelledby="login-heading">
+      <div class="container">
+        <div class="auth-layout">
+
+          <!-- Left: branding panel -->
+          <div class="auth-brand">
+            <img src="public/images/logo.png" alt="The Citadels" class="auth-brand__logo">
+            <p class="auth-brand__text">Sign in to manage your project inquiries, view orders, and access your account.</p>
+          </div>
+
+          <!-- Right: form -->
+          <div class="auth-form-wrap">
+            <h1 id="login-heading" class="auth-title">Sign In</h1>
+            <p class="auth-subtitle">New to The Citadels? <a href="signup.html">Create an account</a></p>
+
+            
+
+            <form class="auth-form" id="login-form" action="login.html" method="POST" novalidate>
+
+              <div class="form-group">
+                <label for="login-email" class="form-label form-label--required">Email Address</label>
+                <input type="email" id="login-email" name="email" class="form-input" required autocomplete="email" value="">
+                
+              </div>
+
+              <div class="form-group">
+                <label for="login-password" class="form-label form-label--required">Password</label>
+                <div class="password-wrap">
+                  <input type="password" id="login-password" name="password" class="form-input" required autocomplete="current-password">
+                  <button type="button" class="password-toggle" aria-label="Show password" data-target="login-password">
+                    <svg class="eye-open" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M1 10s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                    <svg class="eye-closed" width="18" height="18" viewBox="0 0 20 20" fill="none" style="display:none"><path d="M1 10s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z" stroke="currentColor" stroke-width="1.5"/><path d="M3 3l14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                </div>
+                
+              </div>
+
+              <button type="submit" class="btn btn--dark auth-submit" id="login-submit">Sign In</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">
+          <img src="public/images/logo.png" alt="The Citadels logo" class="footer__logo">
+        </div>
+        <p class="footer__brand-text">Premium imported furniture and project solutions for residential, hospitality, office, healthcare, laboratory, airport, and control-room environments across Egypt.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <div class="footer__links">
+          <a href="about.html">About</a>
+          <a href="collections.html">Collections</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Head Office</p>
+        <address class="footer__address">
+          10 Sicily Street, off Makram Ebeid Street<br>
+          Nasr City, Cairo 11765<br><br>
+          <a href="tel:+201069631049">+20 106 963 1049</a><br>
+          <a href="mailto:info@thecitadels.com">info@thecitadels.com</a>
+        </address>
+      </div>
+      <div>
+        <p class="footer__col-title">Showroom</p>
+        <address class="footer__address">
+          Shop 3, Khaled Ibn El Walid<br>
+          Sheraton Al Matar, El Nozha<br>
+          Cairo 11843<br><br>
+          <a href="tel:+201200142107">+20 120 014 2107</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 The Citadels. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="public/js/main.js"></script>
+  <script src="public/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — The Citadels</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="public/css/main.css">
+  <link rel="stylesheet" href="public/css/collections.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" role="banner">
+  <div class="site-header__wrap">
+    <a href="index.html" class="site-logo" aria-label="The Citadels home page">
+      <img src="public/images/logo.png" alt="The Citadels Logo" class="site-logo__full" aria-hidden="true">
+      <span class="site-logo__text">The Citadels</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav" id="nav-toggle">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="site-nav__link">Home</a>
+      <a href="about.html" class="site-nav__link">About</a>
+      <a href="collections.html" class="site-nav__link">Collections</a>
+      <a href="projects.html" class="site-nav__link">Projects</a>
+      <a href="contact.html" class="site-nav__link">Contact</a>
+      <a href="cart.html" class="cart-link" aria-label="Shopping cart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1h3l2 10h10l2-7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="cart-badge" style="display: none;">0</span>
+      </a>
+      <span class="site-nav__divider" aria-hidden="true"></span>
+      
+        <a href="login.html" class="site-nav__link">Sign In</a>
+        <a href="signup.html" class="site-nav__link site-nav__link--cta">Sign Up</a>
+      
+    </nav>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  </div>
+</header>
+
+
+  <main id="main-content">
+
+    <div class="page-intro">
+      <div class="container">
+        <span class="eyebrow">Your Selection</span>
+        <h1>Shopping Cart</h1>
+      </div>
+    </div>
+
+    <section class="cart-section" aria-labelledby="cart-heading">
+      <div class="container">
+        <h2 id="cart-heading" class="sr-only">Cart Items</h2>
+
+        <!-- Empty state -->
+        <div class="cart-empty" id="cart-empty" style="display: none;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 6h6l6 24h18l6-18H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="40" r="3" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="40" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          <p>Your cart is empty.</p>
+          <a href="collections.html" class="btn btn--dark">Browse Collections</a>
+        </div>
+
+        <!-- Cart contents -->
+        <div class="cart-content" id="cart-content" style="display: none;">
+          <div class="cart-layout">
+            <div class="cart-items" id="cart-items">
+              <!-- Populated by JS -->
+            </div>
+            <aside class="cart-summary" id="cart-summary">
+              <h3>Order Summary</h3>
+              <div class="cart-summary__row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">0 EGP</span>
+              </div>
+              <div class="cart-summary__row cart-summary__row--total">
+                <span>Total</span>
+                <span id="cart-total">0 EGP</span>
+              </div>
+              <p class="cart-summary__note">Shipping and taxes calculated at checkout. For large orders or project pricing, please <a href="contact.html">contact us</a>.</p>
+              <a href="contact.html" class="btn btn--dark" style="width: 100%; margin-top: 16px;" id="cart-checkout">Proceed to Inquiry</a>
+              <a href="collections.html" class="btn btn--outline" style="width: 100%; margin-top: 8px;">Continue Shopping</a>
+            </aside>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">
+          <img src="public/images/logo.png" alt="The Citadels logo" class="footer__logo">
+        </div>
+        <p class="footer__brand-text">Premium imported furniture and project solutions for residential, hospitality, office, healthcare, laboratory, airport, and control-room environments across Egypt.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <div class="footer__links">
+          <a href="about.html">About</a>
+          <a href="collections.html">Collections</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Head Office</p>
+        <address class="footer__address">
+          10 Sicily Street, off Makram Ebeid Street<br>
+          Nasr City, Cairo 11765<br><br>
+          <a href="tel:+201069631049">+20 106 963 1049</a><br>
+          <a href="mailto:info@thecitadels.com">info@thecitadels.com</a>
+        </address>
+      </div>
+      <div>
+        <p class="footer__col-title">Showroom</p>
+        <address class="footer__address">
+          Shop 3, Khaled Ibn El Walid<br>
+          Sheraton Al Matar, El Nozha<br>
+          Cairo 11843<br><br>
+          <a href="tel:+201200142107">+20 120 014 2107</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 The Citadels. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="public/js/main.js"></script>
+  <script src="public/js/cart.js"></script>
+</body>
+</html>

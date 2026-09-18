@@ -3,47 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Furniture & Project Solutions — The Citadels</title>
-  <meta name="description" content="The Citadels provides premium imported furniture and end-to-end project solutions for residential, hospitality, office, and healthcare sectors across Egypt.">
-  <meta property="og:title" content="Premium Furniture & Project Solutions — The Citadels">
-  <meta property="og:description" content="The Citadels provides premium imported furniture and end-to-end project solutions for residential, hospitality, office, and healthcare sectors across Egypt.">
+  <title>The Citadels — Premium Imported Furniture for Distinctive Spaces</title>
+  <meta name="description" content="High-end furniture solutions for residential, hospitality, office, healthcare, laboratory, airport, and control-room environments across Egypt.">
+  <meta property="og:title" content="The Citadels — Premium Imported Furniture for Distinctive Spaces">
+  <meta property="og:description" content="High-end furniture solutions for residential, hospitality, office, healthcare, laboratory, airport, and control-room environments across Egypt.">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="public/css/main.css">
   <link rel="stylesheet" href="public/css/home.css">
 </head>
 <body>
-  <!-- Header -->
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="site-header" role="banner">
-    <div class="site-header__wrap">
-      <a href="index.html" class="site-logo" aria-label="The Citadels home page">
-        <img src="public/images/logo.png" alt="The Citadels Logo" class="site-logo__full" aria-hidden="true">
-        <span class="site-logo__text">The Citadels</span>
+<header class="site-header" role="banner">
+  <div class="site-header__wrap">
+    <a href="index.html" class="site-logo" aria-label="The Citadels home page">
+      <img src="public/images/logo.png" alt="The Citadels Logo" class="site-logo__full" aria-hidden="true">
+      <span class="site-logo__text">The Citadels</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav" id="nav-toggle">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="site-nav__link site-nav__link--active">Home</a>
+      <a href="about.html" class="site-nav__link">About</a>
+      <a href="collections.html" class="site-nav__link">Collections</a>
+      <a href="projects.html" class="site-nav__link">Projects</a>
+      <a href="contact.html" class="site-nav__link">Contact</a>
+      <a href="cart.html" class="cart-link" aria-label="Shopping cart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1h3l2 10h10l2-7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="cart-badge" style="display: none;">0</span>
       </a>
-      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav" id="nav-toggle">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="site-nav__link site-nav__link--active">Home</a>
-        <a href="views/about.ejs" class="site-nav__link">About</a>
-        <a href="views/collections.ejs" class="site-nav__link">Collections</a>
-        <a href="views/projects.ejs" class="site-nav__link">Projects</a>
-        <a href="views/contact.ejs" class="site-nav__link">Contact</a>
-        <a href="views/cart.ejs" class="cart-link" aria-label="Shopping cart">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1h3l2 10h10l2-7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span class="cart-badge" style="display: none;">0</span>
-        </a>
-        <span class="site-nav__divider" aria-hidden="true"></span>
-        <a href="views/login.ejs" class="site-nav__link">Sign In</a>
-        <a href="views/signup.ejs" class="site-nav__link site-nav__link--cta">Sign Up</a>
-      </nav>
-      <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
-    </div>
-  </header>
+      <span class="site-nav__divider" aria-hidden="true"></span>
+      
+        <a href="login.html" class="site-nav__link">Sign In</a>
+        <a href="signup.html" class="site-nav__link site-nav__link--cta">Sign Up</a>
+      
+    </nav>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  </div>
+</header>
+
 
   <main id="main-content">
+
     <!-- ========== HERO ========== -->
     <section class="hero" aria-label="Introduction">
       <div class="hero__image-wrap">
@@ -54,8 +57,8 @@
           <h1>Premium Imported<br>Furniture for<br>Distinctive Spaces</h1>
           <p class="hero__sub">Residential. Hospitality. Office. Healthcare.<br>Control room. Airport. Across Egypt.</p>
           <div class="btn-row">
-            <a href="views/collections.ejs" class="btn btn--dark" id="hero-cta-collections">View Collections</a>
-            <a href="views/contact.ejs" class="btn btn--outline" id="hero-cta-contact">Contact Us</a>
+            <a href="collections.html" class="btn btn--dark" id="hero-cta-collections">View Collections</a>
+            <a href="contact.html" class="btn btn--outline" id="hero-cta-contact">Contact Us</a>
           </div>
         </div>
       </div>
@@ -70,7 +73,7 @@
         </div>
       </div>
       <div class="collections-mosaic">
-        <a href="views/collections.ejs#residential" class="mosaic-card mosaic-card--large" id="card-residential">
+        <a href="collections.html#residential" class="mosaic-card mosaic-card--large" id="card-residential">
           <img src="public/images/residential.png" alt="Luxury bedroom with premium imported bed, linen bedding, and wood nightstands" class="mosaic-card__img">
           <div class="mosaic-card__overlay">
             <span class="mosaic-card__cat">01</span>
@@ -78,7 +81,7 @@
             <p class="mosaic-card__desc">Living rooms, bedrooms, and dining spaces that define modern luxury.</p>
           </div>
         </a>
-        <a href="views/collections.ejs#hotel" class="mosaic-card" id="card-hotel">
+        <a href="collections.html#hotel" class="mosaic-card" id="card-hotel">
           <img src="public/images/hotel.png" alt="Luxury hotel lobby with elegant reception seating and marble finishes" class="mosaic-card__img">
           <div class="mosaic-card__overlay">
             <span class="mosaic-card__cat">02</span>
@@ -86,7 +89,7 @@
             <p class="mosaic-card__desc">Guest rooms, lobbies, restaurants, and conference halls.</p>
           </div>
         </a>
-        <a href="views/collections.ejs#office" class="mosaic-card" id="card-office">
+        <a href="collections.html#office" class="mosaic-card" id="card-office">
           <img src="public/images/office.png" alt="Executive office with wooden desk, leather chair, and city view" class="mosaic-card__img">
           <div class="mosaic-card__overlay">
             <span class="mosaic-card__cat">03</span>
@@ -94,7 +97,7 @@
             <p class="mosaic-card__desc">Ergonomic desks, executive seating, and modular workstations.</p>
           </div>
         </a>
-        <a href="views/collections.ejs#control-room" class="mosaic-card" id="card-control-room">
+        <a href="collections.html#control-room" class="mosaic-card" id="card-control-room">
           <img src="public/images/control-room.png" alt="Modern control room with ergonomic operator consoles and multiple monitors" class="mosaic-card__img">
           <div class="mosaic-card__overlay">
             <span class="mosaic-card__cat">04</span>
@@ -102,7 +105,7 @@
             <p class="mosaic-card__desc">Mission-critical consoles for 24/7 operations.</p>
           </div>
         </a>
-        <a href="views/collections.ejs#healthcare" class="mosaic-card" id="card-healthcare">
+        <a href="collections.html#healthcare" class="mosaic-card" id="card-healthcare">
           <img src="public/images/healthcare.png" alt="Modern hospital waiting area with clean medical furniture and calming interior" class="mosaic-card__img">
           <div class="mosaic-card__overlay">
             <span class="mosaic-card__cat">05</span>
@@ -110,7 +113,7 @@
             <p class="mosaic-card__desc">Compliant furniture for hospitals, clinics, and laboratories.</p>
           </div>
         </a>
-        <a href="views/collections.ejs#airport" class="mosaic-card" id="card-airport">
+        <a href="collections.html#airport" class="mosaic-card" id="card-airport">
           <div class="mosaic-card__placeholder" style="background:#8E8B83;"></div>
           <div class="mosaic-card__overlay">
             <span class="mosaic-card__cat">06</span>
@@ -155,7 +158,7 @@
           </div>
           <div class="projects-header__right">
             <p class="lead">From proton therapy facilities to monorail control rooms, we deliver furniture solutions for environments where quality is not optional.</p>
-            <a href="views/projects.ejs" class="arrow-link">View all projects</a>
+            <a href="projects.html" class="arrow-link">View all projects</a>
           </div>
         </div>
         <div class="project-row">
@@ -203,7 +206,7 @@
         <h2 id="about-heading">A Family-Owned Company With a Proven Track Record</h2>
         <p class="lead">Founded in 2009, The Citadels has grown from a focused contracting firm into a comprehensive furniture and project solutions company serving clients across Egypt.</p>
         <p class="lead">We specialize in sourcing, importing, and delivering premium furniture for environments that demand quality.</p>
-        <a href="views/about.ejs" class="arrow-link" id="home-about-link">About The Citadels</a>
+        <a href="about.html" class="arrow-link" id="home-about-link">About The Citadels</a>
       </div>
     </section>
 
@@ -217,7 +220,7 @@
           <div class="cta-band__right">
             <p>Contact our team to discuss furniture solutions for your home, hotel, office, or specialized project. We respond to all inquiries within one business day.</p>
             <div class="btn-row">
-              <a href="views/contact.ejs" class="btn btn--accent" id="cta-contact">Contact Us</a>
+              <a href="contact.html" class="btn btn--accent" id="cta-contact">Contact Us</a>
               <a href="https://maps.google.com/?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo" class="btn btn--ghost" id="cta-showroom" target="_blank" rel="noopener noreferrer">Visit Showroom</a>
               <a href="https://wa.me/201069631049" class="btn btn--ghost" id="cta-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
@@ -225,67 +228,68 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__top">
-        <div>
-          <div class="footer__brand">
-            <img src="public/images/logo.png" alt="The Citadels logo" class="footer__logo">
-          </div>
-          <p class="footer__brand-text">Premium imported furniture and project solutions for residential, hospitality, office, healthcare, laboratory, airport, and control-room environments across Egypt.</p>
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">
+          <img src="public/images/logo.png" alt="The Citadels logo" class="footer__logo">
         </div>
-        <div>
-          <p class="footer__col-title">Company</p>
-          <div class="footer__links">
-            <a href="views/about.ejs">About</a>
-            <a href="views/collections.ejs">Collections</a>
-            <a href="views/projects.ejs">Projects</a>
-            <a href="views/contact.ejs">Contact</a>
-          </div>
-        </div>
-        <div>
-          <p class="footer__col-title">Head Office</p>
-          <address class="footer__address">
-            10 Sicily Street, off Makram Ebeid Street<br>
-            Nasr City, Cairo 11765<br><br>
-            <a href="tel:+201069631049">+20 106 963 1049</a><br>
-            <a href="mailto:info@thecitadels.com">info@thecitadels.com</a>
-          </address>
-        </div>
-        <div>
-          <p class="footer__col-title">Showroom</p>
-          <address class="footer__address">
-            Shop 3, Khaled Ibn El Walid<br>
-            Sheraton Al Matar, El Nozha<br>
-            Cairo 11843<br><br>
-            <a href="tel:+201200142107">+20 120 014 2107</a>
-          </address>
+        <p class="footer__brand-text">Premium imported furniture and project solutions for residential, hospitality, office, healthcare, laboratory, airport, and control-room environments across Egypt.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <div class="footer__links">
+          <a href="about.html">About</a>
+          <a href="collections.html">Collections</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 The Citadels. All rights reserved.</p>
-        <div class="footer__legal">
-          <a href="views/privacy-policy.ejs">Privacy Policy</a>
-          <a href="views/terms.ejs">Terms & Conditions</a>
-          <a href="views/cookie-policy.ejs">Cookie Policy</a>
-        </div>
+      <div>
+        <p class="footer__col-title">Head Office</p>
+        <address class="footer__address">
+          10 Sicily Street, off Makram Ebeid Street<br>
+          Nasr City, Cairo 11765<br><br>
+          <a href="tel:+201069631049">+20 106 963 1049</a><br>
+          <a href="mailto:info@thecitadels.com">info@thecitadels.com</a>
+        </address>
+      </div>
+      <div>
+        <p class="footer__col-title">Showroom</p>
+        <address class="footer__address">
+          Shop 3, Khaled Ibn El Walid<br>
+          Sheraton Al Matar, El Nozha<br>
+          Cairo 11843<br><br>
+          <a href="tel:+201200142107">+20 120 014 2107</a>
+        </address>
       </div>
     </div>
-  </footer>
-
-  <div class="cookie-consent" id="cookie-consent" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-consent-text">
-    <div class="cookie-consent__inner">
-      <p class="cookie-consent__text" id="cookie-consent-text">
-        This website uses essential cookies to ensure it functions correctly. We do not use tracking or advertising cookies unless you consent. Learn more in our <a href="views/cookie-policy.ejs">Cookie Policy</a>.
-      </p>
-      <div class="cookie-consent__actions">
-        <button class="cookie-consent__btn cookie-consent__btn--accept" id="cookie-accept" type="button">Accept</button>
-        <button class="cookie-consent__btn cookie-consent__btn--decline" id="cookie-decline" type="button">Decline</button>
+    <div class="footer__bottom">
+      <p>&copy; 2026 The Citadels. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
       </div>
     </div>
   </div>
+</footer>
+
+  <div class="cookie-consent" id="cookie-consent" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-consent-text">
+  <div class="cookie-consent__inner">
+    <p class="cookie-consent__text" id="cookie-consent-text">
+      This website uses essential cookies to ensure it functions correctly. We do not use tracking or advertising cookies unless you consent. Learn more in our <a href="cookie-policy.html">Cookie Policy</a>.
+    </p>
+    <div class="cookie-consent__actions">
+      <button class="cookie-consent__btn cookie-consent__btn--accept" id="cookie-accept" type="button">Accept</button>
+      <button class="cookie-consent__btn cookie-consent__btn--decline" id="cookie-decline" type="button">Decline</button>
+    </div>
+  </div>
+</div>
 
   <script src="public/js/main.js"></script>
 </body>

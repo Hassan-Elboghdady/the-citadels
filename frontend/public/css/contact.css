@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Contact Page — Two-Column Layout
+   ========================================================================== */
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Main Layout ---------- */
+.contact-main {
+  padding: 80px 0 120px;
+}
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ---------- Left: Locations + Actions ---------- */
+.contact-side {
+  position: sticky;
+  top: 120px;
+}
+.contact-loc {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.contact-loc:last-of-type {
+  border-bottom: none;
+  margin-bottom: 32px;
+  padding-bottom: 0;
+}
+.contact-loc .eyebrow { margin-bottom: 12px; }
+.contact-loc h3 {
+  font-family: var(--font-serif);
+  font-size: 24px; font-weight: 400;
+  margin-bottom: 16px;
+}
+.contact-loc address {
+  font-style: normal;
+  font-size: 14px; line-height: 1.75;
+  color: var(--ink-muted);
+}
+.contact-phone {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 15px; font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-phone:hover { color: var(--accent); }
+.contact-phone:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* ---------- Action Buttons ---------- */
+.contact-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.contact-act {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13px; font-weight: 500;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-act:hover {
+  border-color: var(--accent);
+  background: var(--bg-warm);
+}
+.contact-act:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px;
+}
+.contact-act svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+/* ---------- Right: Form ---------- */
+.contact-form-title {
+  font-family: var(--font-serif);
+  font-size: 28px; font-weight: 400;
+  margin-bottom: 12px;
+}
+.contact-form-subtitle {
+  font-size: 14px; line-height: 1.7;
+  color: var(--ink-muted);
+  margin-bottom: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .contact-main { padding: 48px 0 80px; }
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .contact-side {
+    position: static;
+  }
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

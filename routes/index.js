@@ -17,11 +17,11 @@ router.get('/about', (req, res) => {
   });
 });
 
-router.get('/collections', (req, res) => {
-  res.render('collections', {
-    title: 'Furniture Collections — The Citadels',
+router.get('/our-partners', (req, res) => {
+  res.render('our-partners', {
+    title: 'Our Partners — The Citadels',
     description: 'Explore premium imported furniture collections for residential, hotel, office, control room, healthcare, laboratory, and airport environments.',
-    currentPage: 'collections'
+    currentPage: 'our-partners'
   });
 });
 

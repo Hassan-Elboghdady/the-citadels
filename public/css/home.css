@@ -65,18 +65,22 @@
 .collections-mosaic {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 340px 340px;
-  gap: 4px;
+  grid-template-rows: 340px 340px 340px;
+  gap: 24px;
 }
 .mosaic-card {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
   cursor: pointer;
   text-decoration: none;
   color: #FFFFFF;
 }
 .mosaic-card--large {
   grid-row: 1 / 3;
+}
+.mosaic-card--wide {
+  grid-column: span 2;
 }
 .mosaic-card__img,
 .mosaic-card__placeholder {

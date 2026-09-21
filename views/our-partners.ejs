@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/our-partners.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+
+    <div class="page-intro">
+      <div class="container">
+        <span class="eyebrow">Our Partners</span>
+        <h1>Our Partners</h1>
+        <p class="lead">Our Scope is the supply and Installation of all types of furniture (e.g.: Hotels & Restaurant Furniture, Hospitals & Laboratory Furniture, Office furniture, Control rooms Furniture, etc...).</p>
+        <p class="lead" style="margin-top: 15px;">We represent many European Manufacturers in the Egyptian Market which we can brief below:</p>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="coll-list" aria-labelledby="categories-heading">
+      <h2 id="categories-heading" class="sr-only">Our Partners</h2>
+
+      <div class="coll-item" id="hotel-residential">
+        <div class="coll-item__img-col">
+          <img src="/images/hotel.png" alt="Luxury hotel and residential furniture by ABLE" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num"></span>
+          <h3>Hotel & Residential High-End Furniture</h3>
+          <p class="coll-item__partner" style="margin-bottom: 20px;"><strong>Partner:</strong> ABLE</p>
+          <p>Able (formerly VIP SALOTI) is the largest Furniture Manufacturer and Brand specializing in contemporary furniture design in Eastern Europe with more than 30 years of experience in the industry, and a reflection of the best of Albania.</p>
+          <div id="details-able" style="display: none;">
+            <p>We offer the design and architecture community our acquired design and manufacturing expertise to create bespoke fully furnished (turnkey) projects for the global contract and high-end Hotels, Residential and Commercial market. Our commitment to quality, durability, and design excellence has made us a trusted partner for numerous hospitality projects worldwide.</p>
+            <p style="margin-bottom: 30px;">Please take your time to visit Able web site to familiarize yourself with the range of products. Alongside the well-known brands, you can also find in the PDF’s local completed projects with 5 stars. This is Hospitality highlights showcased mainly for the client to see the quality of work and our dedication to meeting their requirements:</p>
+          </div>
+          <div class="btn-row" style="margin-top: 20px;">
+            <button class="btn btn--outline" onclick="toggleDetails('details-able', this)">Read More</button>
+            <a href="https://ablebemodern.com/" class="btn btn--dark" id="partner-able-link" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="coll-item coll-item--reverse" id="office-zivella">
+        <div class="coll-item__img-col">
+          <img src="/images/office.png" alt="Office Furniture by Zivella" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num"></span>
+          <h3>Office Furniture</h3>
+          <p class="coll-item__partner" style="margin-bottom: 20px;"><strong>Partner:</strong> Zivella Office Furniture</p>
+          <p>Approximately 25 years ago, Located in Istanbul, our factory exports to nearly 50 countries with our team of 250 specialized employees.</p>
+          <div id="details-zivella" style="display: none;">
+            <p style="margin-bottom: 30px;">With our renowned designers both in Turkey and worldwide, we create designs that promote well-being for both the body and soul, supporting our users in feeling good. Our design approach reflects life, nature, culture, people, and colors. We strive to transform offices, workspaces, and waiting areas into enjoyable and peaceful living spaces with the quality and aesthetics of our products. As Zivella, combines the beauty of life with functional designs and enable spaces to breathe.</p>
+          </div>
+          <div class="btn-row" style="margin-top: 20px;">
+            <button class="btn btn--outline" onclick="toggleDetails('details-zivella', this)">Read More</button>
+            <a href="https://www.zivella.com/" class="btn btn--dark" id="partner-zivella-link" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="coll-item" id="office-falmar">
+        <div class="coll-item__img-col">
+          <img src="/images/residential.png" alt="Office Partitions and Furniture by Falmar" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num"></span>
+          <h3>Office Furniture & Partitions</h3>
+          <p class="coll-item__partner" style="margin-bottom: 20px;"><strong>Partner:</strong> Falmar Office Furniture</p>
+          <p>Falmar based in Pesaro, Italy established in 1990 as manufacturer of Wall Partitions, storage walls and office furniture. The company owns a factory laying on 6000 sqm takes care of the full production process.</p>
+          <div id="details-falmar" style="display: none;">
+            <p style="margin-bottom: 30px;">Falmar manufactures full ranges of office furniture and offers new and innovative solutions able to evaluate the constant evolution of the office world, Falmar’ s activity is not limited to supply standard furniture but is working besides the designer from the first phases of the project. Tailor-made production: we take advantage of our production capacity to realize tailor made solutions, for any kind of project in which unique pieces are required, with the aim of satisfy any specific request of our clients, finding the best esthetical solution besides a good price- quality ratio.</p>
+          </div>
+          <div class="btn-row" style="margin-top: 20px;">
+            <button class="btn btn--outline" onclick="toggleDetails('details-falmar', this)">Read More</button>
+            <a href="https://falmar.it/" class="btn btn--dark" id="partner-falmar-link" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="coll-item coll-item--reverse" id="control-rooms">
+        <div class="coll-item__img-col">
+          <img src="/images/control-room.png" alt="Control Room Furniture by Bosco" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num"></span>
+          <h3>Control Rooms Furniture</h3>
+          <p class="coll-item__partner" style="margin-bottom: 20px;"><strong>Partner:</strong> Elettromeccanica Bosco SNC</p>
+          <p>BOSCO is a pioneer in designing and delivering high tech control room solutions. Our technical and ergonomical furniture includes control consoles and video wall systems.</p>
+          <div id="details-bosco" style="display: none;">
+            <p style="margin-bottom: 30px;">Built with exceptional durability and resistance for the most demanding 24/7 environments, our command-and-control centres are iconic yet functional. Based in Italy, our team has delivered control rooms in more than 20 countries all over the world – in Europe, Africa, Middle East, South America and West Asia. With over 30 years of experience, we have cooperated with prestigious clients and provided ultra-modern control centres for the process industry. We operate in Oil and Gas, Power Plants, Military and Defence, Aviation and Transport, Security and Surveillance, Smart cities and more.</p>
+          </div>
+          <div class="btn-row" style="margin-top: 20px;">
+            <button class="btn btn--outline" onclick="toggleDetails('details-bosco', this)">Read More</button>
+            <a href="https://www.elettrobosco.com/en/" class="btn btn--dark" id="partner-bosco-link" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="coll-item" id="healthcare">
+        <div class="coll-item__img-col">
+          <img src="/images/healthcare.png" alt="Health Care & Laboratories Furniture" class="coll-item__img">
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num"></span>
+          <h3>Health Care & Laboratories Furniture</h3>
+          <p style="color: #d32f2f; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">(Under Construction)</p>
+        </div>
+      </div>
+
+      <div class="coll-item coll-item--reverse" id="airport-furniture">
+        <div class="coll-item__img-col">
+          <div class="coll-item__img-placeholder" style="background: #8E8B83;" role="img" aria-label="Airports Furniture"></div>
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num"></span>
+          <h3>Airports Furniture</h3>
+          <p style="color: #d32f2f; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">(Under Construction)</p>
+        </div>
+      </div>
+
+      <div class="coll-item" id="airport-equipment">
+        <div class="coll-item__img-col">
+          <div class="coll-item__img-placeholder" style="background: #6B6963;" role="img" aria-label="Airports Equipment"></div>
+        </div>
+        <div class="coll-item__content-col">
+          <span class="coll-item__num"></span>
+          <h3>Airports Equipment</h3>
+          <p style="color: #d32f2f; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">(Under Construction)</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band" aria-labelledby="collections-cta-heading">
+      <div class="container">
+        <div class="cta-band__inner">
+          <div class="cta-band__left">
+            <h2 id="collections-cta-heading">Need a Specific<br>Solution?</h2>
+          </div>
+          <div class="cta-band__right">
+            <p>Tell us about your project requirements. Our team will provide a detailed proposal including product specifications, pricing, and delivery timelines.</p>
+            <div class="btn-row">
+              <a href="/contact" class="btn btn--accent" id="collections-cta-contact">Contact Us</a>
+              <a href="/projects" class="btn btn--ghost" id="collections-cta-projects">View Our Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/cookie-consent') %>
+  <script src="/js/main.js"></script>
+  <script>
+    function toggleDetails(id, btn) {
+      const el = document.getElementById(id);
+      if (el.style.display === 'none') {
+        el.style.display = 'block';
+        btn.innerText = 'Read Less';
+      } else {
+        el.style.display = 'none';
+        btn.innerText = 'Read More';
+      }
+    }
+  </script>
+</body>
+</html>

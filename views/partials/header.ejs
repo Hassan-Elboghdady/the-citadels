@@ -1,3 +1,96 @@
+<script>
+  if (!sessionStorage.getItem('citadels_intro_played')) {
+    document.documentElement.classList.add('do-intro');
+  }
+</script>
+
+<style>
+  :root {
+    --intro-bg: #B3AFA5;
+    --logo-fade-in: 0.6s;
+    --logo-hold: 2s;
+    --overlay-fade-out: 0.7s;
+  }
+  
+  #site-intro-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background-color: var(--intro-bg);
+    align-items: center;
+    justify-content: center;
+    transition: opacity var(--overlay-fade-out) ease-in-out;
+  }
+  
+  .do-intro #site-intro-overlay {
+    display: flex;
+  }
+  
+  /* Lock scroll */
+  html.do-intro, html.do-intro body {
+    overflow: hidden !important;
+    height: 100vh;
+  }
+  
+  #site-intro-logo {
+    opacity: 0;
+    transform: translateY(25px);
+    width: 40%;
+    max-width: 250px;
+    mix-blend-mode: multiply;
+    transition: opacity var(--logo-fade-in) ease-out, transform var(--logo-fade-in) ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #site-intro-overlay { display: none !important; }
+    html.do-intro, html.do-intro body { overflow: auto !important; height: auto; }
+  }
+</style>
+
+<div id="site-intro-overlay">
+  <img src="/images/logo.png" alt="The Citadels" id="site-intro-logo">
+</div>
+
+<script>
+  (function() {
+    if (document.documentElement.classList.contains('do-intro')) {
+      const matchMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (matchMedia && matchMedia.matches) {
+         document.documentElement.classList.remove('do-intro');
+         const ov = document.getElementById('site-intro-overlay');
+         if (ov) ov.remove();
+         return;
+      }
+
+      const overlay = document.getElementById('site-intro-overlay');
+      const logo = document.getElementById('site-intro-logo');
+      
+      if (!overlay || !logo) return;
+
+      setTimeout(() => {
+        logo.style.opacity = '1';
+        logo.style.transform = 'translateY(0)';
+        
+        setTimeout(() => {
+          overlay.style.opacity = '0';
+          
+          setTimeout(() => {
+            overlay.remove();
+            document.documentElement.classList.remove('do-intro');
+            sessionStorage.setItem('citadels_intro_played', 'true');
+          }, 700);
+          
+        }, 2600);
+      }, 200);
+      
+    } else {
+      const overlay = document.getElementById('site-intro-overlay');
+      if (overlay) overlay.remove();
+    }
+  })();
+</script>
+
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header" role="banner">
   <div class="site-header__wrap">
@@ -12,24 +105,10 @@
     </button>
     <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
       <a href="/" class="site-nav__link<%= currentPage === 'home' ? ' site-nav__link--active' : '' %>">Home</a>
-      <a href="/about" class="site-nav__link<%= currentPage === 'about' ? ' site-nav__link--active' : '' %>">About</a>
+      <a href="/about" class="site-nav__link<%= currentPage === 'about' ? ' site-nav__link--active' : '' %>">About Us</a>
       <a href="/collections" class="site-nav__link<%= currentPage === 'collections' ? ' site-nav__link--active' : '' %>">Collections</a>
       <a href="/projects" class="site-nav__link<%= currentPage === 'projects' ? ' site-nav__link--active' : '' %>">Projects</a>
-      <a href="/contact" class="site-nav__link<%= currentPage === 'contact' ? ' site-nav__link--active' : '' %>">Contact</a>
-      <a href="/cart" class="cart-link" aria-label="Shopping cart">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1h3l2 10h10l2-7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="17" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
-        <span class="cart-badge" style="display: none;">0</span>
-      </a>
-      <span class="site-nav__divider" aria-hidden="true"></span>
-      <% if (typeof user !== 'undefined' && user) { %>
-        <span class="site-nav__user"><%= user.firstName %></span>
-        <form action="/logout" method="POST" class="site-nav__logout-form">
-          <button type="submit" class="site-nav__link site-nav__link--logout">Sign Out</button>
-        </form>
-      <% } else { %>
-        <a href="/login" class="site-nav__link<%= currentPage === 'login' ? ' site-nav__link--active' : '' %>">Sign In</a>
-        <a href="/signup" class="site-nav__link site-nav__link--cta<%= currentPage === 'signup' ? ' site-nav__link--active' : '' %>">Sign Up</a>
-      <% } %>
+      <a href="/contact" class="site-nav__link<%= currentPage === 'contact' ? ' site-nav__link--active' : '' %>">Contact Us</a>
     </nav>
     <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
   </div>

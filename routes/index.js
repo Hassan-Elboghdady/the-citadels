@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const { getAllProducts, getProductById, getProductsByCategory, getCategories } = require('../data/products');
 
 router.get('/', (req, res) => {
   res.render('home', {
@@ -22,33 +21,7 @@ router.get('/collections', (req, res) => {
   res.render('collections', {
     title: 'Furniture Collections — The Citadels',
     description: 'Explore premium imported furniture collections for residential, hotel, office, control room, healthcare, laboratory, and airport environments.',
-    currentPage: 'collections',
-    products: getAllProducts(),
-    categories: getCategories()
-  });
-});
-
-router.get('/product/:id', (req, res) => {
-  const product = getProductById(req.params.id);
-  if (!product) {
-    return res.status(404).render('404', {
-      title: 'Product Not Found — The Citadels',
-      currentPage: ''
-    });
-  }
-  const relatedProducts = getProductsByCategory(product.category).filter(p => p.id !== product.id);
-  res.render('product', {
-    title: `${product.name} — The Citadels`,
-    currentPage: 'collections',
-    product,
-    relatedProducts
-  });
-});
-
-router.get('/cart', (req, res) => {
-  res.render('cart', {
-    title: 'Cart — The Citadels',
-    currentPage: 'cart'
+    currentPage: 'collections'
   });
 });
 

@@ -65,4 +65,36 @@ router.get('/cookie-policy', (req, res) => {
   });
 });
 
+router.get('/partners/able', (req, res) => {
+  res.render('partner-able', {
+    title: 'ABLE — Hotel & Residential Furniture | The Citadels',
+    description: 'ABLE (formerly VIP SALOTI) is the largest furniture manufacturer specializing in contemporary design in Eastern Europe with over 30 years of experience.',
+    currentPage: 'our-partners'
+  });
+});
+
+router.get('/partners/zivella', (req, res) => {
+  res.render('partner-zivella', {
+    title: 'Zivella — Office Furniture | The Citadels',
+    description: 'Zivella Office Furniture, based in Istanbul, exports to nearly 50 countries creating designs that promote well-being for body and soul.',
+    currentPage: 'our-partners'
+  });
+});
+
+router.get('/partners/falmar', (req, res) => {
+  res.render('partner-falmar', {
+    title: 'Falmar — Office Furniture & Partitions | The Citadels',
+    description: 'Falmar, based in Pesaro Italy since 1990, manufactures premium wall partitions, storage walls and office furniture.',
+    currentPage: 'our-partners'
+  });
+});
+
+router.get('/partners/bosco', (req, res) => {
+  res.render('partner-bosco', {
+    title: 'Bosco — Control Room Furniture | The Citadels',
+    description: 'Bosco is a pioneer in designing and delivering high-tech control room solutions, delivering in 20+ countries worldwide.',
+    currentPage: 'our-partners'
+  });
+});
+
 module.exports = router;

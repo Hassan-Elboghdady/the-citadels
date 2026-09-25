@@ -15,6 +15,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 520px;
+  scroll-margin-top: 110px;
 }
 .coll-item--reverse {
   direction: rtl;
@@ -27,6 +28,11 @@
   position: relative;
   overflow: hidden;
 }
+/* When the image column is a link */
+a.coll-item__img-col {
+  display: block;
+  cursor: pointer;
+}
 .coll-item__img,
 .coll-item__img-placeholder {
   position: absolute;
@@ -37,6 +43,19 @@
 }
 .coll-item:hover .coll-item__img {
   transform: scale(1.03);
+}
+
+/* Image Slider Animation */
+.slider-img-1 {
+  /* stays behind */
+}
+.slider-img-2 {
+  opacity: 0;
+  animation: crossfade 8s infinite alternate ease-in-out;
+}
+@keyframes crossfade {
+  0%, 20% { opacity: 0; }
+  80%, 100% { opacity: 1; }
 }
 
 .coll-item__content-col {

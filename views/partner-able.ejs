@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/partner-detail.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <div class="partner-hero">
+      <img src="/images/partners-projects/able-hospitality-project.png" alt="Hotel & Residential High-End Furniture by ABLE" class="partner-hero__img hero-slider-img-1">
+      <img src="/images/partners-projects/able-residential-project.png" alt="Hotel & Residential High-End Furniture by ABLE" class="partner-hero__img hero-slider-img-2">
+      <div class="partner-hero__overlay"></div>
+      <div class="partner-hero__content">
+        <a href="/our-partners#hotel-residential" class="partner-hero__back">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Our Partners
+        </a>
+        <span class="partner-hero__eyebrow">Hotel &amp; Residential High-End Furniture</span>
+        <h1>ABLE</h1>
+        <a href="#partner-body" class="partner-hero__scroll">
+          <span>Scroll to find out more</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Dark meta strip -->
+    <div class="partner-meta-strip">
+      <div class="container">
+        <div class="partner-meta-strip__inner">
+          <div class="partner-meta-strip__item">
+            <span class="partner-meta-strip__label">Country</span>
+            <span class="partner-meta-strip__value">Albania</span>
+          </div>
+          <div class="partner-meta-strip__sep"></div>
+          <div class="partner-meta-strip__item">
+            <span class="partner-meta-strip__label">Sector</span>
+            <span class="partner-meta-strip__value">Hotel &amp; Residential</span>
+          </div>
+          <div class="partner-meta-strip__sep"></div>
+          <div class="partner-meta-strip__item">
+            <span class="partner-meta-strip__label">Experience</span>
+            <span class="partner-meta-strip__value">30+ Years</span>
+          </div>
+          <div class="partner-meta-strip__sep"></div>
+          <div class="partner-meta-strip__item">
+            <span class="partner-meta-strip__label">Market</span>
+            <span class="partner-meta-strip__value">Global Contract &amp; High-End</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <section class="partner-body" id="partner-body">
+      <div class="container">
+        <div class="partner-layout">
+
+          <!-- Sidebar -->
+          <aside class="partner-sidebar">
+            <div class="partner-sidebar__card">
+              <div class="partner-sidebar__logo-wrap">
+                <img src="/images/partners/Able-Partner.png" alt="ABLE logo" class="partner-sidebar__logo">
+              </div>
+              <div class="partner-sidebar__info">
+                <div class="partner-sidebar__row">
+                  <span class="partner-sidebar__label">Full Name</span>
+                  <span class="partner-sidebar__value">ABLE (formerly VIP SALOTI)</span>
+                </div>
+                <div class="partner-sidebar__row">
+                  <span class="partner-sidebar__label">Sector</span>
+                  <span class="partner-sidebar__value">Hotel &amp; Residential High-End Furniture</span>
+                </div>
+                <div class="partner-sidebar__row">
+                  <span class="partner-sidebar__label">Origin</span>
+                  <span class="partner-sidebar__value">Albania, Eastern Europe</span>
+                </div>
+              </div>
+            </div>
+            <a href="https://ablebemodern.com/" class="btn btn--dark partner-sidebar__website" target="_blank" rel="noopener noreferrer" id="able-visit-website">Visit ABLE Website →</a>
+            <a href="/our-partners#hotel-residential" class="btn btn--outline partner-sidebar__website" id="able-back-btn" style="margin-top: 10px;">← Back to Our Partners</a>
+          </aside>
+
+          <!-- Content -->
+          <div class="partner-content">
+            <p class="partner-content__intro">Able is the largest Furniture Manufacturer and Brand specializing in contemporary furniture design in Eastern Europe — with more than 30 years of experience and a reflection of the best of Albania.</p>
+
+            <p>We offer the design and architecture community our acquired design and manufacturing expertise to create bespoke fully furnished (turnkey) projects for the global contract and high-end Hotels, Residential and Commercial market.</p>
+
+            <p>Our commitment to quality, durability, and design excellence has made us a trusted partner for numerous hospitality projects worldwide.</p>
+
+            <p>Please take your time to visit the ABLE website to familiarize yourself with the full range of products. Alongside well-known brands, you can also find in the PDFs local completed projects with 5-star credentials — Hospitality highlights showcased mainly for clients to see the quality of work and our dedication to meeting their requirements.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <div class="partner-cta">
+      <div class="container">
+        <div class="partner-cta__inner">
+          <div>
+            <h2>Interested in<br>ABLE Products?</h2>
+          </div>
+          <div>
+            <p>Get in touch with The Citadels team and we will provide a detailed proposal including product specifications, pricing, and delivery timelines for your project.</p>
+            <div class="btn-row">
+              <a href="/contact" class="btn btn--dark" id="able-cta-contact">Contact Us</a>
+              <a href="/our-partners" class="btn btn--outline" id="able-cta-back">View All Partners</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/cookie-consent') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

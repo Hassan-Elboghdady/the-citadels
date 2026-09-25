@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %>
+  </title>
+  <meta name="description" content="<%= description %>">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/partner-detail.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+    <main id="main-content">
+
+      <!-- Hero -->
+      <div class="partner-hero">
+        <img src="\images\partners-projects\bosco-project.png" alt="Control Room Furniture by Bosco"
+          class="partner-hero__img">
+        <div class="partner-hero__overlay"></div>
+        <div class="partner-hero__content">
+          <a href="/our-partners#control-rooms" class="partner-hero__back">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Our Partners
+          </a>
+          <span class="partner-hero__eyebrow">Control Rooms Furniture</span>
+          <h1>Bosco</h1>
+          <a href="#partner-body" class="partner-hero__scroll">
+            <span>Scroll to find out more</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Dark meta strip -->
+      <div class="partner-meta-strip">
+        <div class="container">
+          <div class="partner-meta-strip__inner">
+            <div class="partner-meta-strip__item">
+              <span class="partner-meta-strip__label">Country</span>
+              <span class="partner-meta-strip__value">Italy</span>
+            </div>
+            <div class="partner-meta-strip__sep"></div>
+            <div class="partner-meta-strip__item">
+              <span class="partner-meta-strip__label">Sector</span>
+              <span class="partner-meta-strip__value">Control Room Furniture</span>
+            </div>
+            <div class="partner-meta-strip__sep"></div>
+            <div class="partner-meta-strip__item">
+              <span class="partner-meta-strip__label">Experience</span>
+              <span class="partner-meta-strip__value">30+ Years</span>
+            </div>
+            <div class="partner-meta-strip__sep"></div>
+            <div class="partner-meta-strip__item">
+              <span class="partner-meta-strip__label">Global Reach</span>
+              <span class="partner-meta-strip__value">20+ Countries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <section class="partner-body" id="partner-body">
+        <div class="container">
+          <div class="partner-layout">
+
+            <!-- Sidebar -->
+            <aside class="partner-sidebar">
+              <div class="partner-sidebar__card">
+                <div class="partner-sidebar__logo-wrap">
+                  <img src="/images/partners/Bosco-Partner.png" alt="Bosco logo" class="partner-sidebar__logo">
+                </div>
+                <div class="partner-sidebar__info">
+                  <div class="partner-sidebar__row">
+                    <span class="partner-sidebar__label">Full Name</span>
+                    <span class="partner-sidebar__value">Elettromeccanica Bosco SNC</span>
+                  </div>
+                  <div class="partner-sidebar__row">
+                    <span class="partner-sidebar__label">Sector</span>
+                    <span class="partner-sidebar__value">Control Rooms Furniture</span>
+                  </div>
+                  <div class="partner-sidebar__row">
+                    <span class="partner-sidebar__label">Origin</span>
+                    <span class="partner-sidebar__value">Italy</span>
+                  </div>
+                  <div class="partner-sidebar__row">
+                    <span class="partner-sidebar__label">Industries</span>
+                    <span class="partner-sidebar__value">Oil &amp; Gas, Power, Military, Aviation, Smart Cities</span>
+                  </div>
+                </div>
+              </div>
+              <a href="https://www.elettrobosco.com/en/" class="btn btn--dark partner-sidebar__website" target="_blank"
+                rel="noopener noreferrer" id="bosco-visit-website">Visit Bosco Website →</a>
+              <a href="/our-partners#control-rooms" class="btn btn--outline partner-sidebar__website"
+                id="bosco-back-btn" style="margin-top: 10px;">← Back to Our Partners</a>
+            </aside>
+
+            <!-- Content -->
+            <div class="partner-content">
+              <p class="partner-content__intro">BOSCO is a pioneer in designing and delivering high-tech control room
+                solutions — providing iconic, ergonomic consoles and video wall systems built for the most demanding
+                24/7 environments.</p>
+
+              <p>Built with exceptional durability and resistance, their command-and-control centres combine
+                cutting-edge functionality with timeless design. Based in Italy, BOSCO has delivered control rooms in
+                more than 20 countries — spanning Europe, Africa, the Middle East, South America, and West Asia.</p>
+
+              <p>With over 30 years of experience, they have partnered with prestigious clients across multiple critical
+                sectors: Oil and Gas, Power Plants, Military and Defence, Aviation and Transport, Security and
+                Surveillance, and Smart Cities.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom CTA -->
+      <div class="partner-cta">
+        <div class="container">
+          <div class="partner-cta__inner">
+            <div>
+              <h2>Interested in<br>Bosco Solutions?</h2>
+            </div>
+            <div>
+              <p>Get in touch with The Citadels team and we will provide a detailed proposal including product
+                specifications, pricing, and delivery timelines for your project.</p>
+              <div class="btn-row">
+                <a href="/contact" class="btn btn--dark" id="bosco-cta-contact">Contact Us</a>
+                <a href="/our-partners" class="btn btn--outline" id="bosco-cta-back">View All Partners</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <%- include('partials/footer') %>
+      <%- include('partials/cookie-consent') %>
+        <script src="/js/main.js"></script>
+</body>
+
+</html>

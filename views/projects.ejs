@@ -16,81 +16,92 @@
 
   <main id="main-content">
 
-    <div class="page-intro">
+    <!-- Intro -->
+    <div class="proj-intro">
       <div class="container">
-        <span class="eyebrow">Our Work</span>
-        <h1>Projects & Experience</h1>
-        <p class="lead">From proton therapy facilities to monorail control rooms, we deliver furniture solutions for environments where quality is not optional.</p>
+        <div class="proj-intro__inner">
+          <div class="proj-intro__left">
+            <span class="eyebrow">Our Work</span>
+            <h1>Projects &amp;<br>Experience</h1>
+          </div>
+          <div class="proj-intro__right">
+            <p>From proton therapy facilities to monorail control rooms and 5-star hospitality, we deliver premium furniture solutions for environments where quality is not optional.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Project List -->
-    <section class="proj-list" aria-labelledby="proj-heading">
+    <!-- Stats bar -->
+    <div class="proj-stats">
       <div class="container">
-        <h2 id="proj-heading" class="sr-only">Project Portfolio</h2>
-
-        <article class="proj-entry proj-entry--featured">
-          <div class="proj-entry__img-wrap">
-            <img src="/images/healthcare.png" alt="Interior of CCHF Proton Therapy Building in Cairo" class="proj-entry__img">
+        <div class="proj-stats__inner">
+          <div class="proj-stats__item">
+            <span class="proj-stats__num">50+</span>
+            <span class="proj-stats__label">Projects Completed</span>
           </div>
-          <div class="proj-entry__body">
-            <span class="proj-entry__sector">Healthcare</span>
-            <h3>CCHF Proton Therapy Building</h3>
-            <p class="proj-entry__location">Cairo, Egypt</p>
-            <p class="proj-entry__desc">Furniture supply and installation for the Children's Cancer Hospital Foundation proton therapy building. This project required specialized, durable furniture suitable for a medical treatment environment, including waiting areas, consultation rooms, and administrative spaces.</p>
+          <div class="proj-stats__item">
+            <span class="proj-stats__num">6</span>
+            <span class="proj-stats__label">Sectors Served</span>
           </div>
-        </article>
-
-        <div class="proj-pair">
-          <article class="proj-entry">
-            <div class="proj-entry__img-wrap">
-              <img src="/images/control-room.png" alt="NCC Monorail Control Room with ergonomic consoles" class="proj-entry__img">
-            </div>
-            <div class="proj-entry__body">
-              <span class="proj-entry__sector">Control Room</span>
-              <h3>NCC Monorail Control Rooms</h3>
-              <p class="proj-entry__location">Ergonomic Furniture</p>
-              <p class="proj-entry__desc">Supply and installation of ergonomic control room consoles and operator workstations for the New Administrative Capital monorail system. Furniture was sourced to meet 24/7 operational requirements with integrated cable management, adjustable monitor arms, and operator comfort features.</p>
-            </div>
-          </article>
-          <article class="proj-entry">
-            <div class="proj-entry__img-wrap">
-              <img src="/images/control-room.png" alt="West Nile Monorail Control Room furniture" class="proj-entry__img">
-            </div>
-            <div class="proj-entry__body">
-              <span class="proj-entry__sector">Control Room</span>
-              <h3>West Nile Monorail Control Rooms</h3>
-              <p class="proj-entry__location">Ergonomic Furniture</p>
-              <p class="proj-entry__desc">Ergonomic control room furniture for the West Nile monorail project. Custom-configured consoles and operator desks designed for continuous monitoring operations.</p>
-            </div>
-          </article>
+          <div class="proj-stats__item">
+            <span class="proj-stats__num">30+</span>
+            <span class="proj-stats__label">Years of Experience</span>
+          </div>
+          <div class="proj-stats__item">
+            <span class="proj-stats__num">100%</span>
+            <span class="proj-stats__label">European Brands</span>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="proj-pair">
-          <article class="proj-entry">
-            <div class="proj-entry__img-wrap">
-              <img src="/images/office.png" alt="NCC Monorail station office furniture" class="proj-entry__img">
+    <!-- Project Grid -->
+    <section class="proj-grid-section" aria-labelledby="proj-heading">
+      <div class="container">
+
+        <div class="proj-grid">
+
+          <!-- NCC Monorail Control Rooms -->
+          <a id="ncc-monorail-control-rooms" href="/projects/ncc-monorail-control-rooms" class="proj-card" aria-label="View NCC Monorail Control Rooms project">
+            <span class="proj-card__label">NCC Monorail Control Rooms</span>
+            <div class="proj-card__img-wrap">
+              <img src="/images/control-room.png" alt="NCC Monorail Control Room with ergonomic consoles" class="proj-card__img">
             </div>
-            <div class="proj-entry__body">
-              <span class="proj-entry__sector">Transport</span>
-              <h3>NCC Monorail Furniture</h3>
-              <p class="proj-entry__location">New Administrative Capital, Egypt</p>
-              <p class="proj-entry__desc">General furniture supply for the New Administrative Capital monorail project, covering station facilities, administrative offices, and operational areas.</p>
+          </a>
+
+          <!-- West Nile Monorail Control Rooms -->
+          <a id="west-nile-monorail-control-rooms" href="/projects/west-nile-monorail-control-rooms" class="proj-card" aria-label="View West Nile Monorail Control Rooms project">
+            <span class="proj-card__label">West Nile Monorail Control Rooms</span>
+            <div class="proj-card__img-wrap">
+              <img src="/images/control-room.png" alt="West Nile Monorail Control Room furniture" class="proj-card__img">
             </div>
-          </article>
-          <article class="proj-entry">
-            <div class="proj-entry__img-wrap">
-              <img src="/images/office.png" alt="West Nile Monorail station furniture" class="proj-entry__img">
+          </a>
+
+          <!-- NCC Monorail Furniture -->
+          <a id="ncc-monorail-furniture" href="/projects/ncc-monorail-furniture" class="proj-card" aria-label="View NCC Monorail Furniture project">
+            <span class="proj-card__label">NCC Monorail Furniture</span>
+            <div class="proj-card__img-wrap">
+              <img src="/images/office.png" alt="NCC Monorail station office furniture" class="proj-card__img">
             </div>
-            <div class="proj-entry__body">
-              <span class="proj-entry__sector">Transport</span>
-              <h3>West Nile Monorail Furniture</h3>
-              <p class="proj-entry__location">Egypt</p>
-              <p class="proj-entry__desc">Furniture supply for the West Nile monorail project, including station and operational facility furnishings. Delivered to the same quality standards as the NCC monorail project.</p>
+          </a>
+
+          <!-- West Nile Monorail Furniture -->
+          <a id="west-nile-monorail-furniture" href="/projects/west-nile-monorail-furniture" class="proj-card" aria-label="View West Nile Monorail Furniture project">
+            <span class="proj-card__label">West Nile Monorail Furniture</span>
+            <div class="proj-card__img-wrap">
+              <img src="/images/office.png" alt="West Nile Monorail station furniture" class="proj-card__img">
             </div>
-          </article>
+          </a>
+
+          <!-- 5-Star Hotel Project -->
+          <a id="five-star-hotel-project" href="/projects/five-star-hotel-project" class="proj-card" aria-label="View 5-Star Hotel Project">
+            <span class="proj-card__label">Star Hotel Project</span>
+            <div class="proj-card__img-wrap">
+              <img src="/images/partners-projects/able-hospitality-project.png" alt="5-Star Hotel Hospitality Furniture by ABLE" class="proj-card__img">
+            </div>
+          </a>
+
         </div>
-
       </div>
     </section>
 
@@ -105,7 +116,7 @@
             <p>Whether you need furniture for a single space or a large-scale infrastructure project, our team can help with sourcing, specification, and delivery.</p>
             <div class="btn-row">
               <a href="/contact" class="btn btn--accent" id="proj-cta-contact">Contact Us</a>
-              <a href="/collections" class="btn btn--ghost" id="proj-cta-collections">View Collections</a>
+              <a href="/our-partners" class="btn btn--ghost" id="proj-cta-partners">Our Partners</a>
             </div>
           </div>
         </div>

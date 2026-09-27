@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Projects Page — Mixed Layout
+   Projects Page — Premium Photo Grid
    ========================================================================== */
 
 .sr-only {
@@ -7,94 +7,157 @@
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
-/* ---------- Project List ---------- */
-.proj-list {
-  padding: 80px 0 120px;
-}
-
-/* Featured (first project - full width) */
-.proj-entry--featured {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 0;
-  margin-bottom: 64px;
+/* ---------- Intro ---------- */
+.proj-intro {
+  padding: 72px 0 56px;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 64px;
 }
-.proj-entry--featured .proj-entry__img-wrap {
-  aspect-ratio: 16 / 11;
-}
-.proj-entry--featured .proj-entry__body {
-  padding: 40px 0 40px clamp(32px, 4vw, 64px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.proj-entry--featured h3 {
-  font-size: clamp(28px, 3vw, 38px);
-}
-
-/* Paired projects */
-.proj-pair {
+.proj-intro__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 48px;
-  padding-bottom: 48px;
+  gap: 64px;
+  align-items: end;
+}
+.proj-intro__left .eyebrow { margin-bottom: 16px; }
+.proj-intro__left h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 0;
+}
+.proj-intro__right p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink-muted);
+  max-width: 480px;
+}
+
+/* ---------- Stats bar ---------- */
+.proj-stats {
+  border-bottom: 1px solid var(--border);
+  padding: 28px 0;
+}
+.proj-stats__inner {
+  display: flex;
+  gap: 0;
+}
+.proj-stats__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 40px;
+  border-right: 1px solid var(--border);
+}
+.proj-stats__item:first-child { padding-left: 0; }
+.proj-stats__item:last-child { border-right: none; }
+.proj-stats__num {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+}
+.proj-stats__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ---------- Grid ---------- */
+.proj-grid-section {
+  padding: 72px 0 120px;
+}
+.proj-category {
+  margin-bottom: 80px;
+}
+.proj-category:last-child { margin-bottom: 0; }
+.proj-category__heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--border);
 }
-.proj-pair:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+.proj-category__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.proj-category__title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+}
+.proj-category__count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-weight: 500;
 }
 
-/* Shared entry styles */
-.proj-entry__img-wrap {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  margin-bottom: 0;
+/* The photo grid — full width, flush left, gaps between */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 40px;
 }
-.proj-entry__img {
-  position: absolute;
-  inset: 0;
+
+/* Card */
+.proj-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  scroll-margin-top: 110px;
+  transition: opacity 0.2s ease;
+}
+.proj-card:hover {
+  opacity: 0.85;
+}
+
+/* Project name label — sits above the image */
+.proj-card__label {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color:black;
+  padding: 16px 16px 14px;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+.proj-card:hover .proj-card__label {
+  color: var(--ink);
+}
+
+/* Image wrapper */
+.proj-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.proj-card__img {
   width: 100%; height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.6s var(--ease-out);
 }
-.proj-entry:hover .proj-entry__img {
-  transform: scale(1.03);
+.proj-card:hover .proj-card__img {
+  transform: scale(1.04);
 }
 
-.proj-pair .proj-entry__body {
-  padding-top: 20px;
-}
 
-.proj-entry__sector {
-  font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.14em;
-  color: var(--accent);
-  display: inline-block;
-  margin-bottom: 10px;
-}
-.proj-entry__body h3 {
-  font-size: clamp(20px, 2vw, 24px);
-  font-weight: 400;
-  margin-bottom: 6px;
-}
-.proj-entry__location {
-  font-size: 13px;
-  color: var(--ink-faint);
-  margin-bottom: 16px;
-}
-.proj-entry__desc {
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--ink-muted);
-}
-
-/* ---------- CTA (shared) ---------- */
+/* ---------- CTA ---------- */
 .cta-band {
   background: var(--bg-dark);
   padding: 100px 0;
@@ -115,32 +178,23 @@
   margin-bottom: 32px; max-width: 440px;
 }
 
+@media (max-width: 1024px) {
+  .proj-grid { grid-template-columns: repeat(2, 1fr); }
+  .proj-grid--four { grid-template-columns: repeat(2, 1fr); }
+  .proj-stats__item { padding: 0 24px; }
+}
 @media (max-width: 768px) {
-  .proj-list { padding: 48px 0 80px; }
-
-  .proj-entry--featured {
-    grid-template-columns: 1fr;
-    margin-bottom: 48px;
-    padding-bottom: 48px;
-  }
-  .proj-entry--featured .proj-entry__body {
-    padding: 24px 0 0;
-  }
-
-  .proj-pair {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    margin-bottom: 48px;
-    padding-bottom: 48px;
-  }
-
+  .proj-intro__inner { grid-template-columns: 1fr; gap: 24px; }
+  .proj-intro { padding: 48px 0 40px; }
+  .proj-stats__inner { flex-wrap: wrap; gap: 24px 0; }
+  .proj-stats__item { flex: 0 0 50%; border-right: none; padding: 0 0 20px; border-bottom: 1px solid var(--border); }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+  .proj-grid--two { grid-template-columns: 1fr; }
+  .proj-grid-section { padding: 48px 0 80px; }
   .cta-band { padding: 64px 0; }
   .cta-band__inner { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 480px) {
-  .proj-entry--featured .proj-entry__img-wrap {
-    aspect-ratio: 4 / 3;
-  }
-  .proj-entry--featured h3 { font-size: clamp(22px, 6vw, 30px); }
+  .proj-grid { grid-template-columns: 1fr; }
 }
 

@@ -150,11 +150,11 @@
 }
 .partners-section__title {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #9B9A96;
+  color: #000000;
   text-align: center;
   margin-bottom: 30px;
 }

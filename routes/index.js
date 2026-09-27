@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const projects = require('../utils/projects-data');
 
 router.get('/', (req, res) => {
   res.render('home', {
@@ -94,6 +95,18 @@ router.get('/partners/bosco', (req, res) => {
     title: 'Bosco — Control Room Furniture | The Citadels',
     description: 'Bosco is a pioneer in designing and delivering high-tech control room solutions, delivering in 20+ countries worldwide.',
     currentPage: 'our-partners'
+  });
+});
+
+/* Dynamic project detail pages */
+router.get('/projects/:slug', (req, res) => {
+  const project = projects.find(p => p.slug === req.params.slug);
+  if (!project) return res.status(404).render('404', { title: 'Not Found — The Citadels', description: '', currentPage: '' });
+  res.render('project-detail', {
+    title: `${project.name} — The Citadels`,
+    description: project.description,
+    currentPage: 'projects',
+    project
   });
 });
 

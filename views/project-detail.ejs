@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/project-detail.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+
+    <section class="pd-section">
+      <div class="container">
+
+        <!-- Back link -->
+        <a href="/projects#<%= project.slug %>" class="pd-back">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+          </svg>
+          Back to our Projects
+        </a>
+
+        <!-- Main content: image left, details right -->
+        <div class="pd-body">
+
+          <div class="pd-image-col">
+            <div class="pd-image-wrap">
+              <img src="<%= project.image %>" alt="<%= project.name %>" class="pd-image">
+            </div>
+          </div>
+
+          <div class="pd-info-col">
+            <h1 class="pd-title"><%= project.name %></h1>
+
+            <div class="pd-meta">
+              <div class="pd-meta-row">
+                <span class="pd-meta-label">Sector</span>
+                <span class="pd-meta-value"><%= project.sector %></span>
+              </div>
+              <div class="pd-meta-row">
+                <span class="pd-meta-label">Location</span>
+                <span class="pd-meta-value"><%= project.location %></span>
+              </div>
+            </div>
+
+            <p class="pd-desc"><%= project.description %></p>
+
+            <a href="/contact" class="btn btn--accent pd-cta" id="proj-detail-contact">Enquire About This Project</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/cookie-consent') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

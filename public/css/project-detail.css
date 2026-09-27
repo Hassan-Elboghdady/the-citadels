@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Project Detail Page
+   ========================================================================== */
+
+.pd-section {
+  padding: 56px 0 120px;
+}
+
+/* Back link */
+.pd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  margin-bottom: 56px;
+  transition: color 0.2s ease;
+}
+.pd-back svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+.pd-back:hover {
+  color: var(--ink);
+}
+.pd-back:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Main two-column layout */
+.pd-body {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Image column */
+.pd-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.pd-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Info column */
+.pd-info-col {
+  padding-top: 12px;
+}
+
+.pd-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+/* Meta rows */
+.pd-meta {
+  margin-bottom: 40px;
+  border-top: 1px solid var(--border);
+}
+.pd-meta-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pd-meta-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.pd-meta-value {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+/* Description */
+.pd-desc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--ink-muted);
+  margin-bottom: 48px;
+  max-width: 500px;
+}
+
+/* CTA button */
+.pd-cta {
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pd-body {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .pd-info-col { padding-top: 0; }
+}
+@media (max-width: 600px) {
+  .pd-section { padding: 40px 0 80px; }
+  .pd-back { margin-bottom: 36px; }
+}

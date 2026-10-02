@@ -102,20 +102,22 @@
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 768px) {
+
+/* Tablet (≤900px): stack layout */
+@media (max-width: 900px) {
   .contact-main { padding: 48px 0 80px; }
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  .contact-side {
-    position: static;
-  }
-  .contact-actions {
-    grid-template-columns: 1fr;
-  }
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
+  .contact-side { position: static; }
 }
+
+/* Mobile (≤640px): single-column everything */
+@media (max-width: 640px) {
+  .contact-actions { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .contact-act { min-height: 56px; }
+  .contact-phone { font-size: 17px; }
+}
+

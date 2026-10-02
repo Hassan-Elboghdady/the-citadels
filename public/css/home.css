@@ -245,8 +245,10 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE — Tablet (1024px)
+   RESPONSIVE
    ========================================================================== */
+
+/* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .project-row {
     grid-template-columns: 1fr 1fr;
@@ -259,76 +261,53 @@
   }
 }
 
-/* ==========================================================================
-   RESPONSIVE — Mobile (768px)
-   ========================================================================== */
+/* Tablet / Large Mobile (≤900px) */
+@media (max-width: 900px) {
+  /* Stack Hero */
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero__image-wrap { height: 50vw; min-height: 320px; max-height: 480px; order: -1; }
+  .hero__content { padding: 56px clamp(20px, 6vw, 48px); }
+  .hero__text h1 { font-size: clamp(40px, 7vw, 56px); }
+
+  /* Stack About Band */
+  .about-band { grid-template-columns: 1fr; min-height: auto; }
+  .about-band__image-col { height: 50vw; min-height: 320px; max-height: 480px; order: -1; }
+  .about-band__content-col { padding: 64px clamp(20px, 6vw, 48px); }
+}
+
+/* Mobile (≤768px) */
 @media (max-width: 768px) {
-  /* ── Hero ── */
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .hero__image-wrap {
-    height: 55vw;
-    min-height: 260px;
-    max-height: 420px;
-  }
-  .hero__content {
-    padding: 40px clamp(20px, 5vw, 48px) 52px;
-  }
-  .hero__text h1 { font-size: clamp(34px, 9vw, 52px); }
-
-  /* ── Partners band ── */
-  .partners-section { padding: 40px 0; }
-  .partners-grid { gap: 32px; }
-  .partner-logo { max-width: 100px; max-height: 48px; }
-
-  /* ── Trust strip ── */
+  /* Trust strip */
   .trust-strip { padding: 64px 0; }
   .trust-strip__grid { grid-template-columns: 1fr; }
   .trust-item { padding: 32px 24px; }
 
-  /* ── Projects ── */
+  /* Projects */
   .projects-section { padding: 72px 0; }
-  .projects-header {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-  .project-row {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .project-row .project-tile:nth-child(3) .project-tile__img-wrap {
-    aspect-ratio: 4 / 3;
-  }
+  .projects-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  .project-row { grid-template-columns: 1fr; gap: 40px; }
+  .project-row .project-tile:nth-child(3) .project-tile__img-wrap { aspect-ratio: 4 / 3; }
 
-  /* ── About band ── */
-  .about-band {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .about-band__image-col {
-    height: 55vw;
-    min-height: 260px;
-    max-height: 400px;
-  }
-  .about-band__content-col {
-    padding: 48px clamp(20px, 5vw, 48px);
-  }
-
-  /* ── CTA band ── */
+  /* CTA band */
   .cta-band { padding: 64px 0; }
-  .cta-band__inner {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+  .cta-band__inner { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Partners section */
+  .partners-section { padding: 48px 0; }
+  .partners-grid { gap: 40px; }
+  .partner-logo { max-width: 120px; max-height: 50px; }
 }
 
-/* ==========================================================================
-   RESPONSIVE — Small mobile (480px)
-   ========================================================================== */
+/* Small Mobile (≤480px) */
 @media (max-width: 480px) {
+  .hero__content { padding: 40px 16px; }
+  .hero__text h1 { font-size: clamp(34px, 10vw, 40px); }
+  .about-band__content-col { padding: 40px 16px; }
+  
   .partners-grid { gap: 24px; }
   .partner-logo { max-width: 90px; max-height: 40px; }
+  
+  .cta-band { padding: 56px 0; }
+  .cta-band__inner { gap: 24px; }
 }
+

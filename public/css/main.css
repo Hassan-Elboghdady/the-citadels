@@ -372,66 +372,96 @@ p:last-child { margin-bottom: 0; }
 body { padding-top: 72px; }
 
 /* ==========================================================================
-   RESPONSIVE
+   RESPONSIVE — Clean Mobile-First Rewrite
    ========================================================================== */
+
+/* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .footer__top { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 768px) {
-  body { padding-top: 64px; }
-  .site-header__wrap { height: 64px; }
 
-  /* Mobile nav */
+/* Mobile (≤768px) — hamburger nav */
+@media (max-width: 768px) {
+  body { padding-top: 80px; }
+  .site-header__wrap { height: 80px; }
+
+  /* Show hamburger, hide inline nav */
   .nav-toggle { display: flex; }
   .site-nav {
-    position: fixed; top: 0; right: 0; bottom: 0; width: min(300px, 85vw);
-    background: var(--bg); border-left: 1px solid var(--border);
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(300px, 85vw);
+    background: #4A5940;
     flex-direction: column; align-items: flex-start; gap: 0;
-    padding: 88px 36px 36px;
-    transform: translateX(100%); transition: transform 0.35s var(--ease-out);
+    padding: 100px 36px 36px;
+    transform: translateX(100%);
+    transition: transform 0.35s var(--ease-out);
     z-index: 105;
     overflow-y: auto;
+    border-left: 1px solid var(--olive-dark);
   }
   .site-nav--open { transform: translateX(0); }
   .site-nav__link {
-    font-size: 15px; padding: 16px 0; width: 100%;
-    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+    padding: 18px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: rgba(250,250,247,0.8);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
   .site-nav__link::after { display: none; }
+  .site-nav__link:last-child { border-bottom: none; }
 
   /* Footer */
-  .footer__top { grid-template-columns: 1fr; gap: 36px; }
-  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .footer__top { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px 20px; 
+  }
+  .footer__top > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
   .footer__legal { justify-content: center; flex-wrap: wrap; }
+  .footer__brand { margin-bottom: 16px; }
 
   /* Cookie consent */
   .cookie-consent__inner { flex-direction: column; text-align: center; }
   .cookie-consent__actions { width: 100%; justify-content: center; }
 
+  /* Header Logo on mobile */
+  .site-logo__full {
+    height: 60px !important;
+    max-height: 60px !important;
+    width: auto !important;
+  }
+  .site-logo__text {
+    display: block !important;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
   /* Buttons */
-  .btn-row { flex-direction: column; }
-  .btn-row .btn { width: 100%; text-align: center; justify-content: center; }
+  .btn-row { flex-direction: column; align-items: stretch; }
+  .btn-row .btn { width: 100%; justify-content: center; }
 
   /* Page intro */
   .page-intro { padding: 100px 0 48px; }
-  .page-intro h1 { font-size: clamp(30px, 8vw, 48px); }
+  .page-intro h1 { font-size: clamp(28px, 9vw, 44px); }
   .page-intro .lead { font-size: 15px; }
 
-  /* Typography */
-  h2 { font-size: clamp(26px, 7vw, 40px); }
+  /* Typography scale-down */
+  h2 { font-size: clamp(24px, 7vw, 38px); }
+
+  /* Container padding */
+  .container { padding-left: 18px; padding-right: 18px; }
 }
 
-@media (max-width: 480px) {
-  .page-intro { padding: 92px 0 40px; }
-  .site-logo__full { height: 44px; }
-  .site-logo__text { font-size: 16px; letter-spacing: 0.10em; }
-  .footer__logo { height: 80px; }
-
-  /* Tighter container padding on tiny screens */
-  .container { padding-left: 16px; padding-right: 16px; }
-
-  /* Buttons full width on tiny screens */
-  .btn { width: 100%; text-align: center; justify-content: center; }
-  .btn-row .btn { width: 100%; }
+/* Extra-small (≤400px) */
+@media (max-width: 400px) {
+  .footer__logo { height: 72px; }
+  .container { padding-left: 14px; padding-right: 14px; }
 }
-

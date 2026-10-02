@@ -19,24 +19,36 @@
     <section class="pd-section">
       <div class="container">
 
-        <!-- Back link -->
-        <a href="/projects#<%= project.slug %>" class="pd-back">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M19 12H5M12 5l-7 7 7 7"/>
-          </svg>
-          Back to our Projects
-        </a>
+        <!-- Top bar: Back link + Scroll hint -->
+        <div class="pd-top-bar">
+          <a href="/projects#<%= project.slug %>" class="pd-back">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            Back to our Projects
+          </a>
+
+          <% if (project.gallery && project.gallery.length > 0) { %>
+          <div class="pd-scroll-hint-top" id="pdScrollHintTop" onclick="document.getElementById('gallerySection').scrollIntoView({behavior: 'smooth'})" role="button" tabindex="0">
+            <span>Scroll to see more photos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </div>
+          <% } %>
+        </div>
 
         <!-- Main content: image left, details right -->
         <div class="pd-body">
 
           <div class="pd-image-col">
             <div class="pd-image-wrap">
-              <img src="<%= project.image %>" alt="<%= project.name %>" class="pd-image">
+              <img src="<%= project.image %>" alt="<%= project.name %>" class="pd-image" id="mainProjImg" style="cursor: zoom-in;" role="button" aria-label="View full photo" tabindex="0">
             </div>
           </div>
 
           <div class="pd-info-col">
+            <% if (project.subtitle) { %>
+              <p class="pd-subtitle"><%= project.subtitle %></p>
+            <% } %>
             <h1 class="pd-title"><%= project.name %></h1>
 
             <div class="pd-meta">
@@ -60,10 +72,208 @@
       </div>
     </section>
 
+    <!-- Photo Gallery -->
+    <% if (project.gallery && project.gallery.length > 0) { %>
+    <section class="pd-gallery-section" id="gallerySection">
+
+      <!-- Mobile swipe hint -->
+      <div class="pd-mobile-swipe-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>
+        </svg>
+        Swipe right or left to see more pictures
+      </div>
+
+      <!-- Track container with hover arrows overlaid -->
+      <div class="pd-gallery-track-wrap" id="galleryWrap">
+
+        <!-- Left hover arrow -->
+        <button class="pd-hover-arrow pd-hover-arrow--left" id="galleryPrev" aria-label="Previous photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <!-- Right hover arrow -->
+        <button class="pd-hover-arrow pd-hover-arrow--right" id="galleryNext" aria-label="Next photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div class="pd-gallery-track" id="galleryTrack">
+          <% project.gallery.forEach(function(img, i) { %>
+            <div class="pd-gallery-slide">
+              <img
+                src="<%= img %>"
+                alt="<%= project.name %> — photo <%= i + 1 %>"
+                class="pd-gallery-img"
+                data-index="<%= i %>"
+                data-src="<%= img %>"
+                role="button"
+                tabindex="0"
+                aria-label="View full photo <%= i + 1 %>"
+              >
+            </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- Dot indicators (one per page of 3) -->
+      <div class="pd-gallery-controls">
+        <div class="pd-gallery-dots" id="galleryDots">
+          <% var totalPages = Math.ceil(project.gallery.length / 3); %>
+          <% for(var p = 0; p < totalPages; p++) { %>
+            <button class="pd-gallery-dot <%= p === 0 ? 'is-active' : '' %>" data-page="<%= p %>" aria-label="Go to page <%= p + 1 %>"></button>
+          <% } %>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="pd-lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size photo">
+      <button class="pd-lightbox__close" id="lightboxClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <button class="pd-lightbox__arrow pd-lightbox__arrow--left" id="lightboxPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="pd-lightbox__img-wrap">
+        <img src="" alt="" class="pd-lightbox__img" id="lightboxImg">
+      </div>
+      <button class="pd-lightbox__arrow pd-lightbox__arrow--right" id="lightboxNext" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <p class="pd-lightbox__counter"><span id="lightboxNum">1</span> / <%= project.gallery.length %></p>
+    </div>
+    <% } %>
+
   </main>
 
   <%- include('partials/footer') %>
   <%- include('partials/cookie-consent') %>
   <script src="/js/main.js"></script>
+
+  <% if (project.gallery && project.gallery.length > 0) { %>
+  <script>
+  (function() {
+    const galleryImgs = <%- JSON.stringify(project.gallery) %>;
+    const total       = galleryImgs.length;
+    let perPage       = window.innerWidth <= 640 ? 1 : 3;
+    let totalPages    = Math.ceil(total / perPage);
+
+    /* ── Slider ── */
+    const track   = document.getElementById('galleryTrack');
+    const dotsContainer = document.querySelector('.pd-gallery-dots');
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
+    let currentPage = 0;
+    let dots = [];
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      dots = [];
+      
+      // If there are too many dots (e.g. >30 on mobile), hide the container to keep it clean.
+      if (totalPages > 30 && window.innerWidth <= 640) {
+        dotsContainer.style.display = 'none';
+        return;
+      } else {
+        dotsContainer.style.display = 'flex';
+      }
+
+      for (let i = 0; i < totalPages; i++) {
+        const d = document.createElement('div');
+        d.className = 'pd-gallery-dot';
+        if (i === currentPage) d.classList.add('is-active');
+        d.addEventListener('click', () => goToPage(i));
+        dotsContainer.appendChild(d);
+        dots.push(d);
+      }
+    }
+
+    function goToPage(page) {
+      currentPage = (page + totalPages) % totalPages;
+      track.style.transform = `translateX(-${currentPage * 100}%)`;
+      if (dots.length) {
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === currentPage));
+      }
+    }
+
+    buildDots();
+
+    window.addEventListener('resize', () => {
+      const newPerPage = window.innerWidth <= 640 ? 1 : 3;
+      if (newPerPage !== perPage) {
+        perPage = newPerPage;
+        totalPages = Math.ceil(total / perPage);
+        currentPage = 0;
+        buildDots();
+        goToPage(0);
+      }
+    });
+
+    prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
+    nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
+
+    // Touch swipe
+    const wrap = document.getElementById('galleryWrap');
+    let touchStartX = 0;
+    wrap.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    wrap.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) goToPage(diff > 0 ? currentPage + 1 : currentPage - 1);
+    });
+
+    /* ── Lightbox ── */
+    const lightbox = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lightboxImg');
+    const lbNum    = document.getElementById('lightboxNum');
+    const lbClose  = document.getElementById('lightboxClose');
+    const lbPrev   = document.getElementById('lightboxPrev');
+    const lbNext   = document.getElementById('lightboxNext');
+    let lbCurrent  = 0;
+
+    function openLightbox(index) {
+      lbCurrent = (index + total) % total;
+      lbImg.src = galleryImgs[lbCurrent];
+      lbNum.textContent = lbCurrent + 1;
+      lightbox.classList.add('is-open');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+    }
+    function lbGoTo(index) {
+      lbCurrent = (index + total) % total;
+      lbImg.style.opacity = '0';
+      setTimeout(() => {
+        lbImg.src = galleryImgs[lbCurrent];
+        lbImg.style.opacity = '1';
+        lbNum.textContent = lbCurrent + 1;
+      }, 150);
+    }
+
+    document.querySelectorAll('.pd-gallery-img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(+img.dataset.index));
+      img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(+img.dataset.index); });
+    });
+
+    const mainImg = document.getElementById('mainProjImg');
+    if (mainImg && galleryImgs.length > 0) {
+      mainImg.addEventListener('click', () => openLightbox(0));
+      mainImg.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(0); });
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    lbPrev.addEventListener('click', e => { e.stopPropagation(); lbGoTo(lbCurrent - 1); });
+    lbNext.addEventListener('click', e => { e.stopPropagation(); lbGoTo(lbCurrent + 1); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   lbGoTo(lbCurrent - 1);
+      if (e.key === 'ArrowRight')  lbGoTo(lbCurrent + 1);
+    });
+  })();
+  </script>
+  <% } %>
 </body>
 </html>

@@ -2,6 +2,47 @@
    Collections Page — Alternating Editorial Layout
    ========================================================================== */
 
+/* ==========================================================================
+   Partners Hero
+   ========================================================================== */
+.partners-hero {
+  padding: 140px 0 100px;
+  background: var(--bg-warm);
+  border-bottom: 1px solid var(--border);
+}
+.partners-hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.partners-hero__eyebrow {
+  margin-bottom: 24px;
+}
+.partners-hero__title {
+  margin: 0;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.partners-hero__text {
+  max-width: 520px;
+  padding-bottom: 8px; /* align baseline visually with heading */
+}
+.partners-hero__text .lead {
+  margin-bottom: 24px;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.partners-hero__text .lead strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.partners-hero__text .lead:last-child {
+  margin-bottom: 0;
+}
+
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
@@ -98,13 +139,24 @@ a.coll-item__img-col {
 .coll-item__partner {
   font-size: 13px;
   color: var(--ink-faint);
+  margin-bottom: 0 !important;
+}
+.coll-item__partner strong {
+  color: var(--ink-muted);
+}
+.partner-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   padding-top: 8px;
   border-top: 1px solid var(--border);
   margin-top: 8px;
   margin-bottom: 24px;
 }
-.coll-item__partner strong {
-  color: var(--ink-muted);
+.partner-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
 }
 .coll-item__content-col .btn {
   align-self: flex-start;
@@ -166,41 +218,80 @@ a.coll-item__img-col {
   margin-bottom: 32px; max-width: 440px;
 }
 
+
+/* ── Responsive ── */
+
+/* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .partners-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 768px) {
+
+/* Tablet (≤900px): stack partners-hero + partner sections */
+@media (max-width: 900px) {
+  .partners-hero {
+    padding: 120px 0 60px;
+  }
+  .partners-hero__container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .partners-hero__text {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
+
   .coll-item {
     grid-template-columns: 1fr;
     min-height: auto;
   }
   .coll-item--reverse { direction: ltr; }
   .coll-item__img-col {
-    height: 60vw;
+    height: 56vw;
     min-height: 240px;
-    max-height: 380px;
+    max-height: 420px;
+    order: 1;
   }
-  .coll-item__content-col,
+  .coll-item__content-col {
+    order: 2;
+    padding: 40px clamp(20px, 5vw, 56px);
+  }
   .coll-item--reverse .coll-item__content-col {
-    padding: 36px clamp(20px, 5vw, 48px);
+    padding: 40px clamp(20px, 5vw, 56px);
   }
-  .coll-item__num { font-size: 32px; }
-  .coll-item__content-col h3 { font-size: clamp(22px, 6vw, 30px); }
-  .coll-item__content-col p { font-size: 14px; }
-
-  .partners-section { padding: 64px 0; }
-  .partners-grid { grid-template-columns: 1fr; }
-
-  .cta-band { padding: 64px 0; }
-  .cta-band__inner { grid-template-columns: 1fr; gap: 32px; }
 }
-@media (max-width: 480px) {
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .partners-hero {
+    padding: 100px 0 48px;
+  }
+  .partners-hero__title {
+    font-size: clamp(30px, 9vw, 48px);
+  }
+  .partners-hero__text .lead {
+    font-size: 15px;
+  }
+
   .coll-item__img-col {
-    height: 55vw;
+    height: 60vw;
     min-height: 200px;
   }
   .coll-item__content-col,
   .coll-item--reverse .coll-item__content-col {
-    padding: 28px 16px;
+    padding: 32px clamp(16px, 4vw, 32px);
   }
+  .coll-item__num { font-size: 32px; }
+  .coll-item__content-col h3 { font-size: clamp(22px, 6vw, 30px); }
+  .coll-item__content-col p  { font-size: 14px; }
+
+  .partner-logo-lockup { gap: 12px; flex-wrap: wrap; }
+  .partner-logo { height: 24px; }
+
+  .partners-section { padding: 64px 0; }
+  .partners-grid { grid-template-columns: 1fr; }
+
+  .cta-band { padding: 56px 0; }
+  .cta-band__inner { grid-template-columns: 1fr; gap: 28px; }
 }
+

@@ -95,15 +95,6 @@
   color: var(--ink);
 }
 
-/* Description */
-.pd-desc {
-  font-size: 15px;
-  line-height: 1.85;
-  color: var(--ink-muted);
-  margin-bottom: 48px;
-  max-width: 500px;
-}
-
 
 /* ================================================================
    Inline Gallery Slider (inside left image column)

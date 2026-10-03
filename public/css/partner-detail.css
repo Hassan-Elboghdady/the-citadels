@@ -5,7 +5,7 @@
 /* ---------- Hero ---------- */
 .partner-hero {
   position: relative;
-  height: 80vh;
+  height: 90vh;
   min-height: 540px;
   max-height: 800px;
   overflow: hidden;
@@ -52,29 +52,32 @@
 .partner-hero__back {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   margin-bottom: 32px;
-  transition: color 0.25s, gap 0.25s;
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 8px 16px 8px 12px;
-  border-radius: 40px;
-  backdrop-filter: blur(6px);
-  background: rgba(255,255,255,0.06);
+  transition: color 0.25s ease;
+}
+.partner-hero__back svg { 
+  width: 16px; 
+  height: 16px; 
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
 }
 .partner-hero__back:hover {
   color: #fff;
-  gap: 12px;
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.35);
 }
-.partner-hero__back svg { width: 16px; height: 16px; flex-shrink: 0; }
+.partner-hero__back:hover svg {
+  transform: translateX(-4px);
+}
+.partner-hero__back--mobile {
+  display: none; /* hidden by default on desktop */
+}
 .partner-hero__eyebrow {
   font-family: var(--font-sans);
   font-size: 11px;
@@ -95,24 +98,44 @@
   margin-bottom: 0;
   letter-spacing: -0.01em;
 }
+.partner-hero__logo {
+  max-width: 400px;
+  max-height: 140px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 0;
+  /* Adjust based on the actual logo color; if it's dark, you might want to invert it 
+     but the Able logo has a dark background itself, so let's keep it as is or add brightness */
+}
+
+@media (max-width: 768px) {
+  .partner-hero__logo {
+    display: none;
+  }
+}
 .partner-hero__scroll {
+  position: absolute;
+  bottom: clamp(16px, 4vw, 48px);
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  margin-top: 36px;
+  gap: 12px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: clamp(10px, 2.5vw, 14px);
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   transition: color 0.25s;
+  white-space: nowrap;
 }
-.partner-hero__scroll:hover { color: rgba(255,255,255,0.9); }
+.partner-hero__scroll:hover { color: rgba(255,255,255,1); }
 .partner-hero__scroll svg {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   animation: scrollBounce 1.8s ease-in-out infinite;
 }
 @keyframes scrollBounce {
@@ -120,50 +143,6 @@
   50%       { transform: translateY(5px); }
 }
 
-/* ---------- Meta strip below hero ---------- */
-.partner-meta-strip {
-  background: var(--bg-dark);
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.partner-meta-strip__inner {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-.partner-meta-strip__item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.partner-meta-strip__label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-}
-.partner-meta-strip__value {
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-}
-.partner-meta-strip__sep {
-  width: 1px;
-  height: 32px;
-  background: rgba(255,255,255,0.12);
-  flex-shrink: 0;
-}
-.partner-meta-strip__logo {
-  max-height: 36px;
-  max-width: 120px;
-  object-fit: contain;
-  mix-blend-mode: screen;
-  filter: invert(1) hue-rotate(-180deg) brightness(1) contrast(1);
-  opacity: 0.7;
-  margin-left: auto;
-}
 
 /* ---------- Body ---------- */
 .partner-body {
@@ -198,8 +177,8 @@
   border-bottom: 1px solid var(--border);
 }
 .partner-sidebar__logo {
-  max-width: 180px;
-  max-height: 90px;
+  max-width: 220px;
+  max-height: 110px;
   object-fit: contain;
 }
 .partner-sidebar__info {
@@ -298,9 +277,21 @@
 /* Mobile (≤768px): stack layout */
 @media (max-width: 768px) {
   .partner-hero { height: 60vw; min-height: 340px; max-height: 520px; }
+  .partner-hero__content {
+    padding-bottom: 80px; /* Leave space for the absolute-positioned scroll button */
+  }
   .partner-meta-strip__inner { gap: 20px; flex-wrap: wrap; }
   .partner-meta-strip__logo { display: none; }
-  .partner-body { padding: 48px 0 72px; }
+  .partner-hero__back--desktop { display: none; }
+  .partner-hero__back--mobile {
+    display: inline-flex;
+    color: var(--ink-muted);
+    margin-bottom: 32px;
+  }
+  .partner-hero__back--mobile:hover {
+    color: var(--ink);
+  }
+  .partner-body { padding: 32px 0 72px; } /* slightly reduced top padding to fit back button */
   .partner-layout {
     grid-template-columns: 1fr;
     gap: 40px;

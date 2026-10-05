@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>" dir="<%= t.dir %>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +19,10 @@
     <!-- Page Header -->
     <section class="proj-page-header">
       <div class="container">
-        <span class="eyebrow">Our Work</span>
+        <span class="eyebrow"><%= t.projects.eyebrow %></span>
         <div class="proj-page-header__inner">
-          <h1>Projects &amp;<br>Experience</h1>
-          <p>From monorail control rooms to station environments — precision-specified, European-sourced furniture for Egypt's most demanding infrastructure projects.</p>
+          <h1><%- t.projects.h1 %></h1>
+          <p><%= t.projects.lead %></p>
         </div>
       </div>
     </section>
@@ -45,11 +45,12 @@
         <div class="proj-row__info">
           <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">01</span>
           <div class="proj-row__text">
-            <span class="proj-row__sector">Transport / Control Room</span>
-            <h2 class="proj-row__title">NCC Monorail<br>Depot Buildings</h2>
-            <span class="proj-row__location">New Capital City · New Cairo · Nasr City</span>
+            <span class="proj-row__sector"><%= t.projects.proj1Sector %></span>
+            <h2 class="proj-row__title"><%- t.projects.proj1Title %></h2>
+            <span class="proj-row__subtitle"><%= t.projects.proj1Subtitle %></span>
+            <span class="proj-row__location"><%= t.projects.proj1Loc %></span>
             <span class="proj-row__link">
-              View Project
+              <%= t.projects.btnView %>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
@@ -70,11 +71,12 @@
         <div class="proj-row__info">
           <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">02</span>
           <div class="proj-row__text">
-            <span class="proj-row__sector">Transport / Control Room</span>
-            <h2 class="proj-row__title">NCC Monorail<br>Stations</h2>
-            <span class="proj-row__location">New Capital City · New Cairo · Nasr City</span>
+            <span class="proj-row__sector"><%= t.projects.proj2Sector %></span>
+            <h2 class="proj-row__title"><%- t.projects.proj2Title %></h2>
+            <span class="proj-row__subtitle"><%= t.projects.proj2Subtitle %></span>
+            <span class="proj-row__location"><%= t.projects.proj2Loc %></span>
             <span class="proj-row__link">
-              View Project
+              <%= t.projects.btnView %>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
@@ -95,11 +97,12 @@
         <div class="proj-row__info">
           <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">03</span>
           <div class="proj-row__text">
-            <span class="proj-row__sector">Transport / Control Room</span>
-            <h2 class="proj-row__title">West Nile<br>Monorail</h2>
-            <span class="proj-row__location">Giza · 6th of October City</span>
+            <span class="proj-row__sector"><%= t.projects.proj3Sector %></span>
+            <h2 class="proj-row__title"><%- t.projects.proj3Title %></h2>
+            <span class="proj-row__subtitle"><%= t.projects.proj3Subtitle %></span>
+            <span class="proj-row__location"><%= t.projects.proj3Loc %></span>
             <span class="proj-row__link">
-              View Project
+              <%= t.projects.btnView %>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
@@ -113,13 +116,14 @@
       <div class="container">
         <div class="cta-band__inner">
           <div class="cta-band__left">
-            <h2 id="proj-cta-heading">Discuss Your<br>Project</h2>
+            <h2 id="proj-cta-heading"><%- t.projects.ctaH2 %></h2>
           </div>
           <div class="cta-band__right">
-            <p>Whether you need furniture for a single space or a large-scale infrastructure project, our team can help with sourcing, specification, and delivery.</p>
+            <p><%= t.projects.ctaText %></p>
             <div class="btn-row">
-              <a href="/contact" class="btn btn--accent" id="proj-cta-contact">Contact Us</a>
-              <a href="/our-partners" class="btn btn--ghost" id="proj-cta-partners">Our Partners</a>
+              <a href="<%= pfx %>/contact" class="btn btn--accent" id="proj-cta-contact"><%= t.projects.ctaContact %></a>
+              <a href="/brochure/the-citadels-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" id="proj-cta-brochure"><%= t.projects.ctaBrochure %></a>
+              <a href="<%= pfx %>/our-partners" class="btn btn--ghost" id="proj-cta-partners"><%= t.projects.ctaPartners %></a>
             </div>
           </div>
         </div>

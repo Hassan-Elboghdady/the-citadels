@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>" dir="<%= t.dir %>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,13 +18,17 @@
 
     <!-- Intro -->
     <section class="about-hero">
-      <div class="about-hero__image-col">
-        <img src="/images/hotel.png" alt="Premium furniture showroom interior with elegant seating" class="about-hero__img">
-      </div>
-      <div class="about-hero__content-col">
-        <span class="eyebrow">About us</span>
-        <h1>Built on Trust,<br>Driven by Quality</h1>
-        <p class="lead">The Citadels is a family-owned company with a proven track record in engineering, contracting, fit-out, and furniture solutions across Egypt.</p>
+      <div class="container">
+        <div class="about-hero__inner">
+          <div class="about-hero__left">
+            <span class="about-hero__label"><%= t.about.heroLabel %></span>
+            <h1><%- t.about.heroH1 %></h1>
+          </div>
+          <div class="about-hero__right">
+            <span class="about-hero__rule" aria-hidden="true"></span>
+            <p class="about-hero__lead"><%= t.about.heroLead %></p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -33,12 +37,12 @@
       <div class="container">
         <div class="about-story__grid">
           <div class="about-story__left">
-            <h2 id="story-heading">Who We Are</h2>
+            <h2 id="story-heading"><%= t.about.storyHeading %></h2>
           </div>
           <div class="about-story__right">
-            <p>Founded in 2009, The Citadels has grown from a focused contracting firm into a comprehensive furniture and project solutions company serving clients across Egypt.</p>
-            <p>We specialize in sourcing, importing, and delivering premium furniture for environments that demand quality: hospitals, railways, hotels, offices, control rooms, airports, and private residences.</p>
-            <p>As a family-owned business, our reputation is built on personal accountability. Every project receives the attention and commitment that only a dedicated ownership structure can provide.</p>
+            <p><%= t.about.storyP1 %></p>
+            <p><%= t.about.storyP2 %></p>
+            <p><%= t.about.storyP3 %></p>
           </div>
         </div>
       </div>
@@ -49,15 +53,15 @@
       <div class="container">
         <div class="about-vm__grid">
           <div class="about-vm__block">
-            <span class="about-vm__label">Vision</span>
-            <h2 id="vision-heading">Where We Are Headed</h2>
-            <p>To be Egypt's most trusted source for premium imported furniture and project solutions, setting the standard for quality, reliability, and client service in every sector we serve.</p>
+            <span class="about-vm__label"><%= t.about.visionLabel %></span>
+            <h2 id="vision-heading"><%= t.about.visionHeading %></h2>
+            <p><%= t.about.visionText %></p>
           </div>
           <div class="about-vm__divider" aria-hidden="true"></div>
           <div class="about-vm__block">
-            <span class="about-vm__label">Mission</span>
-            <h3>What Drives Us</h3>
-            <p>To deliver furniture solutions that combine international quality with local expertise. We source the best products from selected global partners and support our clients from initial design coordination through installation and after-sales service.</p>
+            <span class="about-vm__label"><%= t.about.missionLabel %></span>
+            <h3><%= t.about.missionHeading %></h3>
+            <p><%= t.about.missionText %></p>
           </div>
         </div>
       </div>
@@ -66,23 +70,23 @@
     <!-- Values -->
     <section class="about-values" aria-labelledby="values-heading">
       <div class="container">
-        <h2 id="values-heading" class="about-values__heading">Company Values</h2>
+        <h2 id="values-heading" class="about-values__heading"><%= t.about.valuesHeading %></h2>
         <div class="about-values__grid">
           <div class="about-values__item">
-            <h3>Quality</h3>
-            <p>We source only from manufacturers and partners whose products meet international standards of durability, safety, and design.</p>
+            <h3><%= t.about.val1Title %></h3>
+            <p><%= t.about.val1Text %></p>
           </div>
           <div class="about-values__item">
-            <h3>Reliability</h3>
-            <p>We honor commitments on timelines, specifications, and budgets. Our clients depend on us for projects with strict deadlines.</p>
+            <h3><%= t.about.val2Title %></h3>
+            <p><%= t.about.val2Text %></p>
           </div>
           <div class="about-values__item">
-            <h3>Integrity</h3>
-            <p>As a family-owned company, our name is on every project. We operate with transparency and take personal responsibility for outcomes.</p>
+            <h3><%= t.about.val3Title %></h3>
+            <p><%= t.about.val3Text %></p>
           </div>
           <div class="about-values__item">
-            <h3>Partnership</h3>
-            <p>We work with clients as long-term partners, providing ongoing support well beyond the initial delivery and installation.</p>
+            <h3><%= t.about.val4Title %></h3>
+            <p><%= t.about.val4Text %></p>
           </div>
         </div>
       </div>
@@ -92,49 +96,50 @@
     <section class="about-sectors" aria-labelledby="sectors-heading">
       <div class="container">
         <div class="about-sectors__header">
-          <h2 id="sectors-heading">Sectors We Serve</h2>
+          <h2 id="sectors-heading"><%= t.about.sectorsHeading %></h2>
+          <span class="about-sectors__count"><%= t.about.sectorsCount %></span>
         </div>
         <div class="about-sectors__list">
           <div class="about-sectors__item">
-            <span class="about-sectors__item-num"></span>
+            <span class="about-sectors__item-num">01</span>
             <div>
-              <h3>Healthcare & Laboratory</h3>
-              <p>Specialized furniture for hospitals, clinics, proton therapy centers, and laboratory environments.</p>
+              <h3><%= t.about.sec1Title %></h3>
+              <p><%= t.about.sec1Text %></p>
             </div>
           </div>
           <div class="about-sectors__item">
-            <span class="about-sectors__item-num"></span>
+            <span class="about-sectors__item-num">02</span>
             <div>
-              <h3>Railway & Transport</h3>
-              <p>Control room consoles, station furniture, and ergonomic operator workstations for monorail and rail systems.</p>
+              <h3><%= t.about.sec2Title %></h3>
+              <p><%= t.about.sec2Text %></p>
             </div>
           </div>
           <div class="about-sectors__item">
-            <span class="about-sectors__item-num"></span>
+            <span class="about-sectors__item-num">03</span>
             <div>
-              <h3>Hospitality</h3>
-              <p>Guest room furniture, lobby seating, restaurant furnishings, and conference room solutions for hotels.</p>
+              <h3><%= t.about.sec3Title %></h3>
+              <p><%= t.about.sec3Text %></p>
             </div>
           </div>
           <div class="about-sectors__item">
-            <span class="about-sectors__item-num"></span>
+            <span class="about-sectors__item-num">04</span>
             <div>
-              <h3>Office</h3>
-              <p>Executive furniture, modular workstations, and ergonomic solutions from leading international office brands.</p>
+              <h3><%= t.about.sec4Title %></h3>
+              <p><%= t.about.sec4Text %></p>
             </div>
           </div>
           <div class="about-sectors__item">
-            <span class="about-sectors__item-num"></span>
+            <span class="about-sectors__item-num">05</span>
             <div>
-              <h3>Residential</h3>
-              <p>Premium imported furniture for living rooms, bedrooms, dining areas, and private villas.</p>
+              <h3><%= t.about.sec5Title %></h3>
+              <p><%= t.about.sec5Text %></p>
             </div>
           </div>
           <div class="about-sectors__item">
-            <span class="about-sectors__item-num"></span>
+            <span class="about-sectors__item-num">06</span>
             <div>
-              <h3>Airport & Aviation</h3>
-              <p>Seating, check-in counters, and gate area equipment designed for high-traffic aviation environments.</p>
+              <h3><%= t.about.sec6Title %></h3>
+              <p><%= t.about.sec6Text %></p>
             </div>
           </div>
         </div>
@@ -146,13 +151,13 @@
       <div class="container">
         <div class="cta-band__inner">
           <div class="cta-band__left">
-            <h2 id="about-cta-heading">Work<br>With Us</h2>
+            <h2 id="about-cta-heading"><%- t.about.ctaHeading %></h2>
           </div>
           <div class="cta-band__right">
-            <p>Whether you are furnishing a single office or outfitting an entire facility, our team is ready to help.</p>
+            <p><%= t.about.ctaText %></p>
             <div class="btn-row">
-              <a href="/contact" class="btn btn--accent" id="about-cta-contact">Contact Us</a>
-              <a href="/collections" class="btn btn--ghost" id="about-cta-collections">View Collections</a>
+              <a href="<%= pfx %>/contact" class="btn btn--accent" id="about-cta-contact"><%= t.about.ctaContact %></a>
+              <a href="/brochure/the-citadels-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" id="about-cta-brochure"><%= t.about.ctaBrochure %></a>
             </div>
           </div>
         </div>

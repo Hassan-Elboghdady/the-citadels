@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>" dir="<%= t.dir %>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,23 +19,23 @@
     <!-- Page Header -->
     <section class="partners-page-header">
       <div class="container">
-        <span class="eyebrow">The Citadels Network</span>
+        <span class="eyebrow"><%= t.partners.eyebrow %></span>
         <div class="partners-page-header__inner">
-          <h1>Our Partner<br>Brands</h1>
-          <p>We represent Europe's leading furniture manufacturers in the Egyptian market — bringing unmatched quality, durability, and design to every environment we furnish.</p>
+          <h1><%- t.partners.h1 %></h1>
+          <p><%= t.partners.lead %></p>
         </div>
       </div>
     </section>
 
     <!-- Partner Cards Grid -->
     <section class="partners-grid-section" aria-labelledby="partners-heading">
-      <h2 id="partners-heading" class="sr-only">Our Partners</h2>
+      <h2 id="partners-heading" class="sr-only"><%= t.partners.srHeading %></h2>
       <div class="container">
         <div class="partners-grid-wrap">
 
           <!-- ABLE -->
           <div class="partner-card" id="hotel-residential">
-            <a href="/partners/able" class="partner-card__img-wrap" aria-label="View ABLE partner details">
+            <a href="<%= pfx %>/partners/able" class="partner-card__img-wrap" aria-label="View ABLE partner details">
               <img src="/images/partners-projects/able-hospitality-project.png" alt="Hotel & Residential furniture by ABLE" class="partner-card__img slider-img-1">
               <img src="/images/partners-projects/able-residential-project.png" alt="ABLE residential furniture" class="partner-card__img slider-img-2">
               <div class="partner-card__overlay"></div>
@@ -45,17 +45,17 @@
                 <img src="/images/partners/Able-Partner.png" alt="ABLE Logo" class="partner-card__logo">
               </div>
               <div class="partner-card__text">
-                <span class="partner-card__sector">Hotel &amp; Residential</span>
+                <span class="partner-card__sector"><%= t.partners.secHotel %></span>
                 <h3 class="partner-card__name">ABLE</h3>
-                <span class="partner-card__origin">Albania · Eastern Europe</span>
+                <span class="partner-card__origin"><%= t.partners.originAble %></span>
               </div>
               <div class="partner-card__actions">
-                <a href="/partners/able" class="partner-card__link">
-                  Learn More
+                <a href="<%= pfx %>/partners/able" class="partner-card__link">
+                  <%= t.partners.btnLearn %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="https://ablebemodern.com/" target="_blank" rel="noopener noreferrer" class="partner-card__link">
-                  Visit Website
+                  <%= t.partners.btnVisitAble %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                 </a>
               </div>
@@ -64,7 +64,7 @@
 
           <!-- Zivella -->
           <div class="partner-card" id="office-zivella">
-            <a href="/partners/zivella" class="partner-card__img-wrap" aria-label="View Zivella partner details">
+            <a href="<%= pfx %>/partners/zivella" class="partner-card__img-wrap" aria-label="View Zivella partner details">
               <img src="/images/partners-projects/zivella-project.png" alt="Office furniture by Zivella" class="partner-card__img">
               <div class="partner-card__overlay"></div>
             </a>
@@ -73,17 +73,17 @@
                 <img src="/images/partners/Zivella-Partner.png" alt="Zivella Logo" class="partner-card__logo">
               </div>
               <div class="partner-card__text">
-                <span class="partner-card__sector">Office Furniture</span>
+                <span class="partner-card__sector"><%= t.partners.secOffice %></span>
                 <h3 class="partner-card__name">Zivella</h3>
-                <span class="partner-card__origin">Istanbul · Turkey</span>
+                <span class="partner-card__origin"><%= t.partners.originZivella %></span>
               </div>
               <div class="partner-card__actions">
-                <a href="/partners/zivella" class="partner-card__link">
-                  Learn More
+                <a href="<%= pfx %>/partners/zivella" class="partner-card__link">
+                  <%= t.partners.btnLearn %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="https://www.zivella.com/" target="_blank" rel="noopener noreferrer" class="partner-card__link">
-                  Visit Website
+                  <%= t.partners.btnVisitZivella %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                 </a>
               </div>
@@ -92,7 +92,7 @@
 
           <!-- Falmar -->
           <div class="partner-card" id="office-falmar">
-            <a href="/partners/falmar" class="partner-card__img-wrap" aria-label="View Falmar partner details">
+            <a href="<%= pfx %>/partners/falmar" class="partner-card__img-wrap" aria-label="View Falmar partner details">
               <img src="/images/partners-projects/falmar-project1.png" alt="Office partitions by Falmar" class="partner-card__img slider-img-1">
               <img src="/images/partners-projects/falmar-project2.png" alt="Falmar office furniture" class="partner-card__img slider-img-2">
               <div class="partner-card__overlay"></div>
@@ -102,17 +102,17 @@
                 <img src="/images/partners/Falmar-Partner.png" alt="Falmar Logo" class="partner-card__logo">
               </div>
               <div class="partner-card__text">
-                <span class="partner-card__sector">Office &amp; Partitions</span>
+                <span class="partner-card__sector"><%= t.partners.secPartitions %></span>
                 <h3 class="partner-card__name">Falmar</h3>
-                <span class="partner-card__origin">Pesaro · Italy</span>
+                <span class="partner-card__origin"><%= t.partners.originFalmar %></span>
               </div>
               <div class="partner-card__actions">
-                <a href="/partners/falmar" class="partner-card__link">
-                  Learn More
+                <a href="<%= pfx %>/partners/falmar" class="partner-card__link">
+                  <%= t.partners.btnLearn %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="https://falmar.it/" target="_blank" rel="noopener noreferrer" class="partner-card__link">
-                  Visit Website
+                  <%= t.partners.btnVisitFalmar %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                 </a>
               </div>
@@ -121,7 +121,7 @@
 
           <!-- Bosco -->
           <div class="partner-card" id="control-rooms">
-            <a href="/partners/bosco" class="partner-card__img-wrap" aria-label="View Bosco partner details">
+            <a href="<%= pfx %>/partners/bosco" class="partner-card__img-wrap" aria-label="View Bosco partner details">
               <img src="/images/partners-projects/bosco-project.png" alt="Control room furniture by Bosco" class="partner-card__img">
               <div class="partner-card__overlay"></div>
             </a>
@@ -130,17 +130,17 @@
                 <img src="/images/partners/Bosco-Partner.png" alt="Bosco Logo" class="partner-card__logo">
               </div>
               <div class="partner-card__text">
-                <span class="partner-card__sector">Control Rooms</span>
+                <span class="partner-card__sector"><%= t.partners.secControl %></span>
                 <h3 class="partner-card__name">Bosco</h3>
-                <span class="partner-card__origin">Italy · Europe</span>
+                <span class="partner-card__origin"><%= t.partners.originBosco %></span>
               </div>
               <div class="partner-card__actions">
-                <a href="/partners/bosco" class="partner-card__link">
-                  Learn More
+                <a href="<%= pfx %>/partners/bosco" class="partner-card__link">
+                  <%= t.partners.btnLearn %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="https://www.elettrobosco.com/en/" target="_blank" rel="noopener noreferrer" class="partner-card__link">
-                  Visit Website
+                  <%= t.partners.btnVisitBosco %>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                 </a>
               </div>
@@ -150,16 +150,15 @@
           <!-- Healthcare — coming soon -->
           <div class="partner-card partner-card--soon" id="healthcare">
             <div class="partner-card__img-wrap">
-              <img src="/images/healthcare.png" alt="Healthcare furniture" class="partner-card__img">
               <div class="partner-card__overlay"></div>
             </div>
             <div class="partner-card__body">
               <div class="partner-card__text">
-                <span class="partner-card__sector">Healthcare &amp; Laboratories</span>
-                <h3 class="partner-card__name">Coming Soon</h3>
-                <span class="partner-card__origin">Under Construction</span>
+                <span class="partner-card__sector"><%= t.partners.secHealth %></span>
+                <h3 class="partner-card__name"><%= t.partners.statusSoon %></h3>
+                <span class="partner-card__origin"><%= t.partners.statusUnder %></span>
               </div>
-              <span class="partner-card__soon-badge">Soon</span>
+              <span class="partner-card__soon-badge"><%= t.partners.badgeSoon %></span>
             </div>
           </div>
 
@@ -169,11 +168,11 @@
             </div>
             <div class="partner-card__body">
               <div class="partner-card__text">
-                <span class="partner-card__sector">Airports Furniture</span>
-                <h3 class="partner-card__name">Coming Soon</h3>
-                <span class="partner-card__origin">Under Construction</span>
+                <span class="partner-card__sector"><%= t.partners.secAirport %></span>
+                <h3 class="partner-card__name"><%= t.partners.statusSoon %></h3>
+                <span class="partner-card__origin"><%= t.partners.statusUnder %></span>
               </div>
-              <span class="partner-card__soon-badge">Soon</span>
+              <span class="partner-card__soon-badge"><%= t.partners.badgeSoon %></span>
             </div>
           </div>
 
@@ -186,13 +185,13 @@
       <div class="container">
         <div class="cta-band__inner">
           <div class="cta-band__left">
-            <h2 id="collections-cta-heading">Need a Specific<br>Solution?</h2>
+            <h2 id="collections-cta-heading"><%- t.partners.ctaH2 %></h2>
           </div>
           <div class="cta-band__right">
-            <p>Tell us about your project requirements. Our team will provide a detailed proposal including product specifications, pricing, and delivery timelines.</p>
+            <p><%= t.partners.ctaText %></p>
             <div class="btn-row">
-              <a href="/contact" class="btn btn--accent" id="collections-cta-contact">Contact Us</a>
-              <a href="/projects" class="btn btn--ghost" id="collections-cta-projects">View Our Projects</a>
+              <a href="<%= pfx %>/contact" class="btn btn--accent" id="collections-cta-contact"><%= t.partners.ctaContact %></a>
+              <a href="<%= pfx %>/projects" class="btn btn--ghost" id="collections-cta-projects"><%= t.partners.ctaProjects %></a>
             </div>
           </div>
         </div>

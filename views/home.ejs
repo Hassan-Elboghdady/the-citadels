@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>" dir="<%= t.dir %>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +19,15 @@
     <!-- ========== HERO ========== -->
     <section class="hero" aria-label="Introduction">
       <div class="hero__image-wrap">
-        <img src="/images/hero.png" alt="Premium modern living room with luxury imported furniture, natural linen sofa, and solid wood coffee table" class="hero__image">
+        <img src="/images/hero-office.png" alt="Premium modern open-plan office space" class="hero__image">
       </div>
       <div class="hero__content">
         <div class="hero__text">
-          <h1>Premium <br>Furniture for<br>Distinctive Spaces</h1>
-          <p class="hero__sub">Residential. Hospitality. Office. Healthcare.<br>Control room. Airport. Across Egypt.</p>
+          <h1><%- t.home.heroH1 %></h1>
+          <p class="hero__sub"><%- t.home.heroSub %></p>
           <div class="btn-row">
-            <a href="/our-partners" class="btn btn--dark" id="hero-cta-our-partners">View Our Partners</a>
-            <a href="/contact" class="btn btn--outline" id="hero-cta-contact">Contact Us</a>
+            <a href="<%= pfx %>/projects" class="btn btn--dark" id="hero-cta-our-projects"><%= t.home.heroBtn1 %></a>
+            <a href="<%= pfx %>/contact" class="btn btn--outline" id="hero-cta-contact"><%= t.home.heroBtn2 %></a>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
     <!-- ========== PARTNERS ========== -->
     <section class="partners-section" aria-labelledby="partners-heading">
       <div class="container">
-        <h2 id="partners-heading" class="partners-section__title">Our Partners</h2>
+        <h2 id="partners-heading" class="partners-section__title"><%= t.home.partnersTitle %></h2>
         <div class="partners-grid">
           <a href="https://ablebemodern.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit ABLE website">
             <img src="/images/partners/Able-Partner.png" alt="Able Partner" class="partner-logo">
@@ -54,24 +54,40 @@
       </div>
     </section>
 
-
+    <!-- ========== BROCHURE CTA ========== -->
+    <section class="brochure-band" aria-label="Download Company Brochure">
+      <div class="container">
+        <div class="brochure-band__inner">
+          <div class="brochure-band__line" aria-hidden="true"></div>
+          <div class="brochure-band__body">
+            <span class="brochure-band__eyebrow"><%= t.home.brochureEyebrow %></span>
+            <h2 class="brochure-band__heading"><%= t.home.brochureHeading %></h2>
+            <a href="/brochure/the-citadels-brochure.pdf" target="_blank" rel="noopener noreferrer" class="brochure-band__btn" id="home-brochure-cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <%= t.home.brochureBtn %>
+            </a>
+          </div>
+          <div class="brochure-band__line" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
 
     <!-- ========== TRUST STRIP ========== -->
     <section class="trust-strip" aria-labelledby="trust-heading">
       <div class="container">
-        <h2 id="trust-heading">Why The Citadels</h2>
+        <h2 id="trust-heading"><%= t.home.trustTitle %></h2>
         <div class="trust-strip__grid">
           <div class="trust-item">
-            <h3 class="trust-item__title">Imported Quality</h3>
-            <p class="trust-item__text">Sourced through selected international manufacturers. Every product meets strict standards before it enters Egypt.</p>
+            <h3 class="trust-item__title"><%= t.home.trust1Title %></h3>
+            <p class="trust-item__text"><%= t.home.trust1Text %></p>
           </div>
           <div class="trust-item">
-            <h3 class="trust-item__title">Project Experience</h3>
-            <p class="trust-item__text">Healthcare facilities, monorail control rooms, hotels, airports. We have delivered across Egypt's most demanding sectors.</p>
+            <h3 class="trust-item__title"><%= t.home.trust2Title %></h3>
+            <p class="trust-item__text"><%= t.home.trust2Text %></p>
           </div>
           <div class="trust-item">
-            <h3 class="trust-item__title">End-to-End Support</h3>
-            <p class="trust-item__text">Design coordination, international sourcing, local delivery, professional installation, and after-sales service.</p>
+            <h3 class="trust-item__title"><%= t.home.trust3Title %></h3>
+            <p class="trust-item__text"><%= t.home.trust3Text %></p>
           </div>
         </div>
       </div>
@@ -82,49 +98,52 @@
       <div class="container">
         <div class="projects-header">
           <div class="projects-header__left">
-            <span class="eyebrow">Selected work</span>
-            <h2 id="projects-heading">Projects &<br>Experience</h2>
+            <span class="eyebrow"><%= t.home.projectsEyebrow %></span>
+            <h2 id="projects-heading"><%- t.home.projectsHeading %></h2>
           </div>
           <div class="projects-header__right">
-            <p class="lead">From proton therapy facilities to monorail control rooms, we deliver furniture solutions for environments where quality is not optional.</p>
-            <a href="/projects" class="arrow-link">View all projects</a>
+            <p class="lead"><%= t.home.projectsLead %></p>
+            <a href="<%= pfx %>/projects" class="arrow-link"><%= t.home.projectsLink %></a>
           </div>
         </div>
         <div class="project-row">
           <article class="project-tile">
-            <a href="/projects/ncc-monorail-depot-buildings" class="project-tile__img-wrap" style="display: block;">
+            <a href="<%= pfx %>/projects/ncc-monorail-depot-buildings" class="project-tile__img-wrap" style="display: block;">
               <img src="/images/our-projects/ncc-monorail-depot-buildings/100_4770.JPG" alt="NCC Monorail Depot Buildings" class="project-tile__img">
             </a>
             <div class="project-tile__info">
-              <span class="project-tile__tag">Transport / Control Room</span>
-              <a href="/projects/ncc-monorail-depot-buildings" style="text-decoration: none; color: inherit;">
-                <h3>NCC Monorail Depot Buildings</h3>
+              <span class="project-tile__tag"><%= t.home.proj1Tag %></span>
+              <a href="<%= pfx %>/projects/ncc-monorail-depot-buildings" style="text-decoration: none; color: inherit;">
+                <h3><%= t.home.proj1Title %></h3>
               </a>
-              <p class="muted">New Capital City · New Cairo · Nasr City</p>
+              <p class="project-tile__subtitle"><%= t.projects.proj1Subtitle %></p>
+              <p class="muted"><%= t.home.proj1Loc %></p>
             </div>
           </article>
           <article class="project-tile">
-            <a href="/projects/ncc-monorail-stations" class="project-tile__img-wrap" style="display: block;">
+            <a href="<%= pfx %>/projects/ncc-monorail-stations" class="project-tile__img-wrap" style="display: block;">
               <img src="/images/our-projects/ncc-monorail-stations/STATION ELEVATION.JPG" alt="NCC Monorail Stations" class="project-tile__img">
             </a>
             <div class="project-tile__info">
-              <span class="project-tile__tag">Transport / Control Room</span>
-              <a href="/projects/ncc-monorail-stations" style="text-decoration: none; color: inherit;">
-                <h3>NCC Monorail Stations</h3>
+              <span class="project-tile__tag"><%= t.home.proj2Tag %></span>
+              <a href="<%= pfx %>/projects/ncc-monorail-stations" style="text-decoration: none; color: inherit;">
+                <h3><%= t.home.proj2Title %></h3>
               </a>
-              <p class="muted">New Capital City · New Cairo · Nasr City</p>
+              <p class="project-tile__subtitle"><%= t.projects.proj2Subtitle %></p>
+              <p class="muted"><%= t.home.proj2Loc %></p>
             </div>
           </article>
           <article class="project-tile">
-            <a href="/projects/west-nile-monorail" class="project-tile__img-wrap" style="display: block;">
+            <a href="<%= pfx %>/projects/west-nile-monorail" class="project-tile__img-wrap" style="display: block;">
               <img src="/images/our-projects/west-nile-monorail/mono.jpg" alt="West Nile Monorail" class="project-tile__img">
             </a>
             <div class="project-tile__info">
-              <span class="project-tile__tag">Transport / Control Room</span>
-              <a href="/projects/west-nile-monorail" style="text-decoration: none; color: inherit;">
-                <h3>West Nile Monorail</h3>
+              <span class="project-tile__tag"><%= t.home.proj3Tag %></span>
+              <a href="<%= pfx %>/projects/west-nile-monorail" style="text-decoration: none; color: inherit;">
+                <h3><%= t.home.proj3Title %></h3>
               </a>
-              <p class="muted">Giza · 6th of October City</p>
+              <p class="project-tile__subtitle"><%= t.projects.proj3Subtitle %></p>
+              <p class="muted"><%= t.home.proj3Loc %></p>
             </div>
           </article>
         </div>
@@ -134,14 +153,14 @@
     <!-- ========== ABOUT PREVIEW ========== -->
     <section class="about-band" aria-labelledby="about-heading">
       <div class="about-band__image-col">
-        <img src="/images/hotel.png" alt="Premium furniture showroom with luxury seating and warm interior lighting" class="about-band__img">
+        <img src="\images\our-projects\west-nile-monorail\mono.jpg" alt="Premium furniture showroom with luxury seating and warm interior lighting" class="about-band__img">
       </div>
       <div class="about-band__content-col">
-        <span class="eyebrow">Since 2009</span>
-        <h2 id="about-heading">A Family-Owned Company With a Proven Track Record</h2>
-        <p class="lead">Founded in 2009, The Citadels has grown from a focused contracting firm into a comprehensive furniture and project solutions company serving clients across Egypt.</p>
-        <p class="lead">We specialize in sourcing, importing, and delivering premium furniture for environments that demand quality.</p>
-        <a href="/about" class="arrow-link" id="home-about-link">About The Citadels</a>
+        <span class="eyebrow"><%= t.home.aboutEyebrow %></span>
+        <h2 id="about-heading"><%= t.home.aboutHeading %></h2>
+        <p class="lead"><%= t.home.aboutP1 %></p>
+        <p class="lead"><%= t.home.aboutP2 %></p>
+        <a href="<%= pfx %>/about" class="arrow-link" id="home-about-link"><%= t.home.aboutLink %></a>
       </div>
     </section>
 
@@ -150,14 +169,14 @@
       <div class="container">
         <div class="cta-band__inner">
           <div class="cta-band__left">
-            <h2 id="cta-heading">Start Your<br>Furniture Project</h2>
+            <h2 id="cta-heading"><%- t.home.ctaH2 %></h2>
           </div>
           <div class="cta-band__right">
-            <p>Contact our team to discuss furniture solutions for your home, hotel, office, or specialized project. We respond to all inquiries within one business day.</p>
+            <p><%= t.home.ctaP %></p>
             <div class="btn-row">
-              <a href="/contact" class="btn btn--accent" id="cta-contact">Contact Us</a>
-              <a href="https://maps.google.com/?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo" class="btn btn--ghost" id="cta-showroom" target="_blank" rel="noopener noreferrer">Visit Showroom</a>
-              <a href="https://wa.me/201069631049" class="btn btn--ghost" id="cta-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a href="<%= pfx %>/contact" class="btn btn--accent" id="cta-contact"><%= t.home.ctaBtn1 %></a>
+              <a href="https://maps.google.com/?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo" class="btn btn--ghost" id="cta-showroom" target="_blank" rel="noopener noreferrer"><%= t.home.ctaBtn2 %></a>
+              <a href="https://wa.me/201069631049" class="btn btn--ghost" id="cta-whatsapp" target="_blank" rel="noopener noreferrer"><%= t.home.ctaBtn3 %></a>
             </div>
           </div>
         </div>

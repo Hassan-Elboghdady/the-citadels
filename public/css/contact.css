@@ -23,6 +23,15 @@
   position: sticky;
   top: 120px;
 }
+.contact-page-title {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 400;
+  margin-bottom: 48px;
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
 .contact-loc {
   margin-bottom: 40px;
   padding-bottom: 32px;

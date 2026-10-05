@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>" dir="<%= t.dir %>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,134 +16,104 @@
 
   <main id="main-content">
 
-    <div class="page-intro">
-      <div class="container">
-        <span class="eyebrow">Get in Touch</span>
-        <h1>Contact Us</h1>
-        <p class="lead">Visit our showroom, call us, or send an inquiry. We respond to all inquiries within one business day.</p>
-      </div>
-    </div>
+
 
     <!-- Two columns: left = locations + actions, right = form -->
     <section class="contact-main" aria-labelledby="contact-heading">
       <div class="container">
-        <h2 id="contact-heading" class="sr-only">Contact Information and Inquiry Form</h2>
+        <h2 id="contact-heading" class="sr-only"><%= t.contact.srHeading %></h2>
         <div class="contact-layout">
 
           <!-- Left column -->
           <div class="contact-side">
+            <h1 class="contact-page-title"><%= t.contact.h1 %></h1>
 
             <div class="contact-loc">
-              <span class="eyebrow">Head Office</span>
-              <h3>Nasr City, Cairo</h3>
+              <span class="eyebrow"><%= t.contact.locEyebrow %></span>
+              <h3><%= t.contact.locTitle %></h3>
               <address>
-                10 Sicily Street, off Makram Ebeid Street<br>
-                Nasr City, Cairo<br>
-                Postal Code: 11765
+                <%- t.contact.locAddress %>
               </address>
+              <a href="tel:+201200142107" class="contact-phone">+20 120 014 2107</a><br>
               <a href="tel:+201069631049" class="contact-phone">+20 106 963 1049</a>
-            </div>
-
-            <div class="contact-loc">
-              <span class="eyebrow">Showroom</span>
-              <h3>Sheraton, Cairo</h3>
-              <address>
-                Shop 3, Khaled Ibn El Walid<br>
-                Sheraton Al Matar, El Nozha, Cairo<br>
-                Postal Code: 11843 / 11757
-              </address>
-              <a href="tel:+201200142107" class="contact-phone">+20 120 014 2107</a>
             </div>
 
             <div class="contact-actions">
               <a href="tel:+201069631049" class="contact-act" id="contact-call-office">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 14.2V16.7C18 17.1 17.7 17.5 17.2 17.5C8.4 18.1 1.9 11.6 2.5 2.8C2.5 2.3 2.9 2 3.3 2H5.8C6.2 2 6.6 2.3 6.7 2.7L7.4 5.7C7.5 6.1 7.3 6.5 7 6.7L5.5 7.9C6.7 10.4 9.6 13.3 12.1 14.5L13.3 13C13.5 12.7 13.9 12.5 14.3 12.6L17.3 13.3C17.7 13.4 18 13.8 18 14.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Call Head Office
+                <%= t.contact.actCallOffice %>
               </a>
               <a href="tel:+201200142107" class="contact-act" id="contact-call-showroom">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 14.2V16.7C18 17.1 17.7 17.5 17.2 17.5C8.4 18.1 1.9 11.6 2.5 2.8C2.5 2.3 2.9 2 3.3 2H5.8C6.2 2 6.6 2.3 6.7 2.7L7.4 5.7C7.5 6.1 7.3 6.5 7 6.7L5.5 7.9C6.7 10.4 9.6 13.3 12.1 14.5L13.3 13C13.5 12.7 13.9 12.5 14.3 12.6L17.3 13.3C17.7 13.4 18 13.8 18 14.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Call Showroom
+                <%= t.contact.actCallShowroom %>
               </a>
               <a href="https://wa.me/201069631049" class="contact-act" id="contact-whatsapp" target="_blank" rel="noopener noreferrer">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2 18L3.3 13.6C2.5 12.2 2 10.6 2 9C2 4.6 5.6 1 10 1C14.4 1 18 4.6 18 9C18 13.4 14.4 17 10 17C8.4 17 6.8 16.5 5.4 15.7L2 18Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                WhatsApp
+                <%= t.contact.actWhatsapp %>
               </a>
               <a href="mailto:info@thecitadels.com" class="contact-act" id="contact-email">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M2 5L10 11L18 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Email Us
-              </a>
-              <a href="https://maps.google.com/?q=10+Sicily+Street+Nasr+City+Cairo" class="contact-act" id="contact-directions-office" target="_blank" rel="noopener noreferrer">
-                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1C6.7 1 4 3.7 4 7C4 12 10 19 10 19C10 19 16 12 16 7C16 3.7 13.3 1 10 1Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
-                Office Directions
+                <%= t.contact.actEmail %>
               </a>
               <a href="https://maps.google.com/?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo" class="contact-act" id="contact-directions-showroom" target="_blank" rel="noopener noreferrer">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1C6.7 1 4 3.7 4 7C4 12 10 19 10 19C10 19 16 12 16 7C16 3.7 13.3 1 10 1Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
-                Showroom Directions
+                <%= t.contact.actLocation %>
               </a>
             </div>
           </div>
 
           <!-- Right column: Form -->
           <div class="contact-form-col">
-            <h3 class="contact-form-title">Send an Inquiry</h3>
-            <p class="contact-form-subtitle">Fill out the form below and our team will get back to you within one business day.</p>
+            <h3 class="contact-form-title"><%= t.contact.formTitle %></h3>
+            <p class="contact-form-subtitle"><%= t.contact.formSubtitle %></p>
 
             <form class="contact-form" id="contact-form" action="/contact" method="POST" novalidate>
 
               <div class="form-group">
-                <label for="contact-name" class="form-label form-label--required">Full Name</label>
-                <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name" placeholder="Your full name">
+                <label for="contact-name" class="form-label form-label--required"><%= t.contact.labelName %></label>
+                <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name" placeholder="<%= t.contact.placeholderName %>">
                 <p class="form-error" id="contact-name-error" aria-live="polite"></p>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="contact-phone" class="form-label form-label--required">Phone Number</label>
-                  <input type="tel" id="contact-phone" name="phone" class="form-input" required autocomplete="tel" placeholder="+20 XXX XXX XXXX">
+                  <label for="contact-phone" class="form-label form-label--required"><%= t.contact.labelPhone %></label>
+                  <input type="tel" id="contact-phone" name="phone" class="form-input" required autocomplete="tel" placeholder="<%= t.contact.placeholderPhone %>">
                   <p class="form-error" id="contact-phone-error" aria-live="polite"></p>
                 </div>
                 <div class="form-group">
-                  <label for="contact-email-input" class="form-label form-label--required">Email Address</label>
-                  <input type="email" id="contact-email-input" name="email" class="form-input" required autocomplete="email" placeholder="your@email.com">
+                  <label for="contact-email-input" class="form-label form-label--required"><%= t.contact.labelEmail %></label>
+                  <input type="email" id="contact-email-input" name="email" class="form-input" required autocomplete="email" placeholder="<%= t.contact.placeholderEmail %>">
                   <p class="form-error" id="contact-email-error" aria-live="polite"></p>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="contact-inquiry" class="form-label form-label--required">Inquiry Type</label>
-                <select id="contact-inquiry" name="inquiry_type" class="form-select" required>
-                  <option value="" disabled selected>Select an inquiry type</option>
-                  <option value="residential">Residential Furniture</option>
-                  <option value="hotel">Hotel Furniture</option>
-                  <option value="office">Office Furniture</option>
-                  <option value="healthcare">Healthcare / Laboratory Furniture</option>
-                  <option value="control-room">Control Room Furniture</option>
-                  <option value="airport">Airport Furniture</option>
-                  <option value="other">Other</option>
-                </select>
-                <p class="form-error" id="contact-inquiry-error" aria-live="polite"></p>
+                <label for="contact-subject" class="form-label form-label--required"><%= t.contact.labelInquiry %></label>
+                <input type="text" id="contact-subject" name="subject" class="form-input" required placeholder="<%= t.contact.optSelect %>">
+                <p class="form-error" id="contact-subject-error" aria-live="polite"></p>
               </div>
 
               <div class="form-group">
-                <label for="contact-message" class="form-label form-label--required">Message</label>
-                <textarea id="contact-message" name="message" class="form-textarea" required placeholder="Tell us about your project or question"></textarea>
+                <label for="contact-message" class="form-label form-label--required"><%= t.contact.labelMessage %></label>
+                <textarea id="contact-message" name="message" class="form-textarea" required placeholder="<%= t.contact.placeholderMessage %>"></textarea>
                 <p class="form-error" id="contact-message-error" aria-live="polite"></p>
               </div>
 
               <fieldset class="form-group">
-                <legend class="form-label">Preferred Contact Method</legend>
+                <legend class="form-label form-label--required"><%= t.contact.prefMethod %></legend>
                 <div class="form-radio-group">
                   <label class="form-radio-label">
-                    <input type="radio" name="preferred_contact" value="phone" checked>
-                    Phone
+                    <input type="radio" name="preferred_contact" value="phone" required>
+                    <%= t.contact.prefPhone %>
                   </label>
                   <label class="form-radio-label">
-                    <input type="radio" name="preferred_contact" value="whatsapp">
-                    WhatsApp
+                    <input type="radio" name="preferred_contact" value="whatsapp" required>
+                    <%= t.contact.prefWhatsapp %>
                   </label>
                   <label class="form-radio-label">
-                    <input type="radio" name="preferred_contact" value="email">
-                    Email
+                    <input type="radio" name="preferred_contact" value="email" required>
+                    <%= t.contact.prefEmail %>
                   </label>
                 </div>
               </fieldset>
@@ -151,12 +121,12 @@
               <div class="form-group">
                 <label class="form-checkbox-label form-consent">
                   <input type="checkbox" name="consent" id="contact-consent" required>
-                  <span>I agree to The Citadels processing my personal data to respond to this inquiry. My data will not be shared with third parties. See our <a href="/privacy-policy">Privacy Policy</a>.</span>
+                  <span><%- t.contact.consentText %></span>
                 </label>
                 <p class="form-error" id="contact-consent-error" aria-live="polite"></p>
               </div>
 
-              <button type="submit" class="btn btn--dark" id="contact-submit" style="width: 100%;">Send Inquiry</button>
+              <button type="submit" class="btn btn--dark" id="contact-submit" style="width: 100%;"><%= t.contact.btnSend %></button>
             </form>
           </div>
 

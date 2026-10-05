@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>" dir="<%= t.dir %>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +19,13 @@
       <img src="/images/partners-projects/falmar-project2.png" alt="Office Furniture & Partitions by Falmar" class="partner-hero__img hero-slider-img-2">
       <div class="partner-hero__overlay"></div>
       <div class="partner-hero__content">
-        <a href="/our-partners#office-falmar" class="partner-hero__back partner-hero__back--desktop">
+        <a href="<%= pfx %>/our-partners#office-falmar" class="partner-hero__back partner-hero__back--desktop">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          Our Partners
+          <%= t.partnerDetail.back %>
         </a>
         <img src="/images/partners/Falmar-Partner.png" alt="Falmar" class="partner-hero__logo">
         <a href="#partner-body" class="partner-hero__scroll">
-          <span>Scroll to find out more</span>
+          <span><%= t.partnerDetail.scroll %></span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
       </div>
@@ -37,9 +37,9 @@
     <section class="partner-body" id="partner-body">
       <div class="container">
         <!-- Mobile back button (hidden on desktop) -->
-        <a href="/our-partners#office-falmar" class="partner-hero__back partner-hero__back--mobile">
+        <a href="<%= pfx %>/our-partners#office-falmar" class="partner-hero__back partner-hero__back--mobile">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          Our Partners
+          <%= t.partnerDetail.back %>
         </a>
         <div class="partner-layout">
 
@@ -51,34 +51,36 @@
               </div>
               <div class="partner-sidebar__info">
                 <div class="partner-sidebar__row">
-                  <span class="partner-sidebar__label">Full Name</span>
-                  <span class="partner-sidebar__value">Falmar Office Furniture</span>
+                  <span class="partner-sidebar__label"><%= t.partnerDetail.sidebarFullName %></span>
+                  <span class="partner-sidebar__value"><%= t.partnerDetail.falmarFullName %></span>
                 </div>
                 <div class="partner-sidebar__row">
-                  <span class="partner-sidebar__label">Sector</span>
-                  <span class="partner-sidebar__value">Office Furniture &amp; Partitions</span>
+                  <span class="partner-sidebar__label"><%= t.partnerDetail.sidebarSector %></span>
+                  <span class="partner-sidebar__value"><%= t.partnerDetail.falmarSector %></span>
                 </div>
                 <div class="partner-sidebar__row">
-                  <span class="partner-sidebar__label">Origin</span>
-                  <span class="partner-sidebar__value">Pesaro, Italy</span>
+                  <span class="partner-sidebar__label"><%= t.partnerDetail.sidebarOrigin %></span>
+                  <span class="partner-sidebar__value"><%= t.partnerDetail.falmarOrigin %></span>
                 </div>
                 <div class="partner-sidebar__row">
-                  <span class="partner-sidebar__label">Established</span>
-                  <span class="partner-sidebar__value">1990</span>
+                  <span class="partner-sidebar__label"><%= t.partnerDetail.sidebarExp %></span>
+                  <span class="partner-sidebar__value"><%= t.partnerDetail.falmarExp %></span>
                 </div>
               </div>
             </div>
-            <a href="https://falmar.it/" class="btn btn--dark partner-sidebar__website" target="_blank" rel="noopener noreferrer" id="falmar-visit-website">Visit Falmar Website →</a>
-            <a href="/our-partners#office-falmar" class="btn btn--outline partner-sidebar__website" id="falmar-back-btn" style="margin-top: 10px;">← Back to Our Partners</a>
+            <a href="https://falmar.it/" class="btn btn--dark partner-sidebar__website" target="_blank" rel="noopener noreferrer" id="falmar-visit-website"><%= t.partnerDetail.falmarVisit %></a>
+            <a href="<%= pfx %>/our-partners#office-falmar" class="btn btn--outline partner-sidebar__website" id="falmar-back-btn" style="margin-top: 10px;"><%= t.partnerDetail.backLink %></a>
           </aside>
 
           <!-- Content -->
           <div class="partner-content">
-            <p class="partner-content__intro">Falmar, established in Pesaro, Italy in 1990, is a specialist manufacturer of wall partitions, storage walls, and office furniture — operating from a fully integrated 6,000 m² production facility.</p>
+            <p class="partner-content__intro"><%= t.partnerDetail.falmarIntro %></p>
 
-            <p>Falmar manufactures full ranges of office furniture and offers new and innovative solutions designed to meet the constant evolution of the modern office world. Their activity is not limited to supplying standard furniture — they work alongside designers from the very first phases of each project.</p>
+            <p><%= t.partnerDetail.falmarP2 %></p>
 
-            <p>Tailor-made production is at the heart of what they do: leveraging their full production capacity to realize custom solutions for any project requiring unique pieces, combining aesthetic excellence with a strong price-quality ratio.</p>
+            <p><%= t.partnerDetail.falmarP3 %></p>
+
+            <p><%= t.partnerDetail.falmarP4 %></p>
           </div>
 
         </div>
@@ -90,13 +92,13 @@
       <div class="container">
         <div class="partner-cta__inner">
           <div>
-            <h2>Interested in<br>Falmar Products?</h2>
+            <h2><%= t.partnerDetail.ctaTitle %><br>Falmar <%= t.partnerDetail.ctaTitle2 %></h2>
           </div>
           <div>
-            <p>Get in touch with The Citadels team and we will provide a detailed proposal including product specifications, pricing, and delivery timelines for your project.</p>
+            <p><%= t.partnerDetail.ctaText %></p>
             <div class="btn-row">
-              <a href="/contact" class="btn btn--dark" id="falmar-cta-contact">Contact Us</a>
-              <a href="/our-partners" class="btn btn--outline" id="falmar-cta-back">View All Partners</a>
+              <a href="<%= pfx %>/contact" class="btn btn--dark" id="falmar-cta-contact"><%= t.partnerDetail.ctaContact %></a>
+              <a href="<%= pfx %>/our-partners" class="btn btn--outline" id="falmar-cta-back"><%= t.partnerDetail.ctaAll %></a>
             </div>
           </div>
         </div>

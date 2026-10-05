@@ -26,6 +26,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+/* Fix for the specific office image which has a compressed source aspect ratio */
+.hero__image[src*="hero-office"] {
+  transform: scaleX(1.3);
 }
 .hero__content {
   display: flex;
@@ -104,8 +109,8 @@
 
 .project-row {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr 0.7fr;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
 }
 .project-tile {
   position: relative;
@@ -138,6 +143,12 @@
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 4px;
+}
+.project-tile__subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
 }
 
 /* ==========================================================================
@@ -177,6 +188,87 @@
 .partner-logo:hover {
   opacity: 1;
   filter: grayscale(0);
+}
+
+/* ==========================================================================
+   BROCHURE CTA BAND
+   ========================================================================== */
+.brochure-band {
+  background: var(--ink);
+  padding: 64px 0;
+}
+.brochure-band__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.brochure-band__line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+}
+.brochure-band__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.brochure-band__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.brochure-band__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4vw, 38px);
+  color: #F5F3EF;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+}
+.brochure-band__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #F5F3EF;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s;
+  margin-top: 4px;
+}
+.brochure-band__btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.7);
+}
+@media (max-width: 768px) {
+  .brochure-band { padding: 52px 0; }
+  .brochure-band__line { display: none; }
+  .brochure-band__body {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .brochure-band__heading {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+  .brochure-band__btn {
+    width: 100%;
+    justify-content: center;
+    padding: 18px 28px;
+    font-size: 13px;
+  }
 }
 
 /* ==========================================================================
@@ -265,9 +357,9 @@
 @media (max-width: 900px) {
   /* Stack Hero */
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero__image-wrap { height: 50vw; min-height: 320px; max-height: 480px; order: -1; }
-  .hero__content { padding: 56px clamp(20px, 6vw, 48px); }
-  .hero__text h1 { font-size: clamp(40px, 7vw, 56px); }
+  .hero__image-wrap { height: 55vw; min-height: 280px; max-height: 420px; order: -1; }
+  .hero__content { padding: 40px clamp(20px, 6vw, 48px) 48px; }
+  .hero__text h1 { font-size: clamp(36px, 7vw, 56px); }
 
   /* Stack About Band */
   .about-band { grid-template-columns: 1fr; min-height: auto; }
@@ -294,20 +386,138 @@
 
   /* Partners section */
   .partners-section { padding: 48px 0; }
-  .partners-grid { gap: 40px; }
-  .partner-logo { max-width: 120px; max-height: 50px; }
+  .partners-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+  .partners-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .partner-logo { max-width: 110px; max-height: 48px; }
 }
 
 /* Small Mobile (≤480px) */
 @media (max-width: 480px) {
-  .hero__content { padding: 40px 16px; }
-  .hero__text h1 { font-size: clamp(34px, 10vw, 40px); }
+  .hero__image-wrap { height: 60vw; min-height: 220px; max-height: 320px; }
+  .hero__content { padding: 32px 20px 40px; }
+  .hero__text h1 { font-size: clamp(30px, 9vw, 38px); margin-bottom: 16px; }
+  .hero__sub { font-size: 14px; margin-bottom: 28px; }
+  /* Make hero buttons full-width stack on small phones */
+  .hero .btn-row { flex-direction: column; gap: 10px; }
+  .hero .btn-row .btn { width: 100%; justify-content: center; text-align: center; }
+
   .about-band__content-col { padding: 40px 16px; }
-  
-  .partners-grid { gap: 24px; }
-  .partner-logo { max-width: 90px; max-height: 40px; }
-  
+
+  .partners-grid { gap: 28px 20px; }
+  .partner-logo { max-width: 90px; max-height: 38px; }
+
   .cta-band { padding: 56px 0; }
   .cta-band__inner { gap: 24px; }
+}
+
+/* ==========================================================================
+   ARABIC — Right-aligned text, natural reading flow
+   No layout mirroring — text direction + alignment only
+   ========================================================================== */
+
+/* Hero */
+[lang="ar"] .hero__content {
+  justify-content: flex-end;
+}
+[lang="ar"] .hero__text {
+  text-align: right;
+  direction: rtl;
+}
+[lang="ar"] .hero .btn-row {
+  justify-content: flex-end;
+  direction: rtl;
+}
+
+/* Partners band */
+[lang="ar"] .partners-section__title {
+  direction: rtl;
+}
+
+/* Trust strip */
+[lang="ar"] .trust-item {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Projects section */
+[lang="ar"] .projects-header__left,
+[lang="ar"] .projects-header__right {
+  text-align: right;
+  direction: rtl;
+}
+[lang="ar"] .projects-header__right .arrow-link {
+  display: block;
+  text-align: right;
+}
+[lang="ar"] .project-tile__info {
+  text-align: right;
+  direction: rtl;
+}
+[lang="ar"] .project-tile__tag {
+  display: block;
+  text-align: right;
+}
+
+/* About band — flip columns: image right, text left */
+[lang="ar"] .about-band__image-col {
+  order: 2;
+}
+[lang="ar"] .about-band__content-col {
+  order: 1;
+  text-align: right;
+  direction: rtl;
+  padding-left: clamp(48px, 8vw, 120px);
+  padding-right: clamp(48px, 6vw, 96px);
+}
+
+/* Brochure band */
+[lang="ar"] .brochure-band__eyebrow,
+[lang="ar"] .brochure-band__heading {
+  direction: rtl;
+}
+
+/* CTA band */
+[lang="ar"] .cta-band__left h2,
+[lang="ar"] .cta-band__right p {
+  text-align: right;
+  direction: rtl;
+}
+[lang="ar"] .cta-band__right .btn-row {
+  justify-content: flex-end;
+  direction: rtl;
+}
+
+/* Mobile — restore natural stacked order */
+@media (max-width: 900px) {
+  [lang="ar"] .about-band__image-col { order: -1; }
+  [lang="ar"] .about-band__content-col {
+    order: 0;
+    padding-left: clamp(20px, 6vw, 48px);
+    padding-right: clamp(20px, 6vw, 48px);
+  }
+}
+
+@media (max-width: 480px) {
+  [lang="ar"] .hero .btn-row {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  [lang="ar"] .hero .btn-row .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  [lang="ar"] .cta-band__right .btn-row {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 

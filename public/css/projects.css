@@ -158,11 +158,17 @@
   margin: 0;
   letter-spacing: -0.015em;
 }
+.proj-row__subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
 .proj-row__location {
   font-size: 12px;
   color: var(--ink-faint);
   letter-spacing: 0.05em;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .proj-row__link {
   display: inline-flex;

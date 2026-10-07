@@ -558,3 +558,5 @@
 }
 
 
+
+.pd-description p { margin-top: 1rem; line-height: 1.6; color: var(--text-color); font-size: 1rem; }

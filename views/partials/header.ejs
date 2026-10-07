@@ -112,7 +112,7 @@
       <!-- Language Dropdown -->
       <div class="lang-dropdown" id="lang-dropdown" role="navigation" aria-label="Language selection">
         <button class="lang-dropdown__trigger" id="lang-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
-          <span class="lang-dropdown__current"><%= lang === 'ar' ? 'AR' : lang === 'it' ? 'IT' : 'EN' %></span>
+          <span class="lang-dropdown__current"><%= lang === 'ar' ? 'AR' : lang === 'it' ? 'IT' : lang === 'fr' ? 'FR' : 'EN' %></span>
           <svg class="lang-dropdown__chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
             <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -126,6 +126,9 @@
           </li>
           <li role="option" aria-selected="<%= lang === 'it' ? 'true' : 'false' %>">
             <a href="<%= lang === 'it' ? '#' : itUrl %>" class="lang-dropdown__option<%= lang === 'it' ? ' lang-dropdown__option--active' : '' %>">IT</a>
+          </li>
+          <li role="option" aria-selected="<%= lang === 'fr' ? 'true' : 'false' %>">
+            <a href="<%= lang === 'fr' ? '#' : frUrl %>" class="lang-dropdown__option<%= lang === 'fr' ? ' lang-dropdown__option--active' : '' %>">FR</a>
           </li>
         </ul>
       </div>

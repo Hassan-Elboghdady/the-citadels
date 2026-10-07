@@ -17,7 +17,8 @@ app.use((req, res, next) => {
   // Detect language from URL prefix /ar/... or /it/... or default to en
   const isArabic = req.path.startsWith('/ar') || req.path === '/ar';
   const isItalian = req.path.startsWith('/it') || req.path === '/it';
-  const lang = isArabic ? 'ar' : isItalian ? 'it' : 'en';
+  const isFrench = req.path.startsWith('/fr') || req.path === '/fr';
+  const lang = isArabic ? 'ar' : isItalian ? 'it' : isFrench ? 'fr' : 'en';
   const localePath = path.join(__dirname, 'locales', `${lang}.json`);
   const t = JSON.parse(fs.readFileSync(localePath, 'utf8'));
   res.locals.t = t;
@@ -25,14 +26,16 @@ app.use((req, res, next) => {
   // Build equivalent URLs in the other languages
   const basePath = lang === 'ar' ? req.path.replace(/^\/ar/, '') || '/'
                  : lang === 'it' ? req.path.replace(/^\/it/, '') || '/'
+                 : lang === 'fr' ? req.path.replace(/^\/fr/, '') || '/'
                  : req.path;
   res.locals.enUrl = basePath;
   res.locals.arUrl = '/ar' + basePath;
   res.locals.itUrl = '/it' + basePath;
+  res.locals.frUrl = '/fr' + basePath;
   // Keep backward-compat
   res.locals.alternateLangUrl = lang === 'ar' ? basePath : '/ar' + basePath;
-  // Convenient prefix: '' | '/ar' | '/it'
-  res.locals.pfx = lang === 'ar' ? '/ar' : lang === 'it' ? '/it' : '';
+  // Convenient prefix: '' | '/ar' | '/it' | '/fr'
+  res.locals.pfx = lang === 'ar' ? '/ar' : lang === 'it' ? '/it' : lang === 'fr' ? '/fr' : '';
   next();
 });
 

@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>" dir="<%= t.dir %>">
+<%
+  function tField(obj, field) {
+    if (!obj) return '';
+    const val = obj[field + '_' + lang];
+    return val ? val : obj[field];
+  }
+%>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +56,7 @@
                       <div class="pd-inline-slide">
                         <img
                           src="<%= img %>"
-                          alt="<%= lang === 'ar' && project.name_ar ? project.name_ar : project.name %> — photo <%= i + 1 %>"
+                          alt="<%= tField(project, 'name') %> — photo <%= i + 1 %>"
                           class="pd-inline-img"
                           data-index="<%= i %>"
                           role="button"
@@ -76,25 +83,25 @@
             <% } else { %>
               <!-- Fallback: single image -->
               <div class="pd-image-wrap">
-                <img src="<%= project.image %>" alt="<%= lang === 'ar' && project.name_ar ? project.name_ar : project.name %>" class="pd-image" id="mainProjImg" style="cursor: zoom-in;" role="button" aria-label="View full photo" tabindex="0">
+                <img src="<%= project.image %>" alt="<%= tField(project, 'name') %>" class="pd-image" id="mainProjImg" style="cursor: zoom-in;" role="button" aria-label="View full photo" tabindex="0">
               </div>
             <% } %>
           </div>
 
           <div class="pd-info-col">
-            <% if ((lang === 'ar' && project.subtitle_ar) || project.subtitle) { %>
-              <p class="pd-subtitle"><%= lang === 'ar' && project.subtitle_ar ? project.subtitle_ar : project.subtitle %></p>
+            <% if (tField(project, 'subtitle')) { %>
+              <p class="pd-subtitle"><%= tField(project, 'subtitle') %></p>
             <% } %>
-            <h1 class="pd-title"><%= lang === 'ar' && project.name_ar ? project.name_ar : project.name %></h1>
+            <h1 class="pd-title"><%= tField(project, 'name') %></h1>
 
             <div class="pd-meta">
               <div class="pd-meta-row">
                 <span class="pd-meta-label"><%= t.projects.pdSector %></span>
-                <span class="pd-meta-value"><%= lang === 'ar' && project.sector_ar ? project.sector_ar : project.sector %></span>
+                <span class="pd-meta-value"><%= tField(project, 'sector') %></span>
               </div>
               <div class="pd-meta-row">
                 <span class="pd-meta-label"><%= t.projects.pdLocation %></span>
-                <span class="pd-meta-value"><%= lang === 'ar' && project.location_ar ? project.location_ar : project.location %></span>
+                <span class="pd-meta-value"><%= tField(project, 'location') %></span>
               </div>
           </div>
 

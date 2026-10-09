@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   <meta name="description" content="<%= description %>">
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= description %>">
@@ -17,8 +18,8 @@
   <main id="main-content">
     <div class="page-intro">
       <div class="container container--tight">
-        <h1>Cookie Policy</h1>
-        <p class="legal-date">Last updated: September 2026</p>
+        <h1><%- t.cookies.h1 %></h1>
+        <p class="legal-date"><%- t.cookies.updated %></p>
       </div>
     </div>
 
@@ -26,76 +27,76 @@
       <div class="container container--tight">
         <article class="legal-content">
 
-          <h2>1. What Are Cookies</h2>
-          <p>Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work efficiently and to provide information to the site owners.</p>
+          <h2><%- t.cookies.s1H %></h2>
+          <p><%- t.cookies.s1P %></p>
 
-          <h2>2. Cookies We Use</h2>
-          <p>We use a minimal number of cookies, limited to what is necessary for the website to function and to respect your preferences.</p>
-
-          <h3>Essential Cookies</h3>
+          <h2><%- t.cookies.s2H %></h2>
+          <p><%- t.cookies.s2P %></p>
+          <h3><%- t.cookies.essentialH %></h3>
           <table class="legal-table">
             <thead>
               <tr>
-                <th>Cookie Name</th>
-                <th>Purpose</th>
-                <th>Duration</th>
+                <th><%- t.cookies.thName %></th>
+                <th><%- t.cookies.thPurpose %></th>
+                <th><%- t.cookies.thDuration %></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>cookie_consent</td>
-                <td>Stores your cookie consent preference so we do not ask you again on every visit.</td>
-                <td>365 days</td>
+                <td><%- t.cookies.consentPurpose %></td>
+                <td><%- t.cookies.consentDuration %></td>
               </tr>
             </tbody>
           </table>
-          <p>Essential cookies are necessary for the website to function. They cannot be disabled.</p>
-
-          <h3>Analytics Cookies (Optional)</h3>
-          <p>If you accept cookies through our consent banner, we may use Google Analytics to understand how visitors use the website. These cookies collect anonymous, aggregated data only.</p>
+          <p><%- t.cookies.essentialNote %></p>
+          <h3><%- t.cookies.analyticsH %></h3>
+          <p><%- t.cookies.analyticsP %></p>
           <table class="legal-table">
             <thead>
               <tr>
-                <th>Cookie Name</th>
-                <th>Purpose</th>
-                <th>Duration</th>
+                <th><%- t.cookies.thName %></th>
+                <th><%- t.cookies.thPurpose %></th>
+                <th><%- t.cookies.thDuration %></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>_ga</td>
-                <td>Google Analytics: distinguishes unique users</td>
-                <td>2 years</td>
+                <td><%- t.cookies.gaPurpose %></td>
+                <td><%- t.cookies.twoYears %></td>
               </tr>
               <tr>
                 <td>_ga_*</td>
-                <td>Google Analytics: maintains session state</td>
-                <td>2 years</td>
+                <td><%- t.cookies.gaSessionPurpose %></td>
+                <td><%- t.cookies.twoYears %></td>
               </tr>
             </tbody>
           </table>
-          <p>Analytics cookies are only set if you click "Accept" on our cookie consent banner. If you click "Decline", no analytics cookies are set.</p>
+          <p><%- t.cookies.analyticsNote %></p>
 
-          <h2>3. Third-Party Cookies</h2>
-          <p>Our website does not embed third-party content (such as social media widgets or video players) that would set additional cookies. Links to external services such as Google Maps or WhatsApp open in a new tab and are governed by those services' own cookie policies.</p>
+          <h2><%- t.cookies.s3H %></h2>
+          <p><%- t.cookies.s3P %></p>
 
-          <h2>4. How to Manage Cookies</h2>
-          <p>You can manage cookies through:</p>
+          <h2><%- t.cookies.s4H %></h2>
+          <p><%- t.cookies.s4Intro %></p>
           <ul>
-            <li><strong>Our cookie consent banner</strong> Click "Decline" to reject non-essential cookies. Your preference is saved and the banner will not appear again.</li>
-            <li><strong>Your browser settings</strong> Most browsers allow you to block or delete cookies. Refer to your browser's help documentation for instructions. Note that blocking essential cookies may affect website functionality.</li>
+            <li><%- t.cookies.s4L1 %></li>
+            <li><%- t.cookies.s4L2 %></li>
           </ul>
-          <p>To reset your cookie preference on our website, clear the <code>cookie_consent</code> item from your browser's local storage.</p>
+          <p><%- t.cookies.s4P %></p>
 
-          <h2>5. Updates to This Policy</h2>
-          <p>We may update this Cookie Policy if we change the cookies we use. Any changes will be posted on this page with an updated date.</p>
+          <h2><%- t.cookies.s5H %></h2>
+          <p><%- t.cookies.s5P %></p>
 
-          <h2>6. Contact Us</h2>
-          <p>For questions about this Cookie Policy, contact us at:</p>
+          <h2><%- t.cookies.s6H %></h2>
+          <p><%- t.cookies.s6P %></p>
           <div class="legal-address">
-            <p><strong>The Citadels</strong></p>
-            <p>Phone: <a href="tel:+201069631049">+20 106 963 1049</a></p>
-            <p>Email: <a href="mailto:info@thecitadels.com">info@thecitadels.com</a></p>
+            <p><strong><%- t.legal.company %></strong></p>
+            <p><%- t.legal.phone %>: <a href="tel:+201069631049">+20 106 963 1049</a></p>
+            <p><%- t.legal.phone %>: <a href="tel:+201200142107">+20 120 014 2107</a></p>
+            <p><%- t.legal.whatsapp %>: <a href="https://wa.me/201069631049">+20 106 963 1049</a></p>
+            <p><%- t.legal.email %>: <a href="mailto:info@thecitadels.com">info@thecitadels.com</a></p>
           </div>
 
         </article>

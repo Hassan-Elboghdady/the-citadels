@@ -8,10 +8,10 @@
         <p class="footer__brand-text"><%= t.footer.desc %></p>
         <div class="footer__social">
           <a href="https://www.facebook.com/share/18TZFXeKWy/" target="_blank" rel="noopener noreferrer" aria-label="The Citadels on Facebook" class="footer__social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/the-citadels-llc-9639111a1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="The Citadels on LinkedIn" class="footer__social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#0077b5" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
           </a>
         </div>
       </div>
@@ -28,12 +28,17 @@
       </div>
       <div>
         <p class="footer__col-title"><%= t.footer.locationTitle %></p>
-        <address class="footer__address">
-          <%- t.footer.addr %>
+          <a href="https://www.google.com/maps?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo">
+            <address class="footer__address">
+              <%- t.footer.addr %></a>
           <span class="footer__address-divider" aria-hidden="true"></span>
           <span class="footer__contact-links">
-            <a href="tel:+201200142107">+20 120 014 2107</a>
-            <a href="tel:+201069631049">+20 106 963 1049</a>
+            <a href="tel:+201200142107">
+              <bdi dir="ltr">+20 120 014 2107</bdi>
+            </a>
+            <a href="tel:+201069631049">
+              <bdi dir="ltr">+20 106 963 1049</bdi>
+            </a>
             <a href="mailto:info@thecitadels.com">info@thecitadels.com</a>
           </span>
         </address>
@@ -42,9 +47,9 @@
     <div class="footer__bottom">
       <p>&copy; <%= new Date().getFullYear() %> <%= t.footer.copyright %></p>
       <div class="footer__legal">
-        <a href="/privacy-policy"><%= t.footer.privacy %></a>
-        <a href="/terms"><%= t.footer.terms %></a>
-        <a href="/cookie-policy"><%= t.footer.cookies %></a>
+        <a href="/<%= lang %>/privacy-policy"><%= t.footer.privacy %></a>
+        <a href="/<%= lang %>/terms"><%= t.footer.terms %></a>
+        <a href="/<%= lang %>/cookie-policy"><%= t.footer.cookies %></a>
       </div>
     </div>
   </div>

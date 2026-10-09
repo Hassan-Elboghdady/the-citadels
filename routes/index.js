@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 router.get('/about', (req, res) => {
   render(res, 'about', {
-    title: 'About | The Citadels',
+    title: 'About Us | The Citadels',
     description: 'Founded in 2009, The Citadels is a family-owned company with a proven track record in engineering, contracting, fit-out, and furniture solutions across Egypt.',
     currentPage: 'about'
   });
@@ -135,6 +135,30 @@ router.get('/ar/contact', (req, res) => {
   });
 });
 
+router.get('/ar/privacy-policy', (req, res) => {
+  render(res, 'privacy-policy', {
+    title: 'سياسة الخصوصية | The Citadels',
+    description: 'تعرّف على كيفية جمع The Citadels لبياناتك الشخصية واستخدامها وحمايتها.',
+    currentPage: 'privacy-policy'
+  });
+});
+
+router.get('/ar/terms', (req, res) => {
+  render(res, 'terms', {
+    title: 'الشروط والأحكام | The Citadels',
+    description: 'الشروط والأحكام التي تحكم استخدام موقع The Citadels وخدماتها.',
+    currentPage: 'terms'
+  });
+});
+
+router.get('/ar/cookie-policy', (req, res) => {
+  render(res, 'cookie-policy', {
+    title: 'سياسة ملفات تعريف الارتباط | The Citadels',
+    description: 'تعرّف على ملفات تعريف الارتباط المستخدمة في موقع The Citadels وكيفية إدارتها.',
+    currentPage: 'cookie-policy'
+  });
+});
+
 router.get('/ar/partners/able',    (req, res) => render(res, 'partner-able',    { title: 'ABLE | أثاث فنادق وسكني | The Citadels', description: 'ABLE أكبر شركة تصنيع أثاث متخصصة في التصميم المعاصر في أوروبا الشرقية بخبرة تتجاوز 30 عامًا.', currentPage: 'our-partners' }));
 router.get('/ar/partners/zivella', (req, res) => render(res, 'partner-zivella', { title: 'Zivella | أثاث مكاتب | The Citadels', description: 'تصدر Zivella منتجاتها إلى ما يقارب 50 دولة بتصاميم تعزز الرفاهية والراحة.', currentPage: 'our-partners' }));
 router.get('/ar/partners/falmar',  (req, res) => render(res, 'partner-falmar',  { title: 'Falmar | أثاث مكاتب وتقسيمات | The Citadels', description: 'Falmar من إيطاليا، تصنع فواصل جدارية وأثاث مكاتب فاخراً منذ عام 1990.', currentPage: 'our-partners' }));
@@ -195,6 +219,30 @@ router.get('/it/contact', (req, res) => {
   });
 });
 
+router.get('/it/privacy-policy', (req, res) => {
+  render(res, 'privacy-policy', {
+    title: 'Informativa sulla Privacy | The Citadels',
+    description: 'Scopri come The Citadels raccoglie, utilizza e protegge i tuoi dati personali.',
+    currentPage: 'privacy-policy'
+  });
+});
+
+router.get('/it/terms', (req, res) => {
+  render(res, 'terms', {
+    title: 'Termini e Condizioni | The Citadels',
+    description: 'Termini e condizioni che regolano l\'uso del sito web e dei servizi di The Citadels.',
+    currentPage: 'terms'
+  });
+});
+
+router.get('/it/cookie-policy', (req, res) => {
+  render(res, 'cookie-policy', {
+    title: 'Cookie Policy | The Citadels',
+    description: 'Scopri i cookie utilizzati sul sito di The Citadels e come gestirli.',
+    currentPage: 'cookie-policy'
+  });
+});
+
 router.get('/it/partners/able',    (req, res) => render(res, 'partner-able',    { title: 'ABLE | Arredi Hotel e Residenziali | The Citadels', description: 'ABLE è il più grande produttore di arredi specializzato nel design contemporaneo in Europa orientale con oltre 30 anni di esperienza.', currentPage: 'our-partners' }));
 router.get('/it/partners/zivella', (req, res) => render(res, 'partner-zivella', { title: 'Zivella | Arredi per Ufficio | The Citadels', description: 'Zivella esporta in quasi 50 paesi creando design che promuovono il benessere.', currentPage: 'our-partners' }));
 router.get('/it/partners/falmar',  (req, res) => render(res, 'partner-falmar',  { title: 'Falmar | Arredi e Pareti Divisorie per Uffici | The Citadels', description: 'Falmar, con sede a Pesaro dal 1990, produce pareti divisorie e arredi per uffici di alta qualità.', currentPage: 'our-partners' }));
@@ -251,6 +299,30 @@ router.get('/fr/contact', (req, res) => {
     title: 'Contactez-nous | The Citadels',
     description: 'Prenez contact avec l\'équipe de The Citadels. Visitez notre salle d\'exposition, appelez-nous ou envoyez une demande pour des solutions d\'ameublement de qualité supérieure.',
     currentPage: 'contact'
+  });
+});
+
+router.get('/fr/privacy-policy', (req, res) => {
+  render(res, 'privacy-policy', {
+    title: 'Politique de confidentialité | The Citadels',
+    description: 'Découvrez comment The Citadels collecte, utilise et protège vos données personnelles.',
+    currentPage: 'privacy-policy'
+  });
+});
+
+router.get('/fr/terms', (req, res) => {
+  render(res, 'terms', {
+    title: 'Conditions générales | The Citadels',
+    description: 'Conditions générales régissant l\'utilisation du site web et des services de The Citadels.',
+    currentPage: 'terms'
+  });
+});
+
+router.get('/fr/cookie-policy', (req, res) => {
+  render(res, 'cookie-policy', {
+    title: 'Politique en matière de cookies | The Citadels',
+    description: 'Découvrez les cookies utilisés sur le site de The Citadels et comment les gérer.',
+    currentPage: 'cookie-policy'
   });
 });
 

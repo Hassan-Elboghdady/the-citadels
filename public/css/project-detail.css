@@ -426,7 +426,7 @@
   right: 28px;
   width: 44px;
   height: 44px;
-  background: rgba(255,255,255,0.1);
+  background: white;
   border: 1px solid rgba(255,255,255,0.2);
   cursor: pointer;
   display: flex;
@@ -434,11 +434,11 @@
   justify-content: center;
   transition: background 0.2s ease;
 }
-.pd-lightbox__close:hover { background: rgba(255,255,255,0.22); }
+.pd-lightbox__close:hover { background: #4a5940; }
 .pd-lightbox__close svg {
   width: 18px;
   height: 18px;
-  stroke: #fff;
+  stroke: #000000;
 }
 
 /* Side arrows in lightbox */
@@ -448,8 +448,8 @@
   transform: translateY(-50%);
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: white;
+  border: 1px solid #11111124;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -457,13 +457,13 @@
   transition: background 0.2s ease, transform 0.2s ease;
 }
 .pd-lightbox__arrow:hover {
-  background: rgba(255,255,255,0.22);
+  background: #4a5940;
   transform: translateY(-50%) scale(1.08);
 }
 .pd-lightbox__arrow svg {
   width: 22px;
   height: 22px;
-  stroke: #fff;
+  stroke: #000000;
 }
 .pd-lightbox__arrow--left  { left: 28px; }
 .pd-lightbox__arrow--right { right: 28px; }

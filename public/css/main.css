@@ -285,8 +285,8 @@ p:last-child { margin-bottom: 0; }
 }
 .nav-social__link:hover { color: #fff; }
 .nav-social__link svg {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   flex-shrink: 0;
 }
 .footer__col-title {

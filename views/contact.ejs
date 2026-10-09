@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   <meta name="description" content="<%= description %>">
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= description %>">
@@ -31,11 +32,18 @@
             <div class="contact-loc">
               <span class="eyebrow"><%= t.contact.locEyebrow %></span>
               <h3><%= t.contact.locTitle %></h3>
-              <address>
-                <%- t.contact.locAddress %>
-              </address>
-              <a href="tel:+201200142107" class="contact-phone">+20 120 014 2107</a><br>
-              <a href="tel:+201069631049" class="contact-phone">+20 106 963 1049</a>
+              <a href="https://www.google.com/maps?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo">
+                <address class="contact-phone">
+                  <%- t.contact.locAddress %>
+                </address>
+              </a>
+              <br>
+              <a href="tel:+201200142107"class="contact-phone">
+                <bdi dir="ltr">+20 120 014 2107</bdi>
+              </a><br>
+              <a href="tel:+201069631049" class="contact-phone">
+                <bdi dir="ltr">+20 106 963 1049</bdi>
+              </a>
             </div>
 
             <div class="contact-actions">

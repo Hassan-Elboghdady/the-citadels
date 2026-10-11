@@ -9,8 +9,11 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="stylesheet" href="/css/contact.min.css">
+  <% if (process.env.RECAPTCHA_SITE_KEY && process.env.RECAPTCHA_SITE_KEY !== 'your_recaptcha_site_key_here') { %>
+  <script src="https://www.google.com/recaptcha/api.js?render=<%= process.env.RECAPTCHA_SITE_KEY %>"></script>
+  <% } %>
 </head>
 <body>
   <%- include('partials/header') %>
@@ -146,6 +149,16 @@
 
   <%- include('partials/footer') %>
   <%- include('partials/cookie-consent') %>
-  <script src="/js/main.js"></script>
+  <script>
+    window.CONTACT_I18N = {
+      btnSending:   '<%= t.contact.btnSending %>',
+      successTitle: '<%= t.contact.successTitle %>',
+      successText:  '<%= t.contact.successText %>',
+      errorTitle:   '<%= t.contact.errorTitle %>',
+      errorText:    '<%= t.contact.errorText %>'
+    };
+    window.RECAPTCHA_SITE_KEY = '<%= process.env.RECAPTCHA_SITE_KEY || "" %>';
+  </script>
+  <script src="/js/main.min.js"></script>
 </body>
 </html>

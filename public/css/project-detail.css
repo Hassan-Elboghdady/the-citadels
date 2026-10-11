@@ -105,6 +105,7 @@
   background: #000;
   border-radius: 0;
   overflow: hidden;
+  direction: ltr;
   /* Match original image aspect ratio */
   aspect-ratio: 4 / 3;
 }
@@ -153,10 +154,15 @@
   opacity: 0;
 }
 .pd-inline-slider:hover .pd-inline-arrow { opacity: 1; }
+.pd-inline-arrow:focus-visible { opacity: 1; }
 .pd-inline-arrow:hover { background: #fff; }
-.pd-inline-arrow svg { width: 20px; height: 20px; stroke: var(--ink); }
+.pd-inline-arrow svg { width: 20px; height: 20px; stroke: var(--ink); pointer-events: none; }
 .pd-inline-arrow--left  { left: 12px; }
 .pd-inline-arrow--right { right: 12px; }
+
+@media (hover: none) {
+  .pd-inline-arrow { opacity: 1; }
+}
 
 /* Dots */
 .pd-inline-dots {
@@ -380,6 +386,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  direction: ltr;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -439,6 +446,7 @@
   width: 18px;
   height: 18px;
   stroke: #000000;
+  pointer-events: none;
 }
 
 /* Side arrows in lightbox */
@@ -464,6 +472,7 @@
   width: 22px;
   height: 22px;
   stroke: #000000;
+  pointer-events: none;
 }
 .pd-lightbox__arrow--left  { left: 28px; }
 .pd-lightbox__arrow--right { right: 28px; }

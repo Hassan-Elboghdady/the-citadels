@@ -342,4 +342,139 @@ router.get('/fr/projects/:slug', (req, res) => {
   });
 });
 
+// ═══════════════════════════════════════════════════════════════════════════════
+//  API ROUTES
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const { Resend } = require('resend');
+const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder');
+const { body, validationResult } = require('express-validator');
+const Inquiry = require('../models/Inquiry');
+
+// ── Validation & Sanitization Rules ───────────────────────────────────────────
+const contactValidationRules = [
+  body('name')
+    .trim()                                          // Remove leading/trailing spaces
+    .notEmpty().withMessage('Name is required.')
+    .isLength({ min: 2, max: 100 }).withMessage('Name must be between 2 and 100 characters.')
+    .escape(),                                       // Convert <script> → &lt;script&gt; (XSS protection)
+
+  body('phone')
+    .trim()
+    .notEmpty().withMessage('Phone number is required.')
+    .isLength({ min: 7, max: 20 }).withMessage('Phone must be between 7 and 20 characters.')
+    .matches(/^[+\d\s\-().]+$/).withMessage('Phone number contains invalid characters.')
+    .escape(),
+
+  body('email')
+    .trim()
+    .notEmpty().withMessage('Email address is required.')
+    .isEmail().withMessage('Please provide a valid email address.')
+    .isLength({ max: 254 }).withMessage('Email address is too long.')
+    .normalizeEmail(),                               // Lowercases and normalises (foo+tag@gmail.com → foo@gmail.com)
+
+  body('inquiryType')
+    .trim()
+    .notEmpty().withMessage('Subject / inquiry type is required.')
+    .isLength({ max: 200 }).withMessage('Subject must be under 200 characters.')
+    .escape(),
+
+  body('message')
+    .trim()
+    .notEmpty().withMessage('Message is required.')
+    .isLength({ min: 10, max: 5000 }).withMessage('Message must be between 10 and 5000 characters.')
+    .escape(),
+
+  body('preferredContact')
+    .optional()
+    .trim()
+    .isIn(['phone', 'whatsapp', 'email']).withMessage('Invalid preferred contact method.')
+    .escape(),
+];
+
+router.post('/api/contact', contactValidationRules, async (req, res) => {
+  try {
+    // 1. Check express-validator results
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        message: errors.array()[0].msg, // Return first error to user
+        errors: errors.array()          // Full list for debugging
+      });
+    }
+
+    const { name, phone, email, inquiryType, message, preferredContact, recaptchaToken } = req.body;
+
+    // 2. reCAPTCHA v3 verification (skip if keys not configured)
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    if (secretKey && secretKey !== 'your_recaptcha_secret_key_here') {
+      if (!recaptchaToken) {
+        return res.status(400).json({ success: false, message: 'reCAPTCHA token missing.' });
+      }
+      const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+      const verifyRes = await fetch(verifyUrl, { method: 'POST' });
+      const verifyData = await verifyRes.json();
+      // Score below 0.5 = likely a bot (0.0 = bot, 1.0 = human)
+      if (!verifyData.success || verifyData.score < 0.5) {
+        return res.status(400).json({ success: false, message: 'reCAPTCHA verification failed. Please try again.' });
+      }
+    }
+
+    // 2. Save to MongoDB (if configured)
+    let savedInquiry;
+    if (process.env.MONGO_URI && process.env.MONGO_URI !== 'mongodb+srv://your_username:your_password@cluster0.mongodb.net/citadels?retryWrites=true&w=majority') {
+      const inquiry = new Inquiry({
+        name,
+        phone,
+        email,
+        inquiryType,
+        message,
+        preferredContact
+      });
+      savedInquiry = await inquiry.save();
+    }
+
+    // 3. Send Email Notification via Resend
+    if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== 're_your_resend_api_key_here') {
+      await resend.emails.send({
+        from: process.env.CONTACT_EMAIL_FROM || 'onboarding@resend.dev', // Resend requires this exact sandbox email unless a domain is verified
+        to: process.env.CONTACT_EMAIL_TO || 'hello@the-citadels.com',
+        subject: `New Inquiry from ${name} - ${inquiryType}`,
+        text: `
+          New Contact Form Submission:
+          
+          Name: ${name}
+          Phone: ${phone}
+          Email: ${email}
+          Inquiry Type: ${inquiryType}
+          Preferred Contact: ${preferredContact}
+          
+          Message:
+          ${message}
+          
+          ${savedInquiry ? 'This submission was also saved to your database.' : ''}
+        `,
+        html: `
+          <h3>New Contact Form Submission</h3>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Inquiry Type:</strong> ${inquiryType}</p>
+          <p><strong>Preferred Contact:</strong> ${preferredContact}</p>
+          <p><strong>Message:</strong></p>
+          <blockquote style="border-left: 4px solid #ccc; padding-left: 10px;">${message}</blockquote>
+          <p style="font-size: 0.8em; color: #888;">${savedInquiry ? 'This submission was also saved to your database.' : ''}</p>
+        `
+      });
+    }
+
+    // 4. Return success to the frontend
+    res.json({ success: true, message: 'Inquiry submitted successfully.' });
+  } catch (error) {
+    console.error('Contact API Error:', error);
+    res.status(500).json({ success: false, message: 'Server error while processing your inquiry.' });
+  }
+});
+
 module.exports = router;

@@ -9,8 +9,8 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/projects.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="stylesheet" href="/css/projects.min.css">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -39,8 +39,8 @@
          aria-label="View NCC Monorail Depot Buildings">
         <div class="proj-row__img-col">
           <div class="proj-row__img-wrap">
-            <img src="/images/our-projects/ncc-monorail-depot-buildings/100_4770.JPG"
-                 alt="NCC Monorail Depot Buildings" class="proj-row__img">
+            <img src="/images/our-projects/ncc-monorail-depot-buildings/100_4770.webp"
+                 alt="NCC Monorail Depot Buildings" class="proj-row__img" fetchpriority="high" decoding="async">
           </div>
         </div>
         <div class="proj-row__info">
@@ -65,8 +65,8 @@
          aria-label="View NCC Monorail Stations">
         <div class="proj-row__img-col">
           <div class="proj-row__img-wrap">
-            <img src="/images/our-projects/ncc-monorail-stations/STATION ELEVATION.JPG"
-                 alt="NCC Monorail Stations" class="proj-row__img">
+            <img src="/images/our-projects/ncc-monorail-stations/STATION ELEVATION.webp"
+                 alt="NCC Monorail Stations" class="proj-row__img" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="proj-row__info">
@@ -91,8 +91,8 @@
          aria-label="View West Nile Monorail">
         <div class="proj-row__img-col">
           <div class="proj-row__img-wrap">
-            <img src="/images/our-projects/west-nile-monorail/mono.jpg"
-                 alt="West Nile Monorail OCC Control Consoles" class="proj-row__img">
+            <img src="/images/our-projects/west-nile-monorail/mono.webp"
+                 alt="West Nile Monorail OCC Control Consoles" class="proj-row__img" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="proj-row__info">
@@ -135,6 +135,6 @@
 
   <%- include('partials/footer') %>
   <%- include('partials/cookie-consent') %>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.min.js"></script>
 </body>
 </html>

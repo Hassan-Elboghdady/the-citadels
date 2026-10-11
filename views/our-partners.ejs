@@ -9,8 +9,8 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/our-partners.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="stylesheet" href="/css/our-partners.min.css">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -37,13 +37,13 @@
           <!-- ABLE -->
           <div class="partner-card" id="hotel-residential">
             <a href="<%= pfx %>/partners/able" class="partner-card__img-wrap" aria-label="View ABLE partner details">
-              <img src="/images/partners-projects/able-hospitality-project.png" alt="Hotel & Residential furniture by ABLE" class="partner-card__img slider-img-1">
-              <img src="/images/partners-projects/able-residential-project.png" alt="ABLE residential furniture" class="partner-card__img slider-img-2">
+              <img src="/images/partners-projects/able-hospitality-project.webp" alt="Hotel & Residential furniture by ABLE" class="partner-card__img slider-img-1" fetchpriority="high" decoding="async">
+              <img src="/images/partners-projects/able-residential-project.webp" alt="ABLE residential furniture" class="partner-card__img slider-img-2" loading="lazy" decoding="async">
               <div class="partner-card__overlay"></div>
             </a>
             <div class="partner-card__body">
               <div class="partner-card__logo-wrap">
-                <img src="/images/partners/Able-Partner.png" alt="ABLE Logo" class="partner-card__logo">
+                <img src="/images/partners/Able-Partner.png" alt="ABLE Logo" class="partner-card__logo" loading="lazy" decoding="async">
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secHotel %></span>
@@ -66,12 +66,12 @@
           <!-- Zivella -->
           <div class="partner-card" id="office-zivella">
             <a href="<%= pfx %>/partners/zivella" class="partner-card__img-wrap" aria-label="View Zivella partner details">
-              <img src="/images/partners-projects/zivella-project.png" alt="Office furniture by Zivella" class="partner-card__img">
+              <img src="/images/partners-projects/zivella-project.webp" alt="Office furniture by Zivella" class="partner-card__img" loading="lazy" decoding="async">
               <div class="partner-card__overlay"></div>
             </a>
             <div class="partner-card__body">
               <div class="partner-card__logo-wrap">
-                <img src="/images/partners/Zivella-Partner.png" alt="Zivella Logo" class="partner-card__logo">
+                <img src="/images/partners/Zivella-Partner.png" alt="Zivella Logo" class="partner-card__logo" loading="lazy" decoding="async">
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secOffice %></span>
@@ -94,13 +94,13 @@
           <!-- Falmar -->
           <div class="partner-card" id="office-falmar">
             <a href="<%= pfx %>/partners/falmar" class="partner-card__img-wrap" aria-label="View Falmar partner details">
-              <img src="/images/partners-projects/falmar-project1.png" alt="Office partitions by Falmar" class="partner-card__img slider-img-1">
-              <img src="/images/partners-projects/falmar-project2.png" alt="Falmar office furniture" class="partner-card__img slider-img-2">
+              <img src="/images/partners-projects/falmar-project1.webp" alt="Office partitions by Falmar" class="partner-card__img slider-img-1" loading="lazy" decoding="async">
+              <img src="/images/partners-projects/falmar-project2.webp" alt="Falmar office furniture" class="partner-card__img slider-img-2" loading="lazy" decoding="async">
               <div class="partner-card__overlay"></div>
             </a>
             <div class="partner-card__body">
               <div class="partner-card__logo-wrap">
-                <img src="/images/partners/Falmar-Partner.png" alt="Falmar Logo" class="partner-card__logo">
+                <img src="/images/partners/Falmar-Partner.png" alt="Falmar Logo" class="partner-card__logo" loading="lazy" decoding="async">
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secPartitions %></span>
@@ -123,12 +123,12 @@
           <!-- Bosco -->
           <div class="partner-card" id="control-rooms">
             <a href="<%= pfx %>/partners/bosco" class="partner-card__img-wrap" aria-label="View Bosco partner details">
-              <img src="/images/partners-projects/bosco-project.png" alt="Control room furniture by Bosco" class="partner-card__img">
+              <img src="/images/partners-projects/bosco-project.webp" alt="Control room furniture by Bosco" class="partner-card__img" loading="lazy" decoding="async">
               <div class="partner-card__overlay"></div>
             </a>
             <div class="partner-card__body">
               <div class="partner-card__logo-wrap">
-                <img src="/images/partners/Bosco-Partner.png" alt="Bosco Logo" class="partner-card__logo">
+                <img src="/images/partners/Bosco-Partner.png" alt="Bosco Logo" class="partner-card__logo" loading="lazy" decoding="async">
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secControl %></span>
@@ -203,6 +203,6 @@
 
   <%- include('partials/footer') %>
   <%- include('partials/cookie-consent') %>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.min.js"></script>
 </body>
 </html>

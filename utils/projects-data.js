@@ -17,17 +17,17 @@ const projects = [
     "location_ar": "العاصمة الإدارية · القاهرة الجديدة · مدينة نصر",
     "location_it": "Nuova Capitale · Nuova Cairo · Nasr City",
     "location_fr": "Nouvelle Capitale · Nouveau Caire · Nasr City",
-    "image": "/images/our-projects/ncc-monorail-depot-buildings/100_4770.JPG",
+    "image": "/images/our-projects/ncc-monorail-depot-buildings/100_4770.webp",
     "description": "Supply and installation of ergonomic and O&M furniture for the NCC Monorail Depot Buildings across three sites — New Capital City, New Cairo, and Nasr City. Furniture was specified to meet the demanding 24/7 operational requirements of depot environments, covering workstations, operator consoles, storage, and administrative areas throughout each facility.",
     "description_ar": "توريد وتركيب أثاث مريح ومعدات التشغيل والصيانة لمباني مستودعات مونوريل العاصمة عبر ثلاثة مواقع: العاصمة الإدارية، القاهرة الجديدة، ومدينة نصر. تم تحديد الأثاث لتلبية متطلبات التشغيل الصعبة على مدار 24 ساعة طوال أيام الأسبوع لبيئات المستودعات، وتغطية محطات العمل ووحدات تحكم المشغلين والتخزين والمناطق الإدارية في كل منشأة.",
     "description_it": "Fornitura e installazione di mobili ergonomici e O&M per gli edifici del deposito della monorotaia NCC in tre siti: Nuova Capitale, Nuova Cairo e Nasr City. I mobili sono stati specificati per soddisfare i rigorosi requisiti operativi 24/7 degli ambienti del deposito, coprendo postazioni di lavoro, console operatore, aree di archiviazione e amministrative in ogni struttura.",
     "description_fr": "Fourniture et installation de mobilier ergonomique et d'exploitation-maintenance pour les bâtiments du dépôt du monorail NCC sur trois sites : Nouvelle Capitale, Nouveau Caire et Nasr City. Le mobilier a été spécifié pour répondre aux exigences opérationnelles contraignantes 24h/24 et 7j/7 des environnements de dépôt, couvrant les postes de travail, les consoles opérateurs, les zones de stockage et les espaces administratifs de chaque installation.",
     "gallery": [
-      "/images/our-projects/ncc-monorail-depot-buildings/100_4770.JPG",
-      "/images/our-projects/ncc-monorail-depot-buildings/100_4666.JPG",
-      "/images/our-projects/ncc-monorail-depot-buildings/100_4699.JPG",
-      "/images/our-projects/ncc-monorail-depot-buildings/100_4999.jpg",
-      "/images/our-projects/ncc-monorail-depot-buildings/8.jpg"
+      "/images/our-projects/ncc-monorail-depot-buildings/100_4770.webp",
+      "/images/our-projects/ncc-monorail-depot-buildings/100_4666.webp",
+      "/images/our-projects/ncc-monorail-depot-buildings/100_4699.webp",
+      "/images/our-projects/ncc-monorail-depot-buildings/100_4999.webp",
+      "/images/our-projects/ncc-monorail-depot-buildings/8.webp"
     ]
   },
   {
@@ -48,16 +48,16 @@ const projects = [
     "location_ar": "العاصمة الإدارية · القاهرة الجديدة · مدينة نصر",
     "location_it": "Nuova Capitale · Nuova Cairo · Nasr City",
     "location_fr": "Nouvelle Capitale · Nouveau Caire · Nasr City",
-    "image": "/images/our-projects/ncc-monorail-stations/STATION ELEVATION.JPG",
+    "image": "/images/our-projects/ncc-monorail-stations/STATION ELEVATION.webp",
     "description": "Supply and installation of ergonomic and O&M furniture for the NCC Monorail Stations across three sites — New Capital City, New Cairo, and Nasr City. Furniture was specified to meet the demanding operational requirements of monorail station environments.",
     "description_ar": "توريد وتركيب أثاث مريح ومعدات التشغيل والصيانة لمحطات مونوريل العاصمة عبر ثلاثة مواقع: العاصمة الإدارية، القاهرة الجديدة، ومدينة نصر. تم تحديد الأثاث لتلبية متطلبات التشغيل الصعبة لبيئات محطات المونوريل.",
     "description_it": "Fornitura e installazione di mobili ergonomici e O&M per le stazioni della monorotaia NCC in tre siti: Nuova Capitale, Nuova Cairo e Nasr City. I mobili sono stati specificati per soddisfare i rigorosi requisiti operativi degli ambienti delle stazioni della monorotaia.",
     "description_fr": "Fourniture et installation de mobilier ergonomique et d'exploitation-maintenance pour les stations du monorail NCC sur trois sites : Nouvelle Capitale, Nouveau Caire et Nasr City. Le mobilier a été spécifié pour répondre aux exigences opérationnelles contraignantes des environnements de stations de monorail.",
     "gallery": [
-      "/images/our-projects/ncc-monorail-stations/STATION ELEVATION.JPG",
-      "/images/our-projects/ncc-monorail-stations/108 - TOM 2.JPG",
-      "/images/our-projects/ncc-monorail-stations/116 - SMO.JPG",
-      "/images/our-projects/ncc-monorail-stations/132 - SPARE ROOM.JPG"
+      "/images/our-projects/ncc-monorail-stations/STATION ELEVATION.webp",
+      "/images/our-projects/ncc-monorail-stations/108 - TOM 2.webp",
+      "/images/our-projects/ncc-monorail-stations/116 - SMO.webp",
+      "/images/our-projects/ncc-monorail-stations/132 - SPARE ROOM.webp"
     ]
   },
   {
@@ -78,16 +78,16 @@ const projects = [
     "location_ar": "الجيزة · مدينة 6 أكتوبر",
     "location_it": "Giza · Città del 6 Ottobre",
     "location_fr": "Gizeh · Ville du 6 Octobre",
-    "image": "/images/our-projects/west-nile-monorail/mono.jpg",
+    "image": "/images/our-projects/west-nile-monorail/mono.webp",
     "description": "Supply and installation of OCC control consoles for the West Nile Monorail project across Giza and 6th of October City. Custom-configured operator consoles designed to meet the demanding 24/7 operational requirements of monorail control environments.",
     "description_ar": "توريد وتركيب وحدات تحكم المشغلين لمشروع مونوريل غرب النيل عبر الجيزة ومدينة 6 أكتوبر. وحدات تحكم مشغلين مخصصة تم تصميمها لتلبية متطلبات التشغيل الصعبة على مدار 24 ساعة طوال أيام الأسبوع لبيئات التحكم في المونوريل.",
     "description_it": "Fornitura e installazione di console di controllo OCC per il progetto della monorotaia del Nilo Occidentale a Giza e nella Città del 6 Ottobre. Console operatore configurate su misura e progettate per soddisfare i rigorosi requisiti operativi 24/7 degli ambienti di controllo della monorotaia.",
     "description_fr": "Fourniture et installation de consoles de contrôle OCC pour le projet du monorail de West Nile à Gizeh et dans la Ville du 6 Octobre. Consoles opérateurs configurées sur mesure et conçues pour répondre aux exigences opérationnelles contraignantes 24h/24 et 7j/7 des environnements de contrôle de monorail.",
     "gallery": [
-      "/images/our-projects/west-nile-monorail/mono.jpg",
-      "/images/our-projects/west-nile-monorail/100_4944.jpeg",
-      "/images/our-projects/west-nile-monorail/100_5920.jpg",
-      "/images/our-projects/west-nile-monorail/100_5939.jpg"
+      "/images/our-projects/west-nile-monorail/mono.webp",
+      "/images/our-projects/west-nile-monorail/100_4944.webp",
+      "/images/our-projects/west-nile-monorail/100_5920.webp",
+      "/images/our-projects/west-nile-monorail/100_5939.webp"
     ]
   },
   {

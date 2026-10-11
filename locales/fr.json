@@ -131,7 +131,12 @@
     "prefWhatsapp": "WhatsApp",
     "prefEmail": "E-mail",
     "consentText": "J'accepte que The Citadels traite mes données personnelles afin de répondre à cette demande. Mes données ne seront pas partagées avec des tiers. Consultez notre <a href=\"/privacy-policy\">Politique de confidentialité</a>.",
-    "btnSend": "Envoyer la demande"
+    "btnSend": "Envoyer la demande",
+    "btnSending": "Envoi en cours...",
+    "successTitle": "Merci pour votre demande.",
+    "successText": "Nous vous répondrons dans un jour ouvré.",
+    "errorTitle": "Une erreur est survenue.",
+    "errorText": "Veuillez réessayer plus tard ou nous contacter directement."
   },
   "partners": {
     "eyebrow": "Le réseau The Citadels",
@@ -197,7 +202,10 @@
     "copyright": "The Citadels. Tous droits réservés.",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions générales",
-    "cookies": "Politique en matière de cookies"
+    "cookies": "Politique en matière de cookies",
+    "cookieBannerText": "Ce site utilise des cookies essentiels pour assurer son bon fonctionnement. Nous n'utilisons pas de cookies de suivi ou publicitaires sans votre consentement. En savoir plus dans notre",
+    "cookieAccept": "Accepter",
+    "cookieDecline": "Refuser"
   },
   "partnerDetail": {
     "back": "Nos partenaires",
@@ -401,6 +409,12 @@
     "eyebrow": "Erreur 404",
     "h1": "Page introuvable",
     "desc": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "button": "Retour à l'accueil"
+  },
+  "error500": {
+    "eyebrow": "Erreur 500",
+    "h1": "Une erreur est survenue",
+    "desc": "Une erreur interne s'est produite sur le serveur. Veuillez réessayer ultérieurement.",
     "button": "Retour à l'accueil"
   }
 }

@@ -6,8 +6,8 @@
   <title><%= title %></title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   <meta name="description" content="<%= description %>">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/partner-detail.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="stylesheet" href="/css/partner-detail.min.css">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -16,14 +16,14 @@
 
     <!-- Hero -->
     <div class="partner-hero">
-      <img src="\images\partners-projects\zivella-project.png" alt="Office Furniture by Zivella" class="partner-hero__img">
+      <img src="/images/partners-projects/zivella-project.webp" alt="Office Furniture by Zivella" class="partner-hero__img" fetchpriority="high" decoding="async">
       <div class="partner-hero__overlay"></div>
       <div class="partner-hero__content">
         <a href="<%= pfx %>/our-partners#office-zivella" class="partner-hero__back partner-hero__back--desktop">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           <%= t.partnerDetail.back %>
         </a>
-        <img src="/images/partners/Zivella-Partner.png" alt="Zivella" class="partner-hero__logo">
+        <img src="/images/partners/Zivella-Partner.png" alt="Zivella" class="partner-hero__logo" fetchpriority="high" decoding="async">
         <a href="#partner-body" class="partner-hero__scroll">
           <span><%= t.partnerDetail.scroll %></span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -47,7 +47,7 @@
           <aside class="partner-sidebar">
             <div class="partner-sidebar__card">
               <div class="partner-sidebar__logo-wrap">
-                <img src="/images/partners/Zivella-Partner.png" alt="Zivella logo" class="partner-sidebar__logo">
+                <img src="/images/partners/Zivella-Partner.png" alt="Zivella logo" class="partner-sidebar__logo" loading="lazy" decoding="async">
               </div>
               <div class="partner-sidebar__info">
                 <div class="partner-sidebar__row">
@@ -109,6 +109,6 @@
 
   <%- include('partials/footer') %>
   <%- include('partials/cookie-consent') %>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.min.js"></script>
 </body>
 </html>

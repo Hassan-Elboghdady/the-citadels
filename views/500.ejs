@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= t.dir %>">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <title><%= title %></title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/main.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main id="main-content">
+    <section style="min-height: 60vh; display: flex; align-items: center; padding: 120px 0;">
+      <div class="container" style="max-width: 560px;">
+        <span class="eyebrow"><%= (t.error500 && t.error500.eyebrow) ? t.error500.eyebrow : 'Error 500' %></span>
+        <h1 style="margin-bottom: 20px;"><%= (t.error500 && t.error500.h1) ? t.error500.h1 : 'Internal Server Error' %></h1>
+        <p class="lead" style="margin-bottom: 36px;"><%= (t.error500 && t.error500.desc) ? t.error500.desc : 'An unexpected error occurred. Please try again shortly.' %></p>
+        <a href="<%= lang === 'en' ? '/' : '/' + lang %>" class="btn btn--dark" id="home-link-500"><%= (t.error500 && t.error500.button) ? t.error500.button : 'Return to Home' %></a>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.min.js"></script>
+</body>
+</html>

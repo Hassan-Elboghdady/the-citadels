@@ -259,3 +259,14 @@ a.partner-card__img-wrap {
   .cta-band { padding: 64px 0; }
   .cta-band__inner { grid-template-columns: 1fr; gap: 28px; }
 }
+
+/* Arabic Enhancements */
+[lang="ar"] .partner-card__link {
+  font-size: 13px;
+  font-weight: 700;
+  gap: 12px;
+}
+/* Flip the first link's arrow in RTL */
+[lang="ar"] .partner-card__link:first-child svg {
+  transform: scaleX(-1);
+}

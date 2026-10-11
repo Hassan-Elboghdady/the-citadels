@@ -3,7 +3,7 @@
     <div class="footer__top">
       <div>
         <div class="footer__brand">
-          <img src="/images/logo.png" alt="The Citadels logo" class="footer__logo">
+          <img src="/images/logo.png" alt="The Citadels logo" class="footer__logo" loading="lazy" decoding="async">
         </div>
         <p class="footer__brand-text"><%= t.footer.desc %></p>
         <div class="footer__social">
@@ -47,9 +47,9 @@
     <div class="footer__bottom">
       <p>&copy; <%= new Date().getFullYear() %> <%= t.footer.copyright %></p>
       <div class="footer__legal">
-        <a href="/<%= lang %>/privacy-policy"><%= t.footer.privacy %></a>
-        <a href="/<%= lang %>/terms"><%= t.footer.terms %></a>
-        <a href="/<%= lang %>/cookie-policy"><%= t.footer.cookies %></a>
+        <a href="<%= pfx %>/privacy-policy"><%= t.footer.privacy %></a>
+        <a href="<%= pfx %>/terms"><%= t.footer.terms %></a>
+        <a href="<%= pfx %>/cookie-policy"><%= t.footer.cookies %></a>
       </div>
     </div>
   </div>

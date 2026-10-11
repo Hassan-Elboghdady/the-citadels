@@ -111,9 +111,9 @@
         message: 'Please enter a valid email address.'
       },
       {
-        input: document.getElementById('contact-inquiry'),
-        error: document.getElementById('contact-inquiry-error'),
-        message: 'Please select an inquiry type.'
+        input: document.getElementById('contact-subject'),
+        error: document.getElementById('contact-subject-error'),
+        message: 'Please enter a subject.'
       },
       {
         input: document.getElementById('contact-message'),
@@ -233,21 +233,97 @@
         return;
       }
 
-      // Form is valid - show confirmation
-      // In production, this would submit to a backend endpoint
+      // Gather data
+      var formData = {
+        name: document.getElementById('contact-name').value,
+        phone: document.getElementById('contact-phone').value,
+        email: document.getElementById('contact-email-input').value,
+        inquiryType: document.getElementById('contact-subject').value,
+        message: document.getElementById('contact-message').value,
+        preferredContact: document.querySelector('input[name="preferred-contact"]:checked') ? document.querySelector('input[name="preferred-contact"]:checked').value : 'email'
+      };
+
       var submitBtn = document.getElementById('contact-submit');
+      var originalBtnText = submitBtn ? submitBtn.textContent : 'Submit';
+      var i18n = window.CONTACT_I18N || {
+        btnSending:   'Sending...',
+        successTitle: 'Thank you for your inquiry.',
+        successText:  'We will respond within one business day.',
+        errorTitle:   'Something went wrong.',
+        errorText:    'Please try again later or contact us directly.'
+      };
+      
       if (submitBtn) {
-        submitBtn.textContent = 'Inquiry Sent';
+        submitBtn.textContent = i18n.btnSending;
         submitBtn.disabled = true;
-        submitBtn.style.backgroundColor = 'var(--color-olive)';
+        submitBtn.style.opacity = '0.7';
       }
 
-      // Show a simple confirmation message
-      var confirmation = document.createElement('div');
-      confirmation.setAttribute('role', 'alert');
-      confirmation.style.cssText = 'padding: 20px; background-color: #F0F5F0; border: 1px solid #B8D4B8; margin-top: 24px; font-size: 15px; color: var(--color-olive);';
-      confirmation.innerHTML = '<strong>Thank you for your inquiry.</strong><br>We will respond within one business day.';
-      form.appendChild(confirmation);
+      // Get reCAPTCHA token if configured, then submit
+      var siteKey = window.RECAPTCHA_SITE_KEY;
+      var submitForm = function(recaptchaToken) {
+        if (recaptchaToken) formData.recaptchaToken = recaptchaToken;
+
+        fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        if (data.success) {
+          if (submitBtn) {
+            submitBtn.textContent = 'Inquiry Sent';
+            submitBtn.style.backgroundColor = 'var(--color-olive)';
+            submitBtn.style.opacity = '1';
+          }
+          
+          var confirmation = document.createElement('div');
+          confirmation.setAttribute('role', 'alert');
+          confirmation.style.cssText = 'padding: 20px; background-color: #F0F5F0; border: 1px solid #B8D4B8; margin-top: 24px; font-size: 15px; color: var(--color-olive);';
+          confirmation.innerHTML = '<strong>' + i18n.successTitle + '</strong><br>' + i18n.successText;
+          form.appendChild(confirmation);
+          form.reset();
+        } else {
+          throw new Error(data.message || i18n.errorTitle);
+        }
+      })
+      .catch(function(error) {
+        if (submitBtn) {
+          submitBtn.textContent = originalBtnText;
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+        }
+        
+        var errorMsg = document.createElement('div');
+        errorMsg.setAttribute('role', 'alert');
+        errorMsg.style.cssText = 'padding: 20px; background-color: #FDF3F3; border: 1px solid #F3D0D0; margin-top: 24px; font-size: 15px; color: var(--color-error);';
+        errorMsg.innerHTML = '<strong>' + i18n.errorTitle + '</strong><br>' + (error.message || i18n.errorText);
+        form.appendChild(errorMsg);
+        
+        // Remove error message after 5 seconds
+        setTimeout(function() {
+          if (errorMsg.parentNode) {
+            errorMsg.parentNode.removeChild(errorMsg);
+          }
+        }, 5000);
+      });
+      }; // end submitForm
+
+      // Execute reCAPTCHA v3 invisibly, then submit
+      if (siteKey && siteKey !== 'your_recaptcha_site_key_here' && window.grecaptcha) {
+        window.grecaptcha.ready(function() {
+          window.grecaptcha.execute(siteKey, { action: 'contact' }).then(function(token) {
+            submitForm(token);
+          });
+        });
+      } else {
+        submitForm(null);
+      }
     });
   }
 

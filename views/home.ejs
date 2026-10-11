@@ -9,8 +9,8 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="stylesheet" href="/css/home.min.css">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -20,7 +20,7 @@
     <!-- ========== HERO ========== -->
     <section class="hero" aria-label="Introduction">
       <div class="hero__image-wrap">
-        <img src="/images/hero-office.png" alt="Premium modern open-plan office space" class="hero__image">
+        <img src="/images/hero-office.webp" alt="Premium modern open-plan office space" class="hero__image" fetchpriority="high" decoding="async">
       </div>
       <div class="hero__content">
         <div class="hero__text">
@@ -40,16 +40,16 @@
         <h2 id="partners-heading" class="partners-section__title"><%= t.home.partnersTitle %></h2>
         <div class="partners-grid">
           <a href="https://ablebemodern.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit ABLE website">
-            <img src="/images/partners/Able-Partner.png" alt="Able Partner" class="partner-logo">
+            <img src="/images/partners/Able-Partner.png" alt="Able Partner" class="partner-logo" loading="lazy" decoding="async">
           </a>
           <a href="https://www.elettrobosco.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit Bosco website">
-            <img src="/images/partners/Bosco-Partner.png" alt="Bosco Partner" class="partner-logo">
+            <img src="/images/partners/Bosco-Partner.png" alt="Bosco Partner" class="partner-logo" loading="lazy" decoding="async">
           </a>
           <a href="https://falmar.it/" target="_blank" rel="noopener noreferrer" aria-label="Visit Falmar website">
-            <img src="/images/partners/Falmar-Partner.png" alt="Falmar Partner" class="partner-logo">
+            <img src="/images/partners/Falmar-Partner.png" alt="Falmar Partner" class="partner-logo" loading="lazy" decoding="async">
           </a>
           <a href="https://www.zivella.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Zivella website">
-            <img src="/images/partners/Zivella-Partner.png" alt="Zivella Partner" class="partner-logo">
+            <img src="/images/partners/Zivella-Partner.png" alt="Zivella Partner" class="partner-logo" loading="lazy" decoding="async">
           </a>
         </div>
       </div>
@@ -110,11 +110,11 @@
         <div class="project-row">
           <article class="project-tile">
             <a href="<%= pfx %>/projects/ncc-monorail-depot-buildings" class="project-tile__img-wrap" style="display: block;">
-              <img src="/images/our-projects/ncc-monorail-depot-buildings/100_4770.JPG" alt="NCC Monorail Depot Buildings" class="project-tile__img">
+              <img src="/images/our-projects/ncc-monorail-depot-buildings/100_4770.webp" alt="NCC Monorail Depot Buildings" class="project-tile__img" loading="lazy" decoding="async">
             </a>
             <div class="project-tile__info">
               <span class="project-tile__tag"><%= t.home.proj1Tag %></span>
-              <a href="<%= pfx %>/projects/ncc-monorail-depot-buildings" style="text-decoration: none; color: inherit;">
+              <a href="<%= pfx %>/projects/ncc-monorail-depot-buildings" style="text-decoration: none; color: inherit;" class="stretched-link">
                 <h3><%= t.home.proj1Title %></h3>
               </a>
               <p class="project-tile__subtitle"><%= t.projects.proj1Subtitle %></p>
@@ -123,11 +123,11 @@
           </article>
           <article class="project-tile">
             <a href="<%= pfx %>/projects/ncc-monorail-stations" class="project-tile__img-wrap" style="display: block;">
-              <img src="/images/our-projects/ncc-monorail-stations/STATION ELEVATION.JPG" alt="NCC Monorail Stations" class="project-tile__img">
+              <img src="/images/our-projects/ncc-monorail-stations/STATION ELEVATION.webp" alt="NCC Monorail Stations" class="project-tile__img" loading="lazy" decoding="async">
             </a>
             <div class="project-tile__info">
               <span class="project-tile__tag"><%= t.home.proj2Tag %></span>
-              <a href="<%= pfx %>/projects/ncc-monorail-stations" style="text-decoration: none; color: inherit;">
+              <a href="<%= pfx %>/projects/ncc-monorail-stations" style="text-decoration: none; color: inherit;" class="stretched-link">
                 <h3><%= t.home.proj2Title %></h3>
               </a>
               <p class="project-tile__subtitle"><%= t.projects.proj2Subtitle %></p>
@@ -136,11 +136,11 @@
           </article>
           <article class="project-tile">
             <a href="<%= pfx %>/projects/west-nile-monorail" class="project-tile__img-wrap" style="display: block;">
-              <img src="/images/our-projects/west-nile-monorail/mono.jpg" alt="West Nile Monorail" class="project-tile__img">
+              <img src="/images/our-projects/west-nile-monorail/mono.webp" alt="West Nile Monorail" class="project-tile__img" loading="lazy" decoding="async">
             </a>
             <div class="project-tile__info">
               <span class="project-tile__tag"><%= t.home.proj3Tag %></span>
-              <a href="<%= pfx %>/projects/west-nile-monorail" style="text-decoration: none; color: inherit;">
+              <a href="<%= pfx %>/projects/west-nile-monorail" style="text-decoration: none; color: inherit;" class="stretched-link">
                 <h3><%= t.home.proj3Title %></h3>
               </a>
               <p class="project-tile__subtitle"><%= t.projects.proj3Subtitle %></p>
@@ -154,7 +154,7 @@
     <!-- ========== ABOUT PREVIEW ========== -->
     <section class="about-band" aria-labelledby="about-heading">
       <div class="about-band__image-col">
-        <img src="\images\our-projects\west-nile-monorail\mono.jpg" alt="Premium furniture showroom with luxury seating and warm interior lighting" class="about-band__img">
+        <img src="/images/our-projects/west-nile-monorail/mono.webp" alt="Premium furniture showroom with luxury seating and warm interior lighting" class="about-band__img" loading="lazy" decoding="async">
       </div>
       <div class="about-band__content-col">
         <span class="eyebrow"><%= t.home.aboutEyebrow %></span>
@@ -188,6 +188,6 @@
 
   <%- include('partials/footer') %>
   <%- include('partials/cookie-consent') %>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.min.js"></script>
 </body>
 </html>

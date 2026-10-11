@@ -131,7 +131,12 @@
     "prefWhatsapp": "WhatsApp",
     "prefEmail": "Email",
     "consentText": "I agree to The Citadels processing my personal data to respond to this inquiry. My data will not be shared with third parties. See our <a href=\"/privacy-policy\">Privacy Policy</a>.",
-    "btnSend": "Send Inquiry"
+    "btnSend": "Send Inquiry",
+    "btnSending": "Sending...",
+    "successTitle": "Thank you for your inquiry.",
+    "successText": "We will respond within one business day.",
+    "errorTitle": "Something went wrong.",
+    "errorText": "Please try again later or contact us directly."
   },
   "partners": {
     "eyebrow": "The Citadels Network",
@@ -197,7 +202,10 @@
     "copyright": "The Citadels. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
-    "cookies": "Cookie Policy"
+    "cookies": "Cookie Policy",
+    "cookieBannerText": "This website uses essential cookies to ensure it functions correctly. We do not use tracking or advertising cookies unless you consent. Learn more in our",
+    "cookieAccept": "Accept",
+    "cookieDecline": "Decline"
   },
   "partnerDetail": {
     "back": "Our Partners",
@@ -402,5 +410,11 @@
       "h1": "Page Not Found",
       "desc": "The page you are looking for does not exist or has been moved.",
       "button": "Return to Home"
-  }
+    },
+    "error500": {
+      "eyebrow": "Error 500",
+      "h1": "Something Went Wrong",
+      "desc": "An unexpected server error occurred. Our team has been notified. Please try again shortly.",
+      "button": "Return to Home"
+    }
 }

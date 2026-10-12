@@ -68,7 +68,29 @@ app.use(
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+// ── Static Assets & Browser Caching (Bandwidth Optimization) ─────────────────
+// Eliminates asset re-downloads on Render for returning visitors
+const isDev = process.env.NODE_ENV === 'development';
+
+const staticCacheOptions = isDev
+  ? { maxAge: 0 }
+  : {
+      maxAge: '30d',
+      etag: true,
+      lastModified: true,
+      setHeaders: (res, filePath) => {
+        // Images, fonts, and PDFs: 1 year immutable cache
+        if (/\.(webp|avif|png|jpe?g|gif|svg|ico|pdf|woff2?|ttf|eot)$/i.test(filePath)) {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+        // CSS & JS: 30 days cache with stale-while-revalidate
+        else if (/\.(css|js)$/i.test(filePath)) {
+          res.setHeader('Cache-Control', 'public, max-age=2592000, stale-while-revalidate=86400');
+        }
+      }
+    };
+
+app.use(express.static(path.join(__dirname, 'public'), staticCacheOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Handle JSON payloads for contact API
 

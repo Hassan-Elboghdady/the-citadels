@@ -47,6 +47,13 @@
               <a href="tel:+201069631049" class="contact-phone">
                 <bdi dir="ltr">+20 106 963 1049</bdi>
               </a>
+
+              <!-- Mobile-only: scroll to form CTA -->
+              <a href="#contact-inquiry" class="contact-scroll-cta" id="contact-scroll-to-form" aria-label="Scroll to inquiry form">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2v14M4 12l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <%= t.contact.scrollToForm || 'Send Us a Message' %>
+              </a>
+
             </div>
 
             <div class="contact-actions">
@@ -71,11 +78,12 @@
                 <%= t.contact.actLocation %>
               </a>
             </div>
-          </div>
+
+          </div><!-- end contact-side -->
 
           <!-- Right column: Form -->
-          <div class="contact-form-col">
-            <h3 class="contact-form-title"><%= t.contact.formTitle %></h3>
+          <div class="contact-form-col" id="contact-form-col">
+            <h3 class="contact-form-title" id="contact-inquiry"><%= t.contact.formTitle %></h3>
             <p class="contact-form-subtitle"><%= t.contact.formSubtitle %></p>
 
             <form class="contact-form" id="contact-form" action="/contact" method="POST" novalidate>

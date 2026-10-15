@@ -75,10 +75,10 @@ router.get('/cookie-policy', (req, res) => {
   });
 });
 
-router.get('/partners/able',    (req, res) => render(res, 'partner-able',    { title: 'ABLE | Hotel & Residential Furniture | The Citadels', description: 'ABLE is the largest furniture manufacturer specializing in contemporary design in Eastern Europe with over 30 years of experience.', currentPage: 'our-partners' }));
+router.get('/partners/able', (req, res) => render(res, 'partner-able', { title: 'ABLE | Hotel & Residential Furniture | The Citadels', description: 'ABLE is the largest furniture manufacturer specializing in contemporary design in Eastern Europe with over 30 years of experience.', currentPage: 'our-partners' }));
 router.get('/partners/zivella', (req, res) => render(res, 'partner-zivella', { title: 'Zivella | Office Furniture | The Citadels', description: 'Zivella Office Furniture exports to nearly 50 countries creating designs that promote well-being.', currentPage: 'our-partners' }));
-router.get('/partners/falmar',  (req, res) => render(res, 'partner-falmar',  { title: 'Falmar | Office Furniture & Partitions | The Citadels', description: 'Falmar, based in Pesaro Italy since 1990, manufactures premium wall partitions, storage walls and office furniture.', currentPage: 'our-partners' }));
-router.get('/partners/bosco',   (req, res) => render(res, 'partner-bosco',   { title: 'Bosco | Control Room Furniture | The Citadels', description: 'Bosco is a pioneer in designing and delivering high-tech control room solutions in 20+ countries.', currentPage: 'our-partners' }));
+router.get('/partners/falmar', (req, res) => render(res, 'partner-falmar', { title: 'Falmar | Office Furniture & Partitions | The Citadels', description: 'Falmar, based in Pesaro Italy since 1990, manufactures premium wall partitions, storage walls and office furniture.', currentPage: 'our-partners' }));
+router.get('/partners/bosco', (req, res) => render(res, 'partner-bosco', { title: 'Bosco | Control Room Furniture | The Citadels', description: 'Bosco is a pioneer in designing and delivering high-tech control room solutions in 20+ countries.', currentPage: 'our-partners' }));
 
 router.get('/projects/:slug', (req, res) => {
   const project = projects.find(p => p.slug === req.params.slug);
@@ -159,10 +159,10 @@ router.get('/ar/cookie-policy', (req, res) => {
   });
 });
 
-router.get('/ar/partners/able',    (req, res) => render(res, 'partner-able',    { title: 'ABLE | أثاث فنادق وسكني | The Citadels', description: 'ABLE أكبر شركة تصنيع أثاث متخصصة في التصميم المعاصر في أوروبا الشرقية بخبرة تتجاوز 30 عامًا.', currentPage: 'our-partners' }));
+router.get('/ar/partners/able', (req, res) => render(res, 'partner-able', { title: 'ABLE | أثاث فنادق وسكني | The Citadels', description: 'ABLE أكبر شركة تصنيع أثاث متخصصة في التصميم المعاصر في أوروبا الشرقية بخبرة تتجاوز 30 عامًا.', currentPage: 'our-partners' }));
 router.get('/ar/partners/zivella', (req, res) => render(res, 'partner-zivella', { title: 'Zivella | أثاث مكاتب | The Citadels', description: 'تصدر Zivella منتجاتها إلى ما يقارب 50 دولة بتصاميم تعزز الرفاهية والراحة.', currentPage: 'our-partners' }));
-router.get('/ar/partners/falmar',  (req, res) => render(res, 'partner-falmar',  { title: 'Falmar | أثاث مكاتب وتقسيمات | The Citadels', description: 'Falmar من إيطاليا، تصنع فواصل جدارية وأثاث مكاتب فاخراً منذ عام 1990.', currentPage: 'our-partners' }));
-router.get('/ar/partners/bosco',   (req, res) => render(res, 'partner-bosco',   { title: 'Bosco | أثاث غرف التحكم | The Citadels', description: 'Bosco رائدة في تصميم وتوريد حلول غرف التحكم التقنية المتقدمة في أكثر من 20 دولة.', currentPage: 'our-partners' }));
+router.get('/ar/partners/falmar', (req, res) => render(res, 'partner-falmar', { title: 'Falmar | أثاث مكاتب وتقسيمات | The Citadels', description: 'Falmar من إيطاليا، تصنع فواصل جدارية وأثاث مكاتب فاخراً منذ عام 1990.', currentPage: 'our-partners' }));
+router.get('/ar/partners/bosco', (req, res) => render(res, 'partner-bosco', { title: 'Bosco | أثاث غرف التحكم | The Citadels', description: 'Bosco رائدة في تصميم وتوريد حلول غرف التحكم التقنية المتقدمة في أكثر من 20 دولة.', currentPage: 'our-partners' }));
 
 router.get('/ar/projects/:slug', (req, res) => {
   const project = projects.find(p => p.slug === req.params.slug);
@@ -243,10 +243,10 @@ router.get('/it/cookie-policy', (req, res) => {
   });
 });
 
-router.get('/it/partners/able',    (req, res) => render(res, 'partner-able',    { title: 'ABLE | Arredi Hotel e Residenziali | The Citadels', description: 'ABLE è il più grande produttore di arredi specializzato nel design contemporaneo in Europa orientale con oltre 30 anni di esperienza.', currentPage: 'our-partners' }));
+router.get('/it/partners/able', (req, res) => render(res, 'partner-able', { title: 'ABLE | Arredi Hotel e Residenziali | The Citadels', description: 'ABLE è il più grande produttore di arredi specializzato nel design contemporaneo in Europa orientale con oltre 30 anni di esperienza.', currentPage: 'our-partners' }));
 router.get('/it/partners/zivella', (req, res) => render(res, 'partner-zivella', { title: 'Zivella | Arredi per Ufficio | The Citadels', description: 'Zivella esporta in quasi 50 paesi creando design che promuovono il benessere.', currentPage: 'our-partners' }));
-router.get('/it/partners/falmar',  (req, res) => render(res, 'partner-falmar',  { title: 'Falmar | Arredi e Pareti Divisorie per Uffici | The Citadels', description: 'Falmar, con sede a Pesaro dal 1990, produce pareti divisorie e arredi per uffici di alta qualità.', currentPage: 'our-partners' }));
-router.get('/it/partners/bosco',   (req, res) => render(res, 'partner-bosco',   { title: 'Bosco | Arredi per Sale di Controllo | The Citadels', description: 'Bosco è pioniera nella progettazione e fornitura di soluzioni hi-tech per sale di controllo in oltre 20 paesi.', currentPage: 'our-partners' }));
+router.get('/it/partners/falmar', (req, res) => render(res, 'partner-falmar', { title: 'Falmar | Arredi e Pareti Divisorie per Uffici | The Citadels', description: 'Falmar, con sede a Pesaro dal 1990, produce pareti divisorie e arredi per uffici di alta qualità.', currentPage: 'our-partners' }));
+router.get('/it/partners/bosco', (req, res) => render(res, 'partner-bosco', { title: 'Bosco | Arredi per Sale di Controllo | The Citadels', description: 'Bosco è pioniera nella progettazione e fornitura di soluzioni hi-tech per sale di controllo in oltre 20 paesi.', currentPage: 'our-partners' }));
 
 router.get('/it/projects/:slug', (req, res) => {
   const project = projects.find(p => p.slug === req.params.slug);
@@ -326,10 +326,10 @@ router.get('/fr/cookie-policy', (req, res) => {
   });
 });
 
-router.get('/fr/partners/able',    (req, res) => render(res, 'partner-able',    { title: 'ABLE | Mobilier hôtelier et résidentiel | The Citadels', description: 'ABLE est le plus grand fabricant de meubles spécialisé dans le design contemporain en Europe de l\'Est avec plus de 30 ans d\'expérience.', currentPage: 'our-partners' }));
+router.get('/fr/partners/able', (req, res) => render(res, 'partner-able', { title: 'ABLE | Mobilier hôtelier et résidentiel | The Citadels', description: 'ABLE est le plus grand fabricant de meubles spécialisé dans le design contemporain en Europe de l\'Est avec plus de 30 ans d\'expérience.', currentPage: 'our-partners' }));
 router.get('/fr/partners/zivella', (req, res) => render(res, 'partner-zivella', { title: 'Zivella | Mobilier de bureau | The Citadels', description: 'Le mobilier de bureau Zivella est exporté dans près de 50 pays, créant des designs qui favorisent le bien-être.', currentPage: 'our-partners' }));
-router.get('/fr/partners/falmar',  (req, res) => render(res, 'partner-falmar',  { title: 'Falmar | Mobilier de bureau et cloisons | The Citadels', description: 'Falmar, basé à Pesaro en Italie depuis 1990, fabrique des cloisons murales, des murs de rangement et du mobilier de bureau de qualità supérieure.', currentPage: 'our-partners' }));
-router.get('/fr/partners/bosco',   (req, res) => render(res, 'partner-bosco',   { title: 'Bosco | Mobilier pour salles de controllo | The Citadels', description: 'Bosco est un pionnier dans la conception et la fourniture de solutions de salles de contrôle de haute technologie dans plus de 20 pays.', currentPage: 'our-partners' }));
+router.get('/fr/partners/falmar', (req, res) => render(res, 'partner-falmar', { title: 'Falmar | Mobilier de bureau et cloisons | The Citadels', description: 'Falmar, basé à Pesaro en Italie depuis 1990, fabrique des cloisons murales, des murs de rangement et du mobilier de bureau de qualità supérieure.', currentPage: 'our-partners' }));
+router.get('/fr/partners/bosco', (req, res) => render(res, 'partner-bosco', { title: 'Bosco | Mobilier pour salles de controllo | The Citadels', description: 'Bosco est un pionnier dans la conception et la fourniture de solutions de salles de contrôle de haute technologie dans plus de 20 pays.', currentPage: 'our-partners' }));
 
 router.get('/fr/projects/:slug', (req, res) => {
   const project = projects.find(p => p.slug === req.params.slug);

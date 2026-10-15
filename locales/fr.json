@@ -136,7 +136,9 @@
     "successTitle": "Merci pour votre demande.",
     "successText": "Nous vous répondrons dans un jour ouvré.",
     "errorTitle": "Une erreur est survenue.",
-    "errorText": "Veuillez réessayer plus tard ou nous contacter directement."
+    "errorText": "Veuillez réessayer plus tard ou nous contacter directement.",
+    "emailSentTitle": "Nous avons bien recu votre demande.",
+    "emailWarningText": "Votre message a ete sauvegarde, mais un probleme technique nous a empeche d'envoyer la notification. Contactez-nous au +20 120 014 2107 ou info@thecitadels.com."
   },
   "partners": {
     "eyebrow": "Le réseau The Citadels",

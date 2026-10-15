@@ -436,41 +436,41 @@ router.post('/api/contact', contactValidationRules, async (req, res) => {
     }
 
     // 3. Send Email Notification via Resend
-    if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== 're_your_resend_api_key_here') {
-      await resend.emails.send({
-        from: process.env.CONTACT_EMAIL_FROM || 'onboarding@resend.dev', // Resend requires this exact sandbox email unless a domain is verified
-        to: process.env.CONTACT_EMAIL_TO || 'hello@the-citadels.com',
-        subject: `New Inquiry from ${name} - ${inquiryType}`,
-        text: `
-          New Contact Form Submission:
-          
-          Name: ${name}
-          Phone: ${phone}
-          Email: ${email}
-          Inquiry Type: ${inquiryType}
-          Preferred Contact: ${preferredContact}
-          
-          Message:
-          ${message}
-          
-          ${savedInquiry ? 'This submission was also saved to your database.' : ''}
-        `,
-        html: `
-          <h3>New Contact Form Submission</h3>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Inquiry Type:</strong> ${inquiryType}</p>
-          <p><strong>Preferred Contact:</strong> ${preferredContact}</p>
-          <p><strong>Message:</strong></p>
-          <blockquote style="border-left: 4px solid #ccc; padding-left: 10px;">${message}</blockquote>
-          <p style="font-size: 0.8em; color: #888;">${savedInquiry ? 'This submission was also saved to your database.' : ''}</p>
-        `
-      });
+    let emailSent = false;
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const { data, error } = await resend.emails.send({
+          from: process.env.CONTACT_EMAIL_FROM || 'onboarding@resend.dev',
+          to: (process.env.CONTACT_EMAIL_TO || '').trim(),
+          subject: `New Inquiry from ${name} — ${inquiryType}`,
+          text: `New Contact Form Submission\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nInquiry Type: ${inquiryType}\nPreferred Contact: ${preferredContact}\n\nMessage:\n${message}\n\n${savedInquiry ? 'Saved to database.' : ''}`,
+          html: `
+            <h3 style="color:#4a5940;">New Contact Form Submission</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Inquiry Type:</strong> ${inquiryType}</p>
+            <p><strong>Preferred Contact:</strong> ${preferredContact}</p>
+            <p><strong>Message:</strong></p>
+            <blockquote style="border-left:4px solid #4a5940;padding-left:12px;color:#555;">${message}</blockquote>
+            <p style="font-size:0.8em;color:#888;">${savedInquiry ? 'This submission was also saved to your database.' : ''}</p>
+          `
+        });
+        if (error) {
+          console.error('[Resend] Failed to send email:', error);
+          emailSent = false;
+        } else {
+          console.log('[Resend] Email sent, id:', data?.id);
+          emailSent = true;
+        }
+      } catch (emailErr) {
+        console.error('[Resend] Exception sending email:', emailErr.message);
+        emailSent = false;
+      }
     }
 
-    // 4. Return success to the frontend
-    res.json({ success: true, message: 'Inquiry submitted successfully.' });
+    // 4. Return success to the frontend — include emailSent so the UI can show the right message
+    res.json({ success: true, emailSent });
   } catch (error) {
     console.error('Contact API Error:', error);
     res.status(500).json({ success: false, message: 'Server error while processing your inquiry.' });

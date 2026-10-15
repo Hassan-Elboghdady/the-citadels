@@ -159,11 +159,13 @@
   <%- include('partials/cookie-consent') %>
   <script>
     window.CONTACT_I18N = {
-      btnSending:   '<%= t.contact.btnSending %>',
-      successTitle: '<%= t.contact.successTitle %>',
-      successText:  '<%= t.contact.successText %>',
-      errorTitle:   '<%= t.contact.errorTitle %>',
-      errorText:    '<%= t.contact.errorText %>'
+      btnSending:      '<%= t.contact.btnSending %>',
+      successTitle:    '<%= t.contact.successTitle %>',
+      successText:     '<%= t.contact.successText %>',
+      errorTitle:      '<%= t.contact.errorTitle %>',
+      errorText:       '<%= t.contact.errorText %>',
+      emailSentTitle:  '<%= t.contact.emailSentTitle %>',
+      emailWarningText:'<%= t.contact.emailWarningText %>'
     };
     window.RECAPTCHA_SITE_KEY = '<%= process.env.RECAPTCHA_SITE_KEY || "" %>';
   </script>

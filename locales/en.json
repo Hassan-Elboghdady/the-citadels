@@ -136,7 +136,9 @@
     "successTitle": "Thank you for your inquiry.",
     "successText": "We will respond within one business day.",
     "errorTitle": "Something went wrong.",
-    "errorText": "Please try again later or contact us directly."
+    "errorText": "Please try again later or contact us directly.",
+    "emailSentTitle": "We received your inquiry.",
+    "emailWarningText": "Your message was saved, but we had a technical issue sending the email notification. Please also reach us at ‪+20 120 014 2107‬ or info@thecitadels.com."
   },
   "partners": {
     "eyebrow": "The Citadels Network",
@@ -405,16 +407,16 @@
     "s6H": "6. Contact Us",
     "s6P": "For questions about this Cookie Policy, contact us at:"
   },
-    "error404": {
-      "eyebrow": "Error 404",
-      "h1": "Page Not Found",
-      "desc": "The page you are looking for does not exist or has been moved.",
-      "button": "Return to Home"
-    },
-    "error500": {
-      "eyebrow": "Error 500",
-      "h1": "Something Went Wrong",
-      "desc": "An unexpected server error occurred. Our team has been notified. Please try again shortly.",
-      "button": "Return to Home"
-    }
+  "error404": {
+    "eyebrow": "Error 404",
+    "h1": "Page Not Found",
+    "desc": "The page you are looking for does not exist or has been moved.",
+    "button": "Return to Home"
+  },
+  "error500": {
+    "eyebrow": "Error 500",
+    "h1": "Something Went Wrong",
+    "desc": "An unexpected server error occurred. Our team has been notified. Please try again shortly.",
+    "button": "Return to Home"
+  }
 }

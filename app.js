@@ -3,6 +3,7 @@ const express        = require('express');
 const path           = require('path');
 const fs             = require('fs');
 const helmet         = require('helmet');
+const compression    = require('compression');
 const mongoose       = require('mongoose');
 const rateLimit      = require('express-rate-limit');
 const mongoSanitize  = require('express-mongo-sanitize');
@@ -10,6 +11,29 @@ const routes         = require('./routes/index');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// ── Gzip Compression (reduces HTTP response bandwidth by ~60-80%) ─────────────
+app.use(compression({
+  level: 6,           // Good balance of speed vs compression ratio
+  threshold: 1024,    // Only compress responses > 1KB (skip tiny responses)
+  filter: (req, res) => {
+    // Don't compress if client explicitly asks for no compression
+    if (req.headers['x-no-compression']) return false;
+    return compression.filter(req, res);
+  }
+}));
+
+// ── Preload locale files once at startup (not on every request) ───────────────
+const LOCALES = {};
+for (const lang of ['en', 'ar', 'it', 'fr']) {
+  try {
+    LOCALES[lang] = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'locales', `${lang}.json`), 'utf8')
+    );
+  } catch (e) {
+    console.error(`Failed to load locale: ${lang}`, e.message);
+  }
+}
 
 // Trust reverse proxy (essential for Cloud hosts like Render, Railway, AWS, Nginx)
 // Allows express-rate-limit and req.ip to accurately identify real client IP addresses
@@ -106,16 +130,12 @@ app.use(mongoSanitize({
 
 // i18n middleware — injects `t` (translations) and `lang` into every render
 app.use((req, res, next) => {
-  // Detect language from URL prefix /ar/... or /it/... or default to en
   const isArabic = req.path.startsWith('/ar') || req.path === '/ar';
   const isItalian = req.path.startsWith('/it') || req.path === '/it';
   const isFrench = req.path.startsWith('/fr') || req.path === '/fr';
   const lang = isArabic ? 'ar' : isItalian ? 'it' : isFrench ? 'fr' : 'en';
-  const localePath = path.join(__dirname, 'locales', `${lang}.json`);
-  const t = JSON.parse(fs.readFileSync(localePath, 'utf8'));
-  res.locals.t = t;
+  res.locals.t = LOCALES[lang] || LOCALES['en'];
   res.locals.lang = lang;
-  // Build equivalent URLs in the other languages
   const basePath = lang === 'ar' ? req.path.replace(/^\/ar/, '') || '/'
                  : lang === 'it' ? req.path.replace(/^\/it/, '') || '/'
                  : lang === 'fr' ? req.path.replace(/^\/fr/, '') || '/'
@@ -124,9 +144,7 @@ app.use((req, res, next) => {
   res.locals.arUrl = '/ar' + basePath;
   res.locals.itUrl = '/it' + basePath;
   res.locals.frUrl = '/fr' + basePath;
-  // Keep backward-compat
   res.locals.alternateLangUrl = lang === 'ar' ? basePath : '/ar' + basePath;
-  // Convenient prefix: '' | '/ar' | '/it' | '/fr'
   res.locals.pfx = lang === 'ar' ? '/ar' : lang === 'it' ? '/it' : lang === 'fr' ? '/fr' : '';
   next();
 });

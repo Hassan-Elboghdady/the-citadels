@@ -136,7 +136,9 @@
     "successTitle": "Grazie per la tua richiesta.",
     "successText": "Risponderemo entro un giorno lavorativo.",
     "errorTitle": "Qualcosa è andato storto.",
-    "errorText": "Riprova più tardi o contattaci direttamente."
+    "errorText": "Riprova più tardi o contattaci direttamente.",
+    "emailSentTitle": "Abbiamo ricevuto la tua richiesta.",
+    "emailWarningText": "Il tuo messaggio e stato salvato, ma si e verificato un problema tecnico nell'invio della notifica. Contattaci al +20 120 014 2107 o info@thecitadels.com."
   },
   "partners": {
     "eyebrow": "La Rete The Citadels",

@@ -276,16 +276,27 @@
       })
       .then(function(data) {
         if (data.success) {
+          var emailOk = data.emailSent === true;
+
           if (submitBtn) {
-            submitBtn.textContent = 'Inquiry Sent';
-            submitBtn.style.backgroundColor = 'var(--color-olive)';
+            submitBtn.textContent = emailOk ? i18n.emailSentTitle : i18n.errorTitle;
+            submitBtn.style.backgroundColor = emailOk ? 'var(--color-olive)' : '#B45309';
             submitBtn.style.opacity = '1';
           }
-          
+
           var confirmation = document.createElement('div');
           confirmation.setAttribute('role', 'alert');
-          confirmation.style.cssText = 'padding: 20px; background-color: #F0F5F0; border: 1px solid #B8D4B8; margin-top: 24px; font-size: 15px; color: var(--color-olive);';
-          confirmation.innerHTML = '<strong>' + i18n.successTitle + '</strong><br>' + i18n.successText;
+
+          if (emailOk) {
+            // ✅ Email delivered — green success box
+            confirmation.style.cssText = 'padding:20px;background:#F0F5F0;border:1px solid #B8D4B8;margin-top:24px;font-size:15px;color:#2D4A2D;';
+            confirmation.innerHTML = '<strong>' + i18n.emailSentTitle + '</strong><br>' + i18n.successText;
+          } else {
+            // ⚠️ Saved to DB but email failed — amber warning box
+            confirmation.style.cssText = 'padding:20px;background:#FFFBEB;border:1px solid #F59E0B;margin-top:24px;font-size:15px;color:#92400E;';
+            confirmation.innerHTML = '<strong>&#9888; ' + i18n.errorTitle + '</strong><br>' + i18n.emailWarningText;
+          }
+
           form.appendChild(confirmation);
           form.reset();
         } else {

@@ -116,17 +116,26 @@ const staticCacheOptions = isDev
 
 app.use(express.static(path.join(__dirname, 'public'), staticCacheOptions));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); // Handle JSON payloads for contact API
+app.use(express.json());
 
 // ── NoSQL Injection Protection ─────────────────────────────────────────────
-// Strips $ and . operators from ALL req.body, req.params, req.query globally
-// Prevents: { "email": { "$gt": "" } } style MongoDB injection attacks
 app.use(mongoSanitize({
-  replaceWith: '_',          // Replace banned chars with _ instead of deleting
+  replaceWith: '_',
   onSanitize: ({ req, key }) => {
     console.warn(`⚠️  Sanitized suspicious input on key: ${key} from IP: ${req.ip}`);
   }
 }));
+
+// ── HTML page caching (bandwidth reduction) ────────────────────────────────
+// Rendered pages are cached in the browser for 5 min; after that browsers
+// send a conditional request — if nothing changed they get a 304 (0 bytes).
+// API routes and POST requests are excluded.
+app.use((req, res, next) => {
+  if (req.method === 'GET' && !req.path.startsWith('/api/')) {
+    res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=600');
+  }
+  next();
+});
 
 // i18n middleware — injects `t` (translations) and `lang` into every render
 app.use((req, res, next) => {

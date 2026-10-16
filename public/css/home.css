@@ -181,14 +181,11 @@
   max-width: 140px;
   max-height: 60px;
   object-fit: contain;
-  opacity: 0.5;
-  filter: grayscale(1);
-  mix-blend-mode: multiply;
-  transition: opacity 0.3s var(--ease), filter 0.3s var(--ease);
+  opacity: 1;
+  transition: opacity 0.3s var(--ease);
 }
 .partner-logo:hover {
-  opacity: 1;
-  filter: grayscale(0);
+  opacity: 0.75;
 }
 
 /* ==========================================================================

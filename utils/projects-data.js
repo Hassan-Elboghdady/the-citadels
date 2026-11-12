@@ -145,6 +145,7 @@ const projects = [
     "description_it": "Fornitura e installazione di console di controllo OCC per il progetto della monorotaia del Nilo Occidentale a Giza e nella Città del 6 Ottobre. Console operatore configurate su misura e progettate per soddisfare i rigorosi requisiti operativi 24/7 degli ambienti di controllo della monorotaia.",
     "description_fr": "Fourniture et installation de consoles de contrôle OCC pour le projet du monorail de West Nile à Gizeh et dans la Ville du 6 Octobre. Consoles opérateurs configurées sur mesure et conçues pour répondre aux exigences opérationnelles contraignantes 24h/24 et 7j/7 des environnements de contrôle de monorail.",
     "gallery": [
+      "/images/our-projects/west-nile-monorail/WON MONORAIL.webp",
       "/images/our-projects/west-nile-monorail/WhatsApp Image 2026-02-11 at 09.12.06.webp",
       "/images/our-projects/west-nile-monorail/WhatsApp Image 2026-06-12 at 20.36.18.webp"
     ]

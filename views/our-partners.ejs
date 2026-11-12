@@ -10,7 +10,7 @@
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/css/main.min.css?v=9">
-  <link rel="stylesheet" href="/css/our-partners.min.css">
+  <link rel="stylesheet" href="/css/our-partners.min.css?v=2">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -47,7 +47,6 @@
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secHotel %></span>
-                <h3 class="partner-card__name">ABLE</h3>
                 <span class="partner-card__origin"><%= t.partners.originAble %></span>
               </div>
               <div class="partner-card__actions">
@@ -75,7 +74,6 @@
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secOffice %></span>
-                <h3 class="partner-card__name">Zivella</h3>
                 <span class="partner-card__origin"><%= t.partners.originZivella %></span>
               </div>
               <div class="partner-card__actions">
@@ -104,7 +102,6 @@
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secPartitions %></span>
-                <h3 class="partner-card__name">Falmar</h3>
                 <span class="partner-card__origin"><%= t.partners.originFalmar %></span>
               </div>
               <div class="partner-card__actions">
@@ -132,7 +129,6 @@
               </div>
               <div class="partner-card__text">
                 <span class="partner-card__sector"><%= t.partners.secControl %></span>
-                <h3 class="partner-card__name">Bosco</h3>
                 <span class="partner-card__origin"><%= t.partners.originBosco %></span>
               </div>
               <div class="partner-card__actions">
@@ -182,22 +178,6 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta-band" aria-labelledby="collections-cta-heading">
-      <div class="container">
-        <div class="cta-band__inner">
-          <div class="cta-band__left">
-            <h2 id="collections-cta-heading"><%- t.partners.ctaH2 %></h2>
-          </div>
-          <div class="cta-band__right">
-            <p><%= t.partners.ctaText %></p>
-            <div class="btn-row">
-              <a href="<%= pfx %>/contact" class="btn btn--accent" id="collections-cta-contact"><%= t.partners.ctaContact %></a>
-              <a href="<%= pfx %>/projects" class="btn btn--ghost" id="collections-cta-projects"><%= t.partners.ctaProjects %></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </main>
 

@@ -10,7 +10,7 @@
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/css/main.min.css?v=9">
-  <link rel="stylesheet" href="/css/contact.min.css">
+  <link rel="stylesheet" href="/css/contact.min.css?v=2">
   <% if (process.env.RECAPTCHA_SITE_KEY && process.env.RECAPTCHA_SITE_KEY !== 'your_recaptcha_site_key_here') { %>
   <script src="https://www.google.com/recaptcha/api.js?render=<%= process.env.RECAPTCHA_SITE_KEY %>"></script>
   <% } %>
@@ -20,7 +20,13 @@
 
   <main id="main-content">
 
-
+    <!-- Page Header -->
+    <div class="contact-page-header">
+      <div class="contact-page-header__inner">
+        <span class="eyebrow"><%= t.contact.eyebrow || 'GET IN TOUCH' %></span>
+        <h1><%= t.contact.h1 %></h1>
+      </div>
+    </div>
 
     <!-- Two columns: left = locations + actions, right = form -->
     <section class="contact-main" aria-labelledby="contact-heading">
@@ -30,14 +36,14 @@
 
           <!-- Left column -->
           <div class="contact-side">
-            <h1 class="contact-page-title"><%= t.contact.h1 %></h1>
+            <h1 class="contact-page-title" style="display:none;"><%= t.contact.h1 %></h1>
 
             <div class="contact-loc">
               <span class="eyebrow"><%= t.contact.locEyebrow %></span>
               <h3><%= t.contact.locTitle %></h3>
-              <a href="https://www.google.com/maps?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo">
+              <a href="https://maps.app.goo.gl/qTkL5CP8HuTYrmAN7?g_st=aw">
                 <address class="contact-phone">
-                  <%- t.contact.locAddress %>
+                  3 Omar Ibn EL Khattab, Sheraton Al Matar, Cairo
                 </address>
               </a>
               <br>
@@ -59,21 +65,21 @@
             <div class="contact-actions">
               <a href="tel:+201069631049" class="contact-act" id="contact-call-office">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 14.2V16.7C18 17.1 17.7 17.5 17.2 17.5C8.4 18.1 1.9 11.6 2.5 2.8C2.5 2.3 2.9 2 3.3 2H5.8C6.2 2 6.6 2.3 6.7 2.7L7.4 5.7C7.5 6.1 7.3 6.5 7 6.7L5.5 7.9C6.7 10.4 9.6 13.3 12.1 14.5L13.3 13C13.5 12.7 13.9 12.5 14.3 12.6L17.3 13.3C17.7 13.4 18 13.8 18 14.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <%= t.contact.actCallOffice %>
+                SALES
               </a>
               <a href="tel:+201200142107" class="contact-act" id="contact-call-showroom">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M18 14.2V16.7C18 17.1 17.7 17.5 17.2 17.5C8.4 18.1 1.9 11.6 2.5 2.8C2.5 2.3 2.9 2 3.3 2H5.8C6.2 2 6.6 2.3 6.7 2.7L7.4 5.7C7.5 6.1 7.3 6.5 7 6.7L5.5 7.9C6.7 10.4 9.6 13.3 12.1 14.5L13.3 13C13.5 12.7 13.9 12.5 14.3 12.6L17.3 13.3C17.7 13.4 18 13.8 18 14.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <%= t.contact.actCallShowroom %>
+                CUSTOMER SERVICE
               </a>
               <a href="https://wa.me/201069631049" class="contact-act" id="contact-whatsapp" target="_blank" rel="noopener noreferrer">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2 18L3.3 13.6C2.5 12.2 2 10.6 2 9C2 4.6 5.6 1 10 1C14.4 1 18 4.6 18 9C18 13.4 14.4 17 10 17C8.4 17 6.8 16.5 5.4 15.7L2 18Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <%= t.contact.actWhatsapp %>
               </a>
-              <a href="mailto:info@thecitadels.com" class="contact-act" id="contact-email">
+              <a href="mailto:info@thecitadels.org" class="contact-act" id="contact-email">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M2 5L10 11L18 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <%= t.contact.actEmail %>
               </a>
-              <a href="https://maps.google.com/?q=Shop+3+Khaled+Ibn+El+Walid+Sheraton+Al+Matar+Cairo" class="contact-act" id="contact-directions-showroom" target="_blank" rel="noopener noreferrer">
+              <a href="https://maps.app.goo.gl/qTkL5CP8HuTYrmAN7?g_st=aw" class="contact-act" id="contact-directions-showroom" target="_blank" rel="noopener noreferrer">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1C6.7 1 4 3.7 4 7C4 12 10 19 10 19C10 19 16 12 16 7C16 3.7 13.3 1 10 1Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
                 <%= t.contact.actLocation %>
               </a>

@@ -10,7 +10,7 @@
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/css/main.min.css?v=9">
-  <link rel="stylesheet" href="/css/about.min.css">
+  <link rel="stylesheet" href="/css/about.min.css?v=2">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -148,22 +148,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta-band" aria-labelledby="about-cta-heading">
-      <div class="container">
-        <div class="cta-band__inner">
-          <div class="cta-band__left">
-            <h2 id="about-cta-heading"><%- t.about.ctaHeading %></h2>
-          </div>
-          <div class="cta-band__right">
-            <p><%= t.about.ctaText %></p>
-            <div class="btn-row">
-              <a href="<%= pfx %>/contact" class="btn btn--accent" id="about-cta-contact"><%= t.about.ctaContact %></a>
-              <a href="/brochure/the-citadels-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" id="about-cta-brochure"><%= t.about.ctaBrochure %></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
   </main>
 

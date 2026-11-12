@@ -10,11 +10,30 @@
 /* ── Page Header ── */
 .partners-page-header {
   padding: 96px 0 72px;
+  border-top: 3px solid #007F00;
   border-bottom: 1px solid var(--border);
 }
 .partners-page-header .eyebrow {
-  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #007F00;
+  margin-bottom: 24px;
+}
+.partners-page-header .eyebrow::before,
+.partners-page-header .eyebrow::after {
+  content: '';
   display: block;
+  width: 32px;
+  height: 1px;
+  background: #007F00;
+  opacity: 0.45;
+  flex-shrink: 0;
 }
 .partners-page-header__inner {
   display: grid;

@@ -10,7 +10,7 @@
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/css/main.min.css?v=9">
-  <link rel="stylesheet" href="/css/projects.min.css">
+  <link rel="stylesheet" href="/css/projects.min.css?v=4">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -20,10 +20,11 @@
     <!-- Page Header -->
     <section class="proj-page-header">
       <div class="container">
-        <span class="eyebrow"><%= t.projects.eyebrow %></span>
         <div class="proj-page-header__inner">
-          <h1><%- t.projects.h1 %></h1>
-          <p><%= t.projects.lead %></p>
+          <div class="proj-page-header__main">
+            <span class="proj-page-header__eyebrow"><%= t.projects.eyebrow %></span>
+            <h1><%- t.projects.h1 %></h1>
+          </div>
         </div>
       </div>
     </section>
@@ -31,7 +32,55 @@
 
     <!-- Projects List -->
     <section class="proj-list" aria-label="Our projects">
+      <a id="el-arabya"
+         href="<%= pfx %>/projects/el-arabya"
+         class="proj-row"
+         aria-label="View El Arabya">
+        <div class="proj-row__img-col">
+          <div class="proj-row__img-wrap">
+            <img src="/images/our-projects/EL_ARABIYA/el-arabiya-1.jpeg"
+                 alt="El Arabiya HQ" class="proj-row__img" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="proj-row__info">
+          <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">02</span>
+          <div class="proj-row__text">
+            <span class="proj-row__sector">OFFICE FURNITURE</span>
+            <h2 class="proj-row__title">EL ARABIYA HQ</h2>
+            <span class="proj-row__subtitle">Loose Furniture</span>
+            <span class="proj-row__location">Maadi . Cairo </span>
+            <span class="proj-row__link">
+              <%= t.projects.btnView %>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
 
+      <a id="CCHE 57357 - PROTON THERAPY BUILDING"
+         href="<%= pfx %>/projects/CCHE-57357"
+         class="proj-row proj-row--reverse"
+         aria-label="View CCHE 57357 - PROTON THERAPY BUILDING">
+        <div class="proj-row__img-col">
+          <div class="proj-row__img-wrap">
+            <img src="/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PROTON THERAPY BUILDING.jfif"
+                 alt="NCC Monorail Depot Buildings" class="proj-row__img" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+        <div class="proj-row__info">
+          <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">01</span>
+          <div class="proj-row__text">
+            <span class="proj-row__sector">Medical Furniture</span>
+            <h2 class="proj-row__title">CCHE 57357 - PROTON THERAPY BUILDING</h2>
+            <span class="proj-row__subtitle">Medical & Ergonomic Furniture</span>
+            <span class="proj-row__location">Sayeda Zainab . Cairo</span>
+            <span class="proj-row__link">
+              <%= t.projects.btnView %>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
       <!-- Project 01 -->
       <a id="ncc-monorail-depot-buildings"
          href="<%= pfx %>/projects/ncc-monorail-depot-buildings"
@@ -39,7 +88,7 @@
          aria-label="View NCC Monorail Depot Buildings">
         <div class="proj-row__img-col">
           <div class="proj-row__img-wrap">
-            <img src="/images/our-projects/ncc-monorail-depot-buildings/100_4770.webp"
+            <img src="/images/our-projects/ncc-monorail-depot-buildings/mono.webp"
                  alt="NCC Monorail Depot Buildings" class="proj-row__img" fetchpriority="high" decoding="async">
           </div>
         </div>
@@ -47,7 +96,7 @@
           <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">01</span>
           <div class="proj-row__text">
             <span class="proj-row__sector"><%= t.projects.proj1Sector %></span>
-            <h2 class="proj-row__title"><%- t.projects.proj1Title %></h2>
+            <h2 class="proj-row__title">NCC MONORAIL DEPOT BUILDINGS</h2>
             <span class="proj-row__subtitle"><%= t.projects.proj1Subtitle %></span>
             <span class="proj-row__location"><%= t.projects.proj1Loc %></span>
             <span class="proj-row__link">
@@ -73,7 +122,7 @@
           <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">02</span>
           <div class="proj-row__text">
             <span class="proj-row__sector"><%= t.projects.proj2Sector %></span>
-            <h2 class="proj-row__title"><%- t.projects.proj2Title %></h2>
+            <h2 class="proj-row__title">NCC MONORAIL STATIONS</h2>
             <span class="proj-row__subtitle"><%= t.projects.proj2Subtitle %></span>
             <span class="proj-row__location"><%= t.projects.proj2Loc %></span>
             <span class="proj-row__link">
@@ -91,7 +140,7 @@
          aria-label="View West Nile Monorail">
         <div class="proj-row__img-col">
           <div class="proj-row__img-wrap">
-            <img src="/images/our-projects/west-nile-monorail/mono.webp"
+            <img src="\images\our-projects\west-nile-monorail\WON MONORAIL.jfif"
                  alt="West Nile Monorail OCC Control Consoles" class="proj-row__img" loading="lazy" decoding="async">
           </div>
         </div>
@@ -99,8 +148,8 @@
           <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">03</span>
           <div class="proj-row__text">
             <span class="proj-row__sector"><%= t.projects.proj3Sector %></span>
-            <h2 class="proj-row__title"><%- t.projects.proj3Title %></h2>
-            <span class="proj-row__subtitle"><%= t.projects.proj3Subtitle %></span>
+            <h2 class="proj-row__title">WEST OF NILE MONORAIL DEPOT BUILDINGS</h2>
+            <span class="proj-row__subtitle"><%= t.projects.proj2Subtitle %></span>
             <span class="proj-row__location"><%= t.projects.proj3Loc %></span>
             <span class="proj-row__link">
               <%= t.projects.btnView %>
@@ -109,27 +158,36 @@
           </div>
         </div>
       </a>
-
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-band" aria-labelledby="proj-cta-heading">
-      <div class="container">
-        <div class="cta-band__inner">
-          <div class="cta-band__left">
-            <h2 id="proj-cta-heading"><%- t.projects.ctaH2 %></h2>
-          </div>
-          <div class="cta-band__right">
-            <p><%= t.projects.ctaText %></p>
-            <div class="btn-row">
-              <a href="<%= pfx %>/contact" class="btn btn--accent" id="proj-cta-contact"><%= t.projects.ctaContact %></a>
-              <a href="/brochure/the-citadels-brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" id="proj-cta-brochure"><%= t.projects.ctaBrochure %></a>
-              <a href="<%= pfx %>/our-partners" class="btn btn--ghost" id="proj-cta-partners"><%= t.projects.ctaPartners %></a>
-            </div>
+      <a id="west-nile-monorail-stations"
+         href="<%= pfx %>/projects/west-nile-monorail-stations"
+         class="proj-row proj-row--reverse"
+         aria-label="View West Nile Monorail Stations">
+        <div class="proj-row__img-col">
+          <div class="proj-row__img-wrap">
+            <img src="/images/our-projects/west-nile-monorail-stations/WON STATION.jpg"
+                 alt="West Nile Monorail Stations" class="proj-row__img" loading="lazy" decoding="async">
           </div>
         </div>
-      </div>
+        <div class="proj-row__info">
+          <span class="proj-row__num" style="visibility: hidden;" aria-hidden="true">02</span>
+          <div class="proj-row__text">
+            <span class="proj-row__sector"><%= t.projects.proj2Sector %></span>
+            <h2 class="proj-row__title">WEST OF NILE MONORAIL STATIONS</h2>
+            <span class="proj-row__subtitle"><%= t.projects.proj2Subtitle %></span>
+            <span class="proj-row__location">Giza . 6th of October City</span>
+            <span class="proj-row__link">
+              <%= t.projects.btnView %>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+      
     </section>
+    
+
+    <!-- CTA -->
+
 
   </main>
 

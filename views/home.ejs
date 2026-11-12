@@ -10,7 +10,7 @@
   <meta property="og:description" content="<%= description %>">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/css/main.min.css?v=9">
-  <link rel="stylesheet" href="/css/home.min.css?v=13">
+  <link rel="stylesheet" href="/css/home.min.css?v=15">
 </head>
 <body>
   <%- include('partials/header') %>
@@ -19,13 +19,19 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero" aria-label="Introduction">
+      <!-- Background image -->
+      <div class="hero__bg" aria-hidden="true">
+        <img src="/images/home.webp" alt="" class="hero__bg-img" fetchpriority="high" decoding="async">
+        <div class="hero__overlay"></div>
+      </div>
+      <!-- Content -->
       <div class="hero__inner">
-        
+
         <h1><%- t.home.heroH1 %></h1>
         <div class="hero__rule" aria-hidden="true"></div>
         <p class="hero__sub"><%- t.home.heroSub %></p>
         <div class="btn-row">
-          <a href="<%= pfx %>/projects" class="btn btn--dark" id="hero-cta-our-projects"><%= t.home.heroBtn1 %></a>
+          <a href="<%= pfx %>/projects" class="btn btn--outline-light" id="hero-cta-our-projects"><%= t.home.heroBtn1 %></a>
         </div>
       </div>
     </section>

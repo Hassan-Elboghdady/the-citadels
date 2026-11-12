@@ -273,13 +273,13 @@
 }
 .brochure-band__inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+  text-align: center;
 }
 .brochure-band__line {
-  flex: 1;
-  height: 1px;
-  background: rgba(255,255,255,0.12);
+  display: none;
 }
 .brochure-band__body {
   display: flex;
@@ -287,7 +287,7 @@
   align-items: center;
   text-align: center;
   gap: 16px;
-  flex-shrink: 0;
+  width: 100%;
 }
 .brochure-band__eyebrow {
   font-family: var(--font-sans);

@@ -17,17 +17,17 @@ const projects = [
     "location_ar": "المعادي · القاهرة",
     "location_it": "Maadi · Il Cairo",
     "location_fr": "Maadi · Le Caire",
-    "image": "/images/our-projects/EL_ARABIYA/el-arabiya-1.jpeg",
+    "image": "/images/our-projects/EL_ARABIYA/el-arabiya-1.webp",
     "description": "Supply and installation of loose office furniture for the El Arabiya HQ in Maadi, Cairo. A complete fit-out of workstations, executive offices, meeting rooms, and common areas — all specified to reflect the brand's professional identity and deliver a productive, contemporary workspace.",
     "description_ar": "توريد وتركيب أثاث مكاتب متحرك للمقر الرئيسي للعربية في المعادي، القاهرة. تجهيز كامل لمحطات العمل والمكاتب التنفيذية وقاعات الاجتماعات والمناطق المشتركة — بمواصفات تعكس هوية العلامة التجارية وتوفر بيئة عمل منتجة وعصرية.",
     "description_it": "Fornitura e installazione di mobili da ufficio per la sede di El Arabiya a Maadi, Il Cairo. Un allestimento completo di postazioni di lavoro, uffici direzionali, sale riunioni e aree comuni — tutti specificati per riflettere l'identità professionale del marchio.",
     "description_fr": "Fourniture et installation de mobilier de bureau libre pour le siège d'El Arabiya à Maadi, Le Caire. Un aménagement complet des postes de travail, des bureaux de direction, des salles de réunion et des espaces communs.",
     "gallery": [
-      "/images/our-projects/EL_ARABIYA/el-arabiya-1.jpeg",
-      "/images/our-projects/EL_ARABIYA/el-arabiya-2.jpeg",
-      "/images/our-projects/EL_ARABIYA/el-arabiya-3.jpeg",
-      "/images/our-projects/EL_ARABIYA/el-arabiya-4.jpeg",
-      "/images/our-projects/EL_ARABIYA/el-arabiya-5.jpeg"
+      "/images/our-projects/EL_ARABIYA/el-arabiya-1.webp",
+      "/images/our-projects/EL_ARABIYA/el-arabiya-2.webp",
+      "/images/our-projects/EL_ARABIYA/el-arabiya-3.webp",
+      "/images/our-projects/EL_ARABIYA/el-arabiya-4.webp",
+      "/images/our-projects/EL_ARABIYA/el-arabiya-5.webp"
     ]
   },
   {
@@ -48,16 +48,16 @@ const projects = [
     "location_ar": "السيدة زينب · القاهرة",
     "location_it": "Sayeda Zainab · Il Cairo",
     "location_fr": "Sayeda Zainab · Le Caire",
-    "image": "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PROTON THERAPY BUILDING.jfif",
+    "image": "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PROTON THERAPY BUILDING.webp",
     "description": "Supply and installation of medical and ergonomic furniture for the CCHE 57357 Proton Therapy Building — one of the most advanced cancer treatment facilities in Africa. Furniture was specified to meet the strict clinical and operational requirements of a world-class proton therapy centre, covering treatment areas, clinical offices, waiting zones, and staff workstations.",
     "description_ar": "توريد وتركيب أثاث طبي وأثاث مريح لمبنى العلاج بالبروتون في مستشفى سرطان الأطفال 57357 — أحد أكثر مرافق علاج السرطان تطوراً في أفريقيا. تم تحديد الأثاث ليستوفي المتطلبات السريرية والتشغيلية الصارمة لمركز علاج بروتوني عالمي المستوى.",
     "description_it": "Fornitura e installazione di mobili medici ed ergonomici per l'edificio di protonterapia CCHE 57357 — una delle strutture di trattamento del cancro più avanzate in Africa. I mobili sono stati specificati per soddisfare i rigorosi requisiti clinici e operativi di un centro di protonterapia di livello mondiale.",
     "description_fr": "Fourniture et installation de mobilier médical et ergonomique pour le bâtiment de protonthérapie CCHE 57357 — l'une des installations de traitement du cancer les plus avancées d'Afrique. Le mobilier a été spécifié pour répondre aux exigences cliniques et opérationnelles strictes d'un centre de protonthérapie de classe mondiale.",
     "gallery": [
-      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PROTON THERAPY BUILDING.jfif",
-      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PTN Furniture 1.jpg",
-      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PTN Furniture 2.jpg",
-      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PTN Furniture 4.jpg"
+      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PROTON THERAPY BUILDING.webp",
+      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PTN Furniture 1.webp",
+      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PTN Furniture 2.webp",
+      "/images/our-projects/CCHE_57357_PROTON_THERAPY_BUILDING/PTN Furniture 4.webp"
     ]
   },
   {
@@ -139,14 +139,14 @@ const projects = [
     "location_ar": "الجيزة · مدينة 6 أكتوبر",
     "location_it": "Giza · Città del 6 Ottobre",
     "location_fr": "Gizeh · Ville du 6 Octobre",
-    "image": "/images/our-projects/west-nile-monorail/WON MONORAIL.jfif",
+    "image": "/images/our-projects/west-nile-monorail/WON MONORAIL.webp",
     "description": "Supply and installation of OCC control consoles for the West Nile Monorail project across Giza and 6th of October City. Custom-configured operator consoles designed to meet the demanding 24/7 operational requirements of monorail control environments.",
     "description_ar": "توريد وتركيب وحدات تحكم المشغلين لمشروع مونوريل غرب النيل عبر الجيزة ومدينة 6 أكتوبر. وحدات تحكم مشغلين مخصصة تم تصميمها لتلبية متطلبات التشغيل الصعبة على مدار 24 ساعة طوال أيام الأسبوع لبيئات التحكم في المونوريل.",
     "description_it": "Fornitura e installazione di console di controllo OCC per il progetto della monorotaia del Nilo Occidentale a Giza e nella Città del 6 Ottobre. Console operatore configurate su misura e progettate per soddisfare i rigorosi requisiti operativi 24/7 degli ambienti di controllo della monorotaia.",
     "description_fr": "Fourniture et installation de consoles de contrôle OCC pour le projet du monorail de West Nile à Gizeh et dans la Ville du 6 Octobre. Consoles opérateurs configurées sur mesure et conçues pour répondre aux exigences opérationnelles contraignantes 24h/24 et 7j/7 des environnements de contrôle de monorail.",
     "gallery": [
-      "/images/our-projects/west-nile-monorail/WhatsApp Image 2026-02-11 at 09.12.06.jpeg",
-      "/images/our-projects/west-nile-monorail/WhatsApp Image 2026-06-12 at 20.36.18.jpeg"
+      "/images/our-projects/west-nile-monorail/WhatsApp Image 2026-02-11 at 09.12.06.webp",
+      "/images/our-projects/west-nile-monorail/WhatsApp Image 2026-06-12 at 20.36.18.webp"
     ]
   },
   {
@@ -167,17 +167,17 @@ const projects = [
     "location_ar": "الجيزة · مدينة 6 أكتوبر",
     "location_it": "Giza · Città del 6 Ottobre",
     "location_fr": "Gizeh · Ville du 6 Octobre",
-    "image": "/images/our-projects/west-nile-monorail-stations/WON STATION.jpg",
+    "image": "/images/our-projects/west-nile-monorail-stations/WON STATION.webp",
     "description": "Supply and installation of ergonomic and O&M furniture for the West of Nile Monorail Stations across Giza and 6th of October City. Furniture was specified to meet the operational and passenger-facing requirements of monorail station environments, covering staff workstations, operator areas, and public-facing zones throughout each station.",
     "description_ar": "توريد وتركيب أثاث مريح ومعدات التشغيل والصيانة لمحطات مونوريل غرب النيل عبر الجيزة ومدينة 6 أكتوبر. تم تحديد الأثاث لتلبية متطلبات التشغيل ومتطلبات المسافرين في بيئات محطات المونوريل.",
     "description_it": "Fornitura e installazione di mobili ergonomici e O&M per le stazioni della monorotaia del Nilo Occidentale a Giza e nella Città del 6 Ottobre. I mobili sono stati specificati per soddisfare i requisiti operativi e per i passeggeri degli ambienti delle stazioni della monorotaia.",
     "description_fr": "Fourniture et installation de mobilier ergonomique et d'exploitation-maintenance pour les stations du monorail de West Nile à Gizeh et dans la Ville du 6 Octobre. Le mobilier a été spécifié pour répondre aux exigences opérationnelles et aux besoins des passagers.",
     "gallery": [
-      "/images/our-projects/west-nile-monorail-stations/WON STATION.jpg",
-      "/images/our-projects/west-nile-monorail-stations/WON STATIION NEW OTOBER.jpg",
-      "/images/our-projects/west-nile-monorail-stations/STATION 2 2026-09-12 at 14.25.10.jpeg",
-      "/images/our-projects/west-nile-monorail-stations/WhatsApp Image 2026-10-05 at 14.07.48 (2).jpeg",
-      "/images/our-projects/west-nile-monorail-stations/WhatsApp Image 2026-10-05 at 15.19.56 (1).jpeg"
+      "/images/our-projects/west-nile-monorail-stations/WON STATION.webp",
+      "/images/our-projects/west-nile-monorail-stations/WON STATIION NEW OTOBER.webp",
+      "/images/our-projects/west-nile-monorail-stations/STATION 2 2026-09-12 at 14.25.10.webp",
+      "/images/our-projects/west-nile-monorail-stations/WhatsApp Image 2026-10-05 at 14.07.48 (2).webp",
+      "/images/our-projects/west-nile-monorail-stations/WhatsApp Image 2026-10-05 at 15.19.56 (1).webp"
     ]
   },
   {
